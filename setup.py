@@ -26,8 +26,8 @@
 
 from setuptools import setup, find_packages
 
-NAME = "aspose-imaging-cloud"
-VERSION = "19.10.0"
+NAME = "aspose-cad-cloud"
+VERSION = "19.11.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -39,7 +39,8 @@ REQUIRES = [
     "urllib3>=1.22",
     "six>=1.11",
     "certifi>=2018.1",
-    "python_dateutil>=2.8"
+    "python_dateutil>=2.8",
+    "asposestoragecloud>=1.0.6"
 ]
 
 with open("README.md", "r") as fh:
@@ -48,10 +49,10 @@ with open("README.md", "r") as fh:
 setup(
     name=NAME,
     version=VERSION,
-    description="Aspose.Imaging Cloud Python SDK",
-    author="Sergei Zubov",
-    author_email="sergei.zubov@aspose.com",
-    url="https://products.aspose.cloud/imaging",
+    description="Aspose.CAD Cloud Python SDK",
+    author="Vitalii Kornyliuk",
+    author_email="vitalii.kornyliuk@aspose.com",
+    url="https://products.aspose.cloud/cad",
     licence="MIT",
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -70,41 +71,37 @@ setup(
     ],
     keywords=[
         "Aspose",
-        "Imaging",
+        "CAD",
         "Cloud",
         "REST",
         "API",
         "SDK",
+        "drawing",
+        "DWG",
+        "DXF",
+        "DWF",
+        "DWT",
+        "STL",
+        "IGS",
+        "DGN",
+        "OBJ",
+        "CF2",
         "image",
         "bmp",
-        "dicom",
-        "dng",
-        "djvu",
-        "djv",
-        "emf",
         "gif",
         "jpg",
-        "jpe",
         "jpeg",
         "jpeg2000",
         "jp2",
-        "jpx",
-        "jpm",
         "j2k",
-        "odg",
         "png",
         "psd",
         "tiff",
         "tif",
-        "webp",
         "wmf",
-        "cdr",
-        "cmx",
-        "pdf",
         "svg",
-        "otg",
-        "reverse",
-        "search"],
+        "export",
+        "conversion"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "test*"]),
     include_package_data=True,
