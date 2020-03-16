@@ -25,25 +25,9 @@
 #  ----------------------------------------------------------------------------
 
 from test import api_tester
-from test.api.storage.test_file_api import TestFileApi
-from test.api.storage.test_folder_api import TestFolderApi
-from test.api.storage.test_storage_api import TestStorageApi
 from test.api.test_bmp_api import TestBmpApi
 from test.api.test_crop_api import TestCropApi
-from test.api.test_emf_api import TestEmfApi
 from test.api.test_examples import TestExamples
-from test.api.test_frames_get_api import TestFramesGetApi
-from test.api.test_frames_post_api import TestFramesPostApi
-from test.api.test_filter_effect_api import TestFilterEffectApi
-from test.api.test_gif_api import TestGifApi
-from test.api.test_jpeg2000_api import TestJpeg2000Api
-from test.api.test_jpg_api import TestJpgApi
-from test.api.test_psd_api import TestPsdApi
 from test.api.test_resize_api import TestResizeApi
 from test.api.test_rotate_flip_api import TestRotateFlipApi
 from test.api.test_save_as_api import TestSaveAsApi
-from test.api.test_svg_api import TestSvgApi
-from test.api.test_tiff_api import TestTiffApi
-from test.api.test_update_image_api import TestUpdateImageApi
-from test.api.test_web_p_api import TestWebPApi
-from test.api.test_wmf_api import TestWmfApi

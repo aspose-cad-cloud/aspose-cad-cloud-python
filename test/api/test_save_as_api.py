@@ -159,5 +159,5 @@ class TestSaveAsApi(CadApiTester):
                             folder,
                             storage)
 
-t = TestSaveAsApi()
-t.test_save_image_as()
+#t = TestSaveAsApi()
+#t.test_save_image_as()
