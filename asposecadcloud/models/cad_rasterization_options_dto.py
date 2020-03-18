@@ -1,35 +1,40 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="CadRasterizationOptionsDTO.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="CadRasterizationOptionsDTO.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
+from asposecadcloud.models.color import Color
+from asposecadcloud.models.graphics_options import GraphicsOptions
+from asposecadcloud.models.pen_options import PenOptions
+from asposecadcloud.models.vector_rasterization_options_dto import VectorRasterizationOptionsDTO
 
-class CadRasterizationOptionsDTO(object):
+
+class CadRasterizationOptionsDTO(VectorRasterizationOptionsDTO):
     """Raster export options
     """
 
@@ -46,7 +51,7 @@ class CadRasterizationOptionsDTO(object):
         'automatic_layouts_scaling': 'bool',
         'layers': 'list[str]',
         'layouts': 'list[str]',
-        'draw_type': 'str',
+        'draw_type': 'object',
         'no_scaling': 'bool'
     }
 
@@ -60,8 +65,9 @@ class CadRasterizationOptionsDTO(object):
         'no_scaling': 'NoScaling'
     }
 
-    def __init__(self, zoom=None, pen_options=None, automatic_layouts_scaling=None, layers=None, layouts=None, draw_type=None, no_scaling=None):  # noqa: E501
-        """CadRasterizationOptionsDTO - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, zoom=None, pen_options=None, automatic_layouts_scaling=None, layers=None, layouts=None, draw_type=None, no_scaling=None):
+        """CadRasterizationOptionsDTO - a model defined in Swagger"""
+        super(CadRasterizationOptionsDTO, self).__init__()
 
         self._zoom = None
         self._pen_options = None
@@ -70,7 +76,6 @@ class CadRasterizationOptionsDTO(object):
         self._layouts = None
         self._draw_type = None
         self._no_scaling = None
-        self.discriminator = None
 
         if zoom is not None:
             self.zoom = zoom
@@ -89,11 +94,11 @@ class CadRasterizationOptionsDTO(object):
 
     @property
     def zoom(self):
-        """Gets the zoom of this CadRasterizationOptionsDTO.  # noqa: E501
+        """Gets the zoom of this CadRasterizationOptionsDTO.
 
-        Zoom factor  # noqa: E501
+        Zoom factor
 
-        :return: The zoom of this CadRasterizationOptionsDTO.  # noqa: E501
+        :return: The zoom of this CadRasterizationOptionsDTO.
         :rtype: float
         """
         return self._zoom
@@ -102,21 +107,22 @@ class CadRasterizationOptionsDTO(object):
     def zoom(self, zoom):
         """Sets the zoom of this CadRasterizationOptionsDTO.
 
-        Zoom factor  # noqa: E501
+        Zoom factor
 
-        :param zoom: The zoom of this CadRasterizationOptionsDTO.  # noqa: E501
+        :param zoom: The zoom of this CadRasterizationOptionsDTO.
         :type: float
         """
         if zoom is None:
-            raise ValueError("Invalid value for `zoom`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `zoom`, must not be `None`")
         self._zoom = zoom
+
     @property
     def pen_options(self):
-        """Gets the pen_options of this CadRasterizationOptionsDTO.  # noqa: E501
+        """Gets the pen_options of this CadRasterizationOptionsDTO.
 
-        Pen options  # noqa: E501
+        Pen options
 
-        :return: The pen_options of this CadRasterizationOptionsDTO.  # noqa: E501
+        :return: The pen_options of this CadRasterizationOptionsDTO.
         :rtype: PenOptions
         """
         return self._pen_options
@@ -125,19 +131,20 @@ class CadRasterizationOptionsDTO(object):
     def pen_options(self, pen_options):
         """Sets the pen_options of this CadRasterizationOptionsDTO.
 
-        Pen options  # noqa: E501
+        Pen options
 
-        :param pen_options: The pen_options of this CadRasterizationOptionsDTO.  # noqa: E501
+        :param pen_options: The pen_options of this CadRasterizationOptionsDTO.
         :type: PenOptions
         """
         self._pen_options = pen_options
+
     @property
     def automatic_layouts_scaling(self):
-        """Gets the automatic_layouts_scaling of this CadRasterizationOptionsDTO.  # noqa: E501
+        """Gets the automatic_layouts_scaling of this CadRasterizationOptionsDTO.
 
-        Determines whether layout has to be scaled automatically  # noqa: E501
+        Determines whether layout has to be scaled automatically
 
-        :return: The automatic_layouts_scaling of this CadRasterizationOptionsDTO.  # noqa: E501
+        :return: The automatic_layouts_scaling of this CadRasterizationOptionsDTO.
         :rtype: bool
         """
         return self._automatic_layouts_scaling
@@ -146,21 +153,22 @@ class CadRasterizationOptionsDTO(object):
     def automatic_layouts_scaling(self, automatic_layouts_scaling):
         """Sets the automatic_layouts_scaling of this CadRasterizationOptionsDTO.
 
-        Determines whether layout has to be scaled automatically  # noqa: E501
+        Determines whether layout has to be scaled automatically
 
-        :param automatic_layouts_scaling: The automatic_layouts_scaling of this CadRasterizationOptionsDTO.  # noqa: E501
+        :param automatic_layouts_scaling: The automatic_layouts_scaling of this CadRasterizationOptionsDTO.
         :type: bool
         """
         if automatic_layouts_scaling is None:
-            raise ValueError("Invalid value for `automatic_layouts_scaling`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `automatic_layouts_scaling`, must not be `None`")
         self._automatic_layouts_scaling = automatic_layouts_scaling
+
     @property
     def layers(self):
-        """Gets the layers of this CadRasterizationOptionsDTO.  # noqa: E501
+        """Gets the layers of this CadRasterizationOptionsDTO.
 
-        Layers to export  # noqa: E501
+        Layers to export
 
-        :return: The layers of this CadRasterizationOptionsDTO.  # noqa: E501
+        :return: The layers of this CadRasterizationOptionsDTO.
         :rtype: list[str]
         """
         return self._layers
@@ -169,19 +177,20 @@ class CadRasterizationOptionsDTO(object):
     def layers(self, layers):
         """Sets the layers of this CadRasterizationOptionsDTO.
 
-        Layers to export  # noqa: E501
+        Layers to export
 
-        :param layers: The layers of this CadRasterizationOptionsDTO.  # noqa: E501
+        :param layers: The layers of this CadRasterizationOptionsDTO.
         :type: list[str]
         """
         self._layers = layers
+
     @property
     def layouts(self):
-        """Gets the layouts of this CadRasterizationOptionsDTO.  # noqa: E501
+        """Gets the layouts of this CadRasterizationOptionsDTO.
 
-        Layouts to export  # noqa: E501
+        Layouts to export
 
-        :return: The layouts of this CadRasterizationOptionsDTO.  # noqa: E501
+        :return: The layouts of this CadRasterizationOptionsDTO.
         :rtype: list[str]
         """
         return self._layouts
@@ -190,20 +199,21 @@ class CadRasterizationOptionsDTO(object):
     def layouts(self, layouts):
         """Sets the layouts of this CadRasterizationOptionsDTO.
 
-        Layouts to export  # noqa: E501
+        Layouts to export
 
-        :param layouts: The layouts of this CadRasterizationOptionsDTO.  # noqa: E501
+        :param layouts: The layouts of this CadRasterizationOptionsDTO.
         :type: list[str]
         """
         self._layouts = layouts
+
     @property
     def draw_type(self):
-        """Gets the draw_type of this CadRasterizationOptionsDTO.  # noqa: E501
+        """Gets the draw_type of this CadRasterizationOptionsDTO.
 
-        Drawing mode  # noqa: E501
+        Drawing mode
 
-        :return: The draw_type of this CadRasterizationOptionsDTO.  # noqa: E501
-        :rtype: str
+        :return: The draw_type of this CadRasterizationOptionsDTO.
+        :rtype: object
         """
         return self._draw_type
 
@@ -211,29 +221,22 @@ class CadRasterizationOptionsDTO(object):
     def draw_type(self, draw_type):
         """Sets the draw_type of this CadRasterizationOptionsDTO.
 
-        Drawing mode  # noqa: E501
+        Drawing mode
 
-        :param draw_type: The draw_type of this CadRasterizationOptionsDTO.  # noqa: E501
-        :type: str
+        :param draw_type: The draw_type of this CadRasterizationOptionsDTO.
+        :type: object
         """
         if draw_type is None:
-            raise ValueError("Invalid value for `draw_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["UseDrawColor", "UseObjectColor"]  # noqa: E501
-        if not draw_type.isdigit():	
-            if draw_type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `draw_type` ({0}), must be one of {1}"  # noqa: E501
-                    .format(draw_type, allowed_values))
-            self._draw_type = draw_type
-        else:
-            self._draw_type = allowed_values[int(draw_type) if six.PY3 else long(draw_type)]
+            raise ValueError("Invalid value for `draw_type`, must not be `None`")
+        self._draw_type = draw_type
+
     @property
     def no_scaling(self):
-        """Gets the no_scaling of this CadRasterizationOptionsDTO.  # noqa: E501
+        """Gets the no_scaling of this CadRasterizationOptionsDTO.
 
-        Determines whether scaling has to be turned off  # noqa: E501
+        Determines whether scaling has to be turned off
 
-        :return: The no_scaling of this CadRasterizationOptionsDTO.  # noqa: E501
+        :return: The no_scaling of this CadRasterizationOptionsDTO.
         :rtype: bool
         """
         return self._no_scaling
@@ -242,14 +245,15 @@ class CadRasterizationOptionsDTO(object):
     def no_scaling(self, no_scaling):
         """Sets the no_scaling of this CadRasterizationOptionsDTO.
 
-        Determines whether scaling has to be turned off  # noqa: E501
+        Determines whether scaling has to be turned off
 
-        :param no_scaling: The no_scaling of this CadRasterizationOptionsDTO.  # noqa: E501
+        :param no_scaling: The no_scaling of this CadRasterizationOptionsDTO.
         :type: bool
         """
         if no_scaling is None:
-            raise ValueError("Invalid value for `no_scaling`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `no_scaling`, must not be `None`")
         self._no_scaling = no_scaling
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

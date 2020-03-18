@@ -1,31 +1,31 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ResolutionSetting.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="ResolutionSetting.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
 
@@ -50,12 +50,12 @@ class ResolutionSetting(object):
         'vertical_resolution': 'VerticalResolution'
     }
 
-    def __init__(self, horizontal_resolution=None, vertical_resolution=None):  # noqa: E501
-        """ResolutionSetting - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, horizontal_resolution=None, vertical_resolution=None):
+        """ResolutionSetting - a model defined in Swagger"""
+        super(ResolutionSetting, self).__init__()
 
         self._horizontal_resolution = None
         self._vertical_resolution = None
-        self.discriminator = None
 
         if horizontal_resolution is not None:
             self.horizontal_resolution = horizontal_resolution
@@ -64,11 +64,11 @@ class ResolutionSetting(object):
 
     @property
     def horizontal_resolution(self):
-        """Gets the horizontal_resolution of this ResolutionSetting.  # noqa: E501
+        """Gets the horizontal_resolution of this ResolutionSetting.
 
-        Gets or sets the horizontal resolution.  # noqa: E501
+        Gets or sets the horizontal resolution.
 
-        :return: The horizontal_resolution of this ResolutionSetting.  # noqa: E501
+        :return: The horizontal_resolution of this ResolutionSetting.
         :rtype: float
         """
         return self._horizontal_resolution
@@ -77,21 +77,22 @@ class ResolutionSetting(object):
     def horizontal_resolution(self, horizontal_resolution):
         """Sets the horizontal_resolution of this ResolutionSetting.
 
-        Gets or sets the horizontal resolution.  # noqa: E501
+        Gets or sets the horizontal resolution.
 
-        :param horizontal_resolution: The horizontal_resolution of this ResolutionSetting.  # noqa: E501
+        :param horizontal_resolution: The horizontal_resolution of this ResolutionSetting.
         :type: float
         """
         if horizontal_resolution is None:
-            raise ValueError("Invalid value for `horizontal_resolution`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `horizontal_resolution`, must not be `None`")
         self._horizontal_resolution = horizontal_resolution
+
     @property
     def vertical_resolution(self):
-        """Gets the vertical_resolution of this ResolutionSetting.  # noqa: E501
+        """Gets the vertical_resolution of this ResolutionSetting.
 
-        Gets or sets the vertical resolution.  # noqa: E501
+        Gets or sets the vertical resolution.
 
-        :return: The vertical_resolution of this ResolutionSetting.  # noqa: E501
+        :return: The vertical_resolution of this ResolutionSetting.
         :rtype: float
         """
         return self._vertical_resolution
@@ -100,14 +101,15 @@ class ResolutionSetting(object):
     def vertical_resolution(self, vertical_resolution):
         """Sets the vertical_resolution of this ResolutionSetting.
 
-        Gets or sets the vertical resolution.  # noqa: E501
+        Gets or sets the vertical resolution.
 
-        :param vertical_resolution: The vertical_resolution of this ResolutionSetting.  # noqa: E501
+        :param vertical_resolution: The vertical_resolution of this ResolutionSetting.
         :type: float
         """
         if vertical_resolution is None:
-            raise ValueError("Invalid value for `vertical_resolution`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `vertical_resolution`, must not be `None`")
         self._vertical_resolution = vertical_resolution
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

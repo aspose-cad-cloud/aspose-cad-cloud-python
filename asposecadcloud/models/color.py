@@ -1,31 +1,31 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Color.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="Color.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
 
@@ -62,8 +62,9 @@ class Color(object):
         'name': 'Name'
     }
 
-    def __init__(self, r=None, g=None, b=None, a=None, is_known_color=None, is_empty=None, is_named_color=None, name=None):  # noqa: E501
-        """Color - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, r=None, g=None, b=None, a=None, is_known_color=None, is_empty=None, is_named_color=None, name=None):
+        """Color - a model defined in Swagger"""
+        super(Color, self).__init__()
 
         self._r = None
         self._g = None
@@ -73,7 +74,6 @@ class Color(object):
         self._is_empty = None
         self._is_named_color = None
         self._name = None
-        self.discriminator = None
 
         if r is not None:
             self.r = r
@@ -94,11 +94,11 @@ class Color(object):
 
     @property
     def r(self):
-        """Gets the r of this Color.  # noqa: E501
+        """Gets the r of this Color.
 
-        Gets the red component value of this Color structure.  # noqa: E501
+        Gets the red component value of this Color structure.
 
-        :return: The r of this Color.  # noqa: E501
+        :return: The r of this Color.
         :rtype: int
         """
         return self._r
@@ -107,21 +107,22 @@ class Color(object):
     def r(self, r):
         """Sets the r of this Color.
 
-        Gets the red component value of this Color structure.  # noqa: E501
+        Gets the red component value of this Color structure.
 
-        :param r: The r of this Color.  # noqa: E501
+        :param r: The r of this Color.
         :type: int
         """
         if r is None:
-            raise ValueError("Invalid value for `r`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `r`, must not be `None`")
         self._r = r
+
     @property
     def g(self):
-        """Gets the g of this Color.  # noqa: E501
+        """Gets the g of this Color.
 
-        Gets the green component value of this Color structure.  # noqa: E501
+        Gets the green component value of this Color structure.
 
-        :return: The g of this Color.  # noqa: E501
+        :return: The g of this Color.
         :rtype: int
         """
         return self._g
@@ -130,21 +131,22 @@ class Color(object):
     def g(self, g):
         """Sets the g of this Color.
 
-        Gets the green component value of this Color structure.  # noqa: E501
+        Gets the green component value of this Color structure.
 
-        :param g: The g of this Color.  # noqa: E501
+        :param g: The g of this Color.
         :type: int
         """
         if g is None:
-            raise ValueError("Invalid value for `g`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `g`, must not be `None`")
         self._g = g
+
     @property
     def b(self):
-        """Gets the b of this Color.  # noqa: E501
+        """Gets the b of this Color.
 
-        Gets the blue component value of this Color structure.  # noqa: E501
+        Gets the blue component value of this Color structure.
 
-        :return: The b of this Color.  # noqa: E501
+        :return: The b of this Color.
         :rtype: int
         """
         return self._b
@@ -153,21 +155,22 @@ class Color(object):
     def b(self, b):
         """Sets the b of this Color.
 
-        Gets the blue component value of this Color structure.  # noqa: E501
+        Gets the blue component value of this Color structure.
 
-        :param b: The b of this Color.  # noqa: E501
+        :param b: The b of this Color.
         :type: int
         """
         if b is None:
-            raise ValueError("Invalid value for `b`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `b`, must not be `None`")
         self._b = b
+
     @property
     def a(self):
-        """Gets the a of this Color.  # noqa: E501
+        """Gets the a of this Color.
 
-        Gets the alpha component value of this Color structure.  # noqa: E501
+        Gets the alpha component value of this Color structure.
 
-        :return: The a of this Color.  # noqa: E501
+        :return: The a of this Color.
         :rtype: int
         """
         return self._a
@@ -176,21 +179,22 @@ class Color(object):
     def a(self, a):
         """Sets the a of this Color.
 
-        Gets the alpha component value of this Color structure.  # noqa: E501
+        Gets the alpha component value of this Color structure.
 
-        :param a: The a of this Color.  # noqa: E501
+        :param a: The a of this Color.
         :type: int
         """
         if a is None:
-            raise ValueError("Invalid value for `a`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `a`, must not be `None`")
         self._a = a
+
     @property
     def is_known_color(self):
-        """Gets the is_known_color of this Color.  # noqa: E501
+        """Gets the is_known_color of this Color.
 
-        Gets a value indicating whether this Color structure is a predefined color. Predefined colors are represented by the elements of the KnownColor enumeration.  # noqa: E501
+        Gets a value indicating whether this Color structure is a predefined color. Predefined colors are represented by the elements of the KnownColor enumeration.
 
-        :return: The is_known_color of this Color.  # noqa: E501
+        :return: The is_known_color of this Color.
         :rtype: bool
         """
         return self._is_known_color
@@ -199,21 +203,22 @@ class Color(object):
     def is_known_color(self, is_known_color):
         """Sets the is_known_color of this Color.
 
-        Gets a value indicating whether this Color structure is a predefined color. Predefined colors are represented by the elements of the KnownColor enumeration.  # noqa: E501
+        Gets a value indicating whether this Color structure is a predefined color. Predefined colors are represented by the elements of the KnownColor enumeration.
 
-        :param is_known_color: The is_known_color of this Color.  # noqa: E501
+        :param is_known_color: The is_known_color of this Color.
         :type: bool
         """
         if is_known_color is None:
-            raise ValueError("Invalid value for `is_known_color`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `is_known_color`, must not be `None`")
         self._is_known_color = is_known_color
+
     @property
     def is_empty(self):
-        """Gets the is_empty of this Color.  # noqa: E501
+        """Gets the is_empty of this Color.
 
-        Gets a value indicating whether this Color structure is uninitialized.  # noqa: E501
+        Gets a value indicating whether this Color structure is uninitialized.
 
-        :return: The is_empty of this Color.  # noqa: E501
+        :return: The is_empty of this Color.
         :rtype: bool
         """
         return self._is_empty
@@ -222,21 +227,22 @@ class Color(object):
     def is_empty(self, is_empty):
         """Sets the is_empty of this Color.
 
-        Gets a value indicating whether this Color structure is uninitialized.  # noqa: E501
+        Gets a value indicating whether this Color structure is uninitialized.
 
-        :param is_empty: The is_empty of this Color.  # noqa: E501
+        :param is_empty: The is_empty of this Color.
         :type: bool
         """
         if is_empty is None:
-            raise ValueError("Invalid value for `is_empty`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `is_empty`, must not be `None`")
         self._is_empty = is_empty
+
     @property
     def is_named_color(self):
-        """Gets the is_named_color of this Color.  # noqa: E501
+        """Gets the is_named_color of this Color.
 
-        Gets a value indicating whether this Color structure is a named color or a member of the KnownColor enumeration.  # noqa: E501
+        Gets a value indicating whether this Color structure is a named color or a member of the KnownColor enumeration.
 
-        :return: The is_named_color of this Color.  # noqa: E501
+        :return: The is_named_color of this Color.
         :rtype: bool
         """
         return self._is_named_color
@@ -245,21 +251,22 @@ class Color(object):
     def is_named_color(self, is_named_color):
         """Sets the is_named_color of this Color.
 
-        Gets a value indicating whether this Color structure is a named color or a member of the KnownColor enumeration.  # noqa: E501
+        Gets a value indicating whether this Color structure is a named color or a member of the KnownColor enumeration.
 
-        :param is_named_color: The is_named_color of this Color.  # noqa: E501
+        :param is_named_color: The is_named_color of this Color.
         :type: bool
         """
         if is_named_color is None:
-            raise ValueError("Invalid value for `is_named_color`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `is_named_color`, must not be `None`")
         self._is_named_color = is_named_color
+
     @property
     def name(self):
-        """Gets the name of this Color.  # noqa: E501
+        """Gets the name of this Color.
 
-        Gets the name of this Color.  # noqa: E501
+        Gets the name of this Color.
 
-        :return: The name of this Color.  # noqa: E501
+        :return: The name of this Color.
         :rtype: str
         """
         return self._name
@@ -268,12 +275,13 @@ class Color(object):
     def name(self, name):
         """Sets the name of this Color.
 
-        Gets the name of this Color.  # noqa: E501
+        Gets the name of this Color.
 
-        :param name: The name of this Color.  # noqa: E501
+        :param name: The name of this Color.
         :type: str
         """
         self._name = name
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

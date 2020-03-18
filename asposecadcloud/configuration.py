@@ -1,98 +1,107 @@
-# coding: utf-8
-
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="configuration.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="configuration.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
 from __future__ import absolute_import
 
-import copy
 import logging
 import multiprocessing
 import sys
-import urllib3
 
 import six
+import urllib3
 from six.moves import http_client as httplib
 
 
-class TypeWithDefault(type):
-    def __init__(cls, name, bases, dct):
-        super(TypeWithDefault, cls).__init__(name, bases, dct)
-        cls._default = None
-
-    def __call__(cls):
-        if cls._default is None:
-            cls._default = type.__call__(cls)
-        return copy.copy(cls._default)
-
-    def set_default(cls, default):
-        cls._default = copy.copy(default)
-
-
-class Configuration(six.with_metaclass(TypeWithDefault, object)):
+class Configuration(object):
     """ Class which contains configuration parameters
     """
 
-    def __init__(self):
+    default_base_url = 'https://api.aspose.cloud'
+
+    default_api_version = 'v3.0'
+
+    def __init__(self, app_key=None, app_sid=None, base_url=None,
+                 api_version=None, debug=False):
         """Constructor"""
-        # Default Base url
-        self.host = "https://api.aspose.com"
-        # Default api version is v1. Available values are v1, v1.1, v2, v3
-        self.api_version = "v1"
+        # Base url
+        if base_url:
+            self.host = base_url
+        else:
+            self.host = Configuration.default_base_url
+        if str.endswith(self.host, '/'):
+            self.host = self.host[:-1]
+
+        # Default api version is v3
+        if api_version:
+            if api_version.startswith('v1') or api_version.startswith('v2'):
+                raise Exception('This Aspose.Imaging Cloud SDK version is '
+                                'intended to be used with API v3.0 or later!')
+            self.api_version = api_version
+        else:
+            self.api_version = Configuration.default_api_version
+        if self.api_version and str.endswith(self.api_version, '/'):
+            self.api_version = self.api_version[:-1]
+        if self.api_version and not str.startswith(self.api_version, '/'):
+            self.api_version = '/' + self.api_version
+
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
         # Authentication Settings
         # dict to store API key(s)
-        self.api_key = {}
-        self.api_key['api_key'] = ""
-        self.api_key['app_sid'] = ""
+        self.api_key = {'api_key': app_key if app_key else "",
+                        'app_sid': app_sid if app_sid else ""}
         # dict to store API prefix (e.g. Bearer)
         self.api_key_prefix = {}
-        # Username for HTTP basic authentication
-        self.username = ""
-        # Password for HTTP basic authentication
-        self.password = ""
 
         # access token for OAuth
         self.access_token = ""
 
         # Logging Settings
-        self.logger = {}
-        self.logger["package_logger"] = logging.getLogger("asposecadcloud")
-        self.logger["urllib3_logger"] = logging.getLogger("urllib3")
+        self.logger = {
+            "package_logger": logging.getLogger("asposecadcloud"),
+            "urllib3_logger": logging.getLogger("urllib3")}
         # Log format
+        self.logger_formatter = None
+        self.__logger_format = None
         self.logger_format = '%(asctime)s %(levelname)s %(message)s'
         # Log stream handler
         self.logger_stream_handler = None
         # Log file handler
         self.logger_file_handler = None
         # Debug file location
+        self.__logger_file = None
         self.logger_file = None
+
         # Debug switch
-        self.debug = False
+        self.debug = debug
+        self.__debug = debug
+
+        # On-premise switch
+        self.on_premise = not (app_key or app_sid) and base_url
 
         # SSL/TLS verification
         # Set this to false to skip verifying SSL certificate when calling API
@@ -223,7 +232,8 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         """
         if (self.api_key.get(identifier) and
                 self.api_key_prefix.get(identifier)):
-            return self.api_key_prefix[identifier] + ' ' + self.api_key[identifier]  # noqa: E501
+            return self.api_key_prefix[identifier] + ' ' + self.api_key[
+                identifier]
         elif self.api_key.get(identifier):
             return self.api_key[identifier]
 
@@ -253,14 +263,15 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
 
         }
 
-    def to_debug_report(self):
+    @staticmethod
+    def to_debug_report():
         """Gets the essential information for debugging.
 
         :return: The report for debugging.
         """
-        return "Python SDK Debug Report:\n"\
-               "OS: {env}\n"\
-               "Python Version: {pyversion}\n"\
-               "Version of the API: 3.0\n"\
-               "SDK Package Version: 19.11.0".\
-               format(env=sys.platform, pyversion=sys.version)
+        return "Python SDK Debug Report:\n" \
+               "OS: {env}\n" \
+               "Python Version: {pyversion}\n" \
+               "Version of the API: 3.0\n" \
+               "SDK Package Version: 20.2.0". \
+            format(env=sys.platform, pyversion=sys.version)

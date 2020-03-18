@@ -1,35 +1,39 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Jpeg2000OptionsDTO.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="Jpeg2000OptionsDTO.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
+from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
+from asposecadcloud.models.drawing_options_base_dto import DrawingOptionsBaseDTO
+from asposecadcloud.models.resolution_setting import ResolutionSetting
 
-class Jpeg2000OptionsDTO(object):
+
+class Jpeg2000OptionsDTO(DrawingOptionsBaseDTO):
     """Export options for JPEG2000 format
     """
 
@@ -50,12 +54,12 @@ class Jpeg2000OptionsDTO(object):
         'codec': 'Codec'
     }
 
-    def __init__(self, comments=None, codec=None):  # noqa: E501
-        """Jpeg2000OptionsDTO - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, comments=None, codec=None):
+        """Jpeg2000OptionsDTO - a model defined in Swagger"""
+        super(Jpeg2000OptionsDTO, self).__init__()
 
         self._comments = None
         self._codec = None
-        self.discriminator = None
 
         if comments is not None:
             self.comments = comments
@@ -64,10 +68,10 @@ class Jpeg2000OptionsDTO(object):
 
     @property
     def comments(self):
-        """Gets the comments of this Jpeg2000OptionsDTO.  # noqa: E501
+        """Gets the comments of this Jpeg2000OptionsDTO.
 
 
-        :return: The comments of this Jpeg2000OptionsDTO.  # noqa: E501
+        :return: The comments of this Jpeg2000OptionsDTO.
         :rtype: list[str]
         """
         return self._comments
@@ -77,16 +81,17 @@ class Jpeg2000OptionsDTO(object):
         """Sets the comments of this Jpeg2000OptionsDTO.
 
 
-        :param comments: The comments of this Jpeg2000OptionsDTO.  # noqa: E501
+        :param comments: The comments of this Jpeg2000OptionsDTO.
         :type: list[str]
         """
         self._comments = comments
+
     @property
     def codec(self):
-        """Gets the codec of this Jpeg2000OptionsDTO.  # noqa: E501
+        """Gets the codec of this Jpeg2000OptionsDTO.
 
 
-        :return: The codec of this Jpeg2000OptionsDTO.  # noqa: E501
+        :return: The codec of this Jpeg2000OptionsDTO.
         :rtype: str
         """
         return self._codec
@@ -96,20 +101,21 @@ class Jpeg2000OptionsDTO(object):
         """Sets the codec of this Jpeg2000OptionsDTO.
 
 
-        :param codec: The codec of this Jpeg2000OptionsDTO.  # noqa: E501
+        :param codec: The codec of this Jpeg2000OptionsDTO.
         :type: str
         """
         if codec is None:
-            raise ValueError("Invalid value for `codec`, must not be `None`")  # noqa: E501
-        allowed_values = ["J2K", "Jp2", "Jpt"]  # noqa: E501
-        if not codec.isdigit():	
+            raise ValueError("Invalid value for `codec`, must not be `None`")
+        allowed_values = ["J2K", "Jp2", "Jpt"]
+        if not codec.isdigit():
             if codec not in allowed_values:
                 raise ValueError(
-                    "Invalid value for `codec` ({0}), must be one of {1}"  # noqa: E501
+                    "Invalid value for `codec` ({0}), must be one of {1}"
                     .format(codec, allowed_values))
             self._codec = codec
         else:
             self._codec = allowed_values[int(codec) if six.PY3 else long(codec)]
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

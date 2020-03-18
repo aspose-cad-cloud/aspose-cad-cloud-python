@@ -1,4 +1,4 @@
-# VectorRasterizationOptionsDTO
+# asposecadcloud.models.VectorRasterizationOptionsDTO
 
 ## Properties
 Name | Type | Description | Notes
@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **content_as_bitmap** | **bool** | Gets or sets a value indicating whether content of a drawing is represented as image inside Pdf. Applicable only for CAD to Pdf export. Default is false. | 
 **graphics_options** | [**GraphicsOptions**](GraphicsOptions.md) | Gets or sets options to render bitmap inside pdf (if ContentAsBitmap is set to true). | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](API_README.md#documentation-for-models) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to API_README]](API_README.md)
 
 

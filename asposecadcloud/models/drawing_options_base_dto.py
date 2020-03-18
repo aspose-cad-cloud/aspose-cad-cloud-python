@@ -1,32 +1,35 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DrawingOptionsBaseDTO.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="DrawingOptionsBaseDTO.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
+
+from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
+from asposecadcloud.models.resolution_setting import ResolutionSetting
 
 
 class DrawingOptionsBaseDTO(object):
@@ -41,7 +44,7 @@ class DrawingOptionsBaseDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'rotation': 'str',
+        'rotation': 'object',
         'layers': 'list[str]',
         'resolution_settings': 'ResolutionSetting',
         'vector_rasterization_options': 'CadRasterizationOptionsDTO'
@@ -67,14 +70,14 @@ class DrawingOptionsBaseDTO(object):
         'TiffOptionsDTO': 'TiffOptionsDTO'
     }
 
-    def __init__(self, rotation=None, layers=None, resolution_settings=None, vector_rasterization_options=None):  # noqa: E501
-        """DrawingOptionsBaseDTO - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, rotation=None, layers=None, resolution_settings=None, vector_rasterization_options=None):
+        """DrawingOptionsBaseDTO - a model defined in Swagger"""
+        super(DrawingOptionsBaseDTO, self).__init__()
 
         self._rotation = None
         self._layers = None
         self._resolution_settings = None
         self._vector_rasterization_options = None
-        self.discriminator = 'Type'
 
         if rotation is not None:
             self.rotation = rotation
@@ -87,12 +90,12 @@ class DrawingOptionsBaseDTO(object):
 
     @property
     def rotation(self):
-        """Gets the rotation of this DrawingOptionsBaseDTO.  # noqa: E501
+        """Gets the rotation of this DrawingOptionsBaseDTO.
 
-        Resulting rotation operation  # noqa: E501
+        Resulting rotation operation
 
-        :return: The rotation of this DrawingOptionsBaseDTO.  # noqa: E501
-        :rtype: str
+        :return: The rotation of this DrawingOptionsBaseDTO.
+        :rtype: object
         """
         return self._rotation
 
@@ -100,29 +103,22 @@ class DrawingOptionsBaseDTO(object):
     def rotation(self, rotation):
         """Sets the rotation of this DrawingOptionsBaseDTO.
 
-        Resulting rotation operation  # noqa: E501
+        Resulting rotation operation
 
-        :param rotation: The rotation of this DrawingOptionsBaseDTO.  # noqa: E501
-        :type: str
+        :param rotation: The rotation of this DrawingOptionsBaseDTO.
+        :type: object
         """
         if rotation is None:
-            raise ValueError("Invalid value for `rotation`, must not be `None`")  # noqa: E501
-        allowed_values = ["RotateNoneFlipNone", "Rotate90FlipNone", "Rotate180FlipNone", "Rotate270FlipNone", "RotateNoneFlipX", "Rotate90FlipX", "Rotate180FlipX", "Rotate270FlipX", "RotateNoneFlipY", "Rotate90FlipY", "Rotate180FlipY", "Rotate270FlipY", "RotateNoneFlipXY", "Rotate90FlipXY", "Rotate180FlipXY", "Rotate270FlipXY"]  # noqa: E501
-        if not rotation.isdigit():	
-            if rotation not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `rotation` ({0}), must be one of {1}"  # noqa: E501
-                    .format(rotation, allowed_values))
-            self._rotation = rotation
-        else:
-            self._rotation = allowed_values[int(rotation) if six.PY3 else long(rotation)]
+            raise ValueError("Invalid value for `rotation`, must not be `None`")
+        self._rotation = rotation
+
     @property
     def layers(self):
-        """Gets the layers of this DrawingOptionsBaseDTO.  # noqa: E501
+        """Gets the layers of this DrawingOptionsBaseDTO.
 
-        Layers to export  # noqa: E501
+        Layers to export
 
-        :return: The layers of this DrawingOptionsBaseDTO.  # noqa: E501
+        :return: The layers of this DrawingOptionsBaseDTO.
         :rtype: list[str]
         """
         return self._layers
@@ -131,19 +127,20 @@ class DrawingOptionsBaseDTO(object):
     def layers(self, layers):
         """Sets the layers of this DrawingOptionsBaseDTO.
 
-        Layers to export  # noqa: E501
+        Layers to export
 
-        :param layers: The layers of this DrawingOptionsBaseDTO.  # noqa: E501
+        :param layers: The layers of this DrawingOptionsBaseDTO.
         :type: list[str]
         """
         self._layers = layers
+
     @property
     def resolution_settings(self):
-        """Gets the resolution_settings of this DrawingOptionsBaseDTO.  # noqa: E501
+        """Gets the resolution_settings of this DrawingOptionsBaseDTO.
 
-        DPI resolution settings  # noqa: E501
+        DPI resolution settings
 
-        :return: The resolution_settings of this DrawingOptionsBaseDTO.  # noqa: E501
+        :return: The resolution_settings of this DrawingOptionsBaseDTO.
         :rtype: ResolutionSetting
         """
         return self._resolution_settings
@@ -152,19 +149,20 @@ class DrawingOptionsBaseDTO(object):
     def resolution_settings(self, resolution_settings):
         """Sets the resolution_settings of this DrawingOptionsBaseDTO.
 
-        DPI resolution settings  # noqa: E501
+        DPI resolution settings
 
-        :param resolution_settings: The resolution_settings of this DrawingOptionsBaseDTO.  # noqa: E501
+        :param resolution_settings: The resolution_settings of this DrawingOptionsBaseDTO.
         :type: ResolutionSetting
         """
         self._resolution_settings = resolution_settings
+
     @property
     def vector_rasterization_options(self):
-        """Gets the vector_rasterization_options of this DrawingOptionsBaseDTO.  # noqa: E501
+        """Gets the vector_rasterization_options of this DrawingOptionsBaseDTO.
 
-        Raster options  # noqa: E501
+        Raster options
 
-        :return: The vector_rasterization_options of this DrawingOptionsBaseDTO.  # noqa: E501
+        :return: The vector_rasterization_options of this DrawingOptionsBaseDTO.
         :rtype: CadRasterizationOptionsDTO
         """
         return self._vector_rasterization_options
@@ -173,16 +171,17 @@ class DrawingOptionsBaseDTO(object):
     def vector_rasterization_options(self, vector_rasterization_options):
         """Sets the vector_rasterization_options of this DrawingOptionsBaseDTO.
 
-        Raster options  # noqa: E501
+        Raster options
 
-        :param vector_rasterization_options: The vector_rasterization_options of this DrawingOptionsBaseDTO.  # noqa: E501
+        :param vector_rasterization_options: The vector_rasterization_options of this DrawingOptionsBaseDTO.
         :type: CadRasterizationOptionsDTO
         """
         self._vector_rasterization_options = vector_rasterization_options
+
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[self.discriminator].lower()
-        return self.discriminator_value_class_map.get(discriminator_value)
+        discriminator_value = data.get(self.discriminator)
+        return self.discriminator_value_class_map.get(discriminator_value.lower()) if discriminator_value else None
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,31 +1,31 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="GraphicsOptions.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="GraphicsOptions.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
 
@@ -41,9 +41,9 @@ class GraphicsOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'text_rendering_hint': 'str',
-        'smoothing_mode': 'str',
-        'interpolation_mode': 'str'
+        'text_rendering_hint': 'object',
+        'smoothing_mode': 'object',
+        'interpolation_mode': 'object'
     }
 
     attribute_map = {
@@ -52,13 +52,13 @@ class GraphicsOptions(object):
         'interpolation_mode': 'InterpolationMode'
     }
 
-    def __init__(self, text_rendering_hint=None, smoothing_mode=None, interpolation_mode=None):  # noqa: E501
-        """GraphicsOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, text_rendering_hint=None, smoothing_mode=None, interpolation_mode=None):
+        """GraphicsOptions - a model defined in Swagger"""
+        super(GraphicsOptions, self).__init__()
 
         self._text_rendering_hint = None
         self._smoothing_mode = None
         self._interpolation_mode = None
-        self.discriminator = None
 
         if text_rendering_hint is not None:
             self.text_rendering_hint = text_rendering_hint
@@ -69,12 +69,12 @@ class GraphicsOptions(object):
 
     @property
     def text_rendering_hint(self):
-        """Gets the text_rendering_hint of this GraphicsOptions.  # noqa: E501
+        """Gets the text_rendering_hint of this GraphicsOptions.
 
-        Gets or sets text rendering hint.  # noqa: E501
+        Gets or sets text rendering hint.
 
-        :return: The text_rendering_hint of this GraphicsOptions.  # noqa: E501
-        :rtype: str
+        :return: The text_rendering_hint of this GraphicsOptions.
+        :rtype: object
         """
         return self._text_rendering_hint
 
@@ -82,30 +82,23 @@ class GraphicsOptions(object):
     def text_rendering_hint(self, text_rendering_hint):
         """Sets the text_rendering_hint of this GraphicsOptions.
 
-        Gets or sets text rendering hint.  # noqa: E501
+        Gets or sets text rendering hint.
 
-        :param text_rendering_hint: The text_rendering_hint of this GraphicsOptions.  # noqa: E501
-        :type: str
+        :param text_rendering_hint: The text_rendering_hint of this GraphicsOptions.
+        :type: object
         """
         if text_rendering_hint is None:
-            raise ValueError("Invalid value for `text_rendering_hint`, must not be `None`")  # noqa: E501
-        allowed_values = ["SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"]  # noqa: E501
-        if not text_rendering_hint.isdigit():	
-            if text_rendering_hint not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `text_rendering_hint` ({0}), must be one of {1}"  # noqa: E501
-                    .format(text_rendering_hint, allowed_values))
-            self._text_rendering_hint = text_rendering_hint
-        else:
-            self._text_rendering_hint = allowed_values[int(text_rendering_hint) if six.PY3 else long(text_rendering_hint)]
+            raise ValueError("Invalid value for `text_rendering_hint`, must not be `None`")
+        self._text_rendering_hint = text_rendering_hint
+
     @property
     def smoothing_mode(self):
-        """Gets the smoothing_mode of this GraphicsOptions.  # noqa: E501
+        """Gets the smoothing_mode of this GraphicsOptions.
 
-        Gets or sets smoothing mode.  # noqa: E501
+        Gets or sets smoothing mode.
 
-        :return: The smoothing_mode of this GraphicsOptions.  # noqa: E501
-        :rtype: str
+        :return: The smoothing_mode of this GraphicsOptions.
+        :rtype: object
         """
         return self._smoothing_mode
 
@@ -113,30 +106,23 @@ class GraphicsOptions(object):
     def smoothing_mode(self, smoothing_mode):
         """Sets the smoothing_mode of this GraphicsOptions.
 
-        Gets or sets smoothing mode.  # noqa: E501
+        Gets or sets smoothing mode.
 
-        :param smoothing_mode: The smoothing_mode of this GraphicsOptions.  # noqa: E501
-        :type: str
+        :param smoothing_mode: The smoothing_mode of this GraphicsOptions.
+        :type: object
         """
         if smoothing_mode is None:
-            raise ValueError("Invalid value for `smoothing_mode`, must not be `None`")  # noqa: E501
-        allowed_values = ["Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"]  # noqa: E501
-        if not smoothing_mode.isdigit():	
-            if smoothing_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `smoothing_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(smoothing_mode, allowed_values))
-            self._smoothing_mode = smoothing_mode
-        else:
-            self._smoothing_mode = allowed_values[int(smoothing_mode) if six.PY3 else long(smoothing_mode)]
+            raise ValueError("Invalid value for `smoothing_mode`, must not be `None`")
+        self._smoothing_mode = smoothing_mode
+
     @property
     def interpolation_mode(self):
-        """Gets the interpolation_mode of this GraphicsOptions.  # noqa: E501
+        """Gets the interpolation_mode of this GraphicsOptions.
 
-        Gets or sets interpolation mode.  # noqa: E501
+        Gets or sets interpolation mode.
 
-        :return: The interpolation_mode of this GraphicsOptions.  # noqa: E501
-        :rtype: str
+        :return: The interpolation_mode of this GraphicsOptions.
+        :rtype: object
         """
         return self._interpolation_mode
 
@@ -144,22 +130,15 @@ class GraphicsOptions(object):
     def interpolation_mode(self, interpolation_mode):
         """Sets the interpolation_mode of this GraphicsOptions.
 
-        Gets or sets interpolation mode.  # noqa: E501
+        Gets or sets interpolation mode.
 
-        :param interpolation_mode: The interpolation_mode of this GraphicsOptions.  # noqa: E501
-        :type: str
+        :param interpolation_mode: The interpolation_mode of this GraphicsOptions.
+        :type: object
         """
         if interpolation_mode is None:
-            raise ValueError("Invalid value for `interpolation_mode`, must not be `None`")  # noqa: E501
-        allowed_values = ["Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"]  # noqa: E501
-        if not interpolation_mode.isdigit():	
-            if interpolation_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `interpolation_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(interpolation_mode, allowed_values))
-            self._interpolation_mode = interpolation_mode
-        else:
-            self._interpolation_mode = allowed_values[int(interpolation_mode) if six.PY3 else long(interpolation_mode)]
+            raise ValueError("Invalid value for `interpolation_mode`, must not be `None`")
+        self._interpolation_mode = interpolation_mode
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

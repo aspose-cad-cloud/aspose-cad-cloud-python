@@ -1,11 +1,11 @@
-# PenOptions
+# asposecadcloud.models.PenOptions
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_cap** | **str** | Gets or sets the start cap. | 
-**end_cap** | **str** | Gets or sets the end cap. | 
+**start_cap** | **object** | Gets or sets the start cap. | 
+**end_cap** | **object** | Gets or sets the end cap. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](API_README.md#documentation-for-models) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to API_README]](API_README.md)
 
 

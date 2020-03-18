@@ -1,71 +1,34 @@
 # asposecadcloud.CadApi
 
-All URIs are relative to *https://api-qa.aspose.cloud/v3.0*
-
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get_drawing_properties**](CadApi.md#get_drawing_properties) | **GET** /cad/{name}/properties | Retrieves info about an existing drawing.             
-[**get_drawing_resize**](CadApi.md#get_drawing_resize) | **GET** /cad/{name}/resize | Resize an existing drawing.
-[**get_drawing_rotate_flip**](CadApi.md#get_drawing_rotate_flip) | **GET** /cad/{name}/rotateflip | Rotate/flip an existing drawing.
-[**get_drawing_save_as**](CadApi.md#get_drawing_save_as) | **GET** /cad/{name}/saveAs/{outputFormat} | Export an existing drawing to another format.
-[**post_drawing_bmp**](CadApi.md#post_drawing_bmp) | **POST** /cad/{name}/bmp | Export an existing drawing to BMP format with export settings specified.
-[**post_drawing_gif**](CadApi.md#post_drawing_gif) | **POST** /cad/{name}/gif | Export an existing drawing into GIF format with export settings specified.
-[**post_drawing_jpeg**](CadApi.md#post_drawing_jpeg) | **POST** /cad/{name}/jpeg | Export an existing drawing into JPEG format with export settings specified.
-[**post_drawing_jpeg2000**](CadApi.md#post_drawing_jpeg2000) | **POST** /cad/{name}/jpeg2000 | Export an existing drawing into JPEG2000 format with export settings specified.
-[**post_drawing_pdf**](CadApi.md#post_drawing_pdf) | **POST** /cad/{name}/pdf | Export an existing drawing to PDF format with export settings specified.
-[**post_drawing_png**](CadApi.md#post_drawing_png) | **POST** /cad/{name}/png | Export an existing drawing into PNG format with export settings specified.
-[**post_drawing_properties**](CadApi.md#post_drawing_properties) | **POST** /cad/properties | Retrieves info about drawing which is passed as a zero-indexed multipart/form-data content or as raw body stream.
-[**post_drawing_psd**](CadApi.md#post_drawing_psd) | **POST** /cad/{name}/psd | Export an existing drawing into PSD format with export settings specified.
-[**post_drawing_resize**](CadApi.md#post_drawing_resize) | **POST** /cad/resize | Resize a drawing. Drawing data is passed as a zero-indexed multipart/form-data content or as raw body stream.
-[**post_drawing_rotate_flip**](CadApi.md#post_drawing_rotate_flip) | **POST** /cad/rotateflip | Rotate/flip a drawing. Drawing data is passed as a zero-indexed multipart/form-data content or as raw body stream.
-[**post_drawing_save_as**](CadApi.md#post_drawing_save_as) | **POST** /cad/saveAs/{outputFormat} | Export existing drawing to another format. Drawing data is passed as zero-indexed multipart/form-data content or as raw body stream.             
-[**post_drawing_svg**](CadApi.md#post_drawing_svg) | **POST** /cad/{name}/svg | Export an existing drawing to SVG format with export settings specified.
-[**post_drawing_tiff**](CadApi.md#post_drawing_tiff) | **POST** /cad/{name}/tiff | Export an existing drawing into TIFF format with export settings specified.
-[**post_drawing_wmf**](CadApi.md#post_drawing_wmf) | **POST** /cad/{name}/wmf | Export an existing drawing to WMF format with export settings specified.
-[**put_drawing_bmp**](CadApi.md#put_drawing_bmp) | **PUT** /cad/bmp | Export drawing to BMP format. Drawing data is passed as zero-indexed multipart/form-data as well as export BMP options serialized as JSON. Order of drawing data and BMP options could vary.
-[**put_drawing_gif**](CadApi.md#put_drawing_gif) | **PUT** /cad/gif | Export drawing to GIF format. Drawing data is passed as zero-indexed multipart/form-data as well as export GIF options serialized as JSON. Order of drawing data and GIF options could vary.
-[**put_drawing_jpeg**](CadApi.md#put_drawing_jpeg) | **PUT** /cad/jpeg | Export drawing to JPEG format. Drawing data is passed as zero-indexed multipart/form-data as well as export JPEG options serialized as JSON. Order of drawing data and JPEG options could vary.
-[**put_drawing_jpeg2000**](CadApi.md#put_drawing_jpeg2000) | **PUT** /cad/jpeg2000 | Export drawing to JPEG2000 format. Drawing data is passed as zero-indexed multipart/form-data as well as export JPEG2000 options serialized as JSON. Order of drawing data and JPEG2000 options could vary.
-[**put_drawing_pdf**](CadApi.md#put_drawing_pdf) | **PUT** /cad/pdf | Export drawing to PDF format. Drawing data is passed as zero-indexed multipart/form-data as well as export PDF options serialized as JSON. Order of drawing data and PDF options could vary.
-[**put_drawing_png**](CadApi.md#put_drawing_png) | **PUT** /cad/png | Export drawing to PNG format. Drawing data is passed as zero-indexed multipart/form-data as well as export PNG options serialized as JSON. Order of drawing data and PNG options could vary.
-[**put_drawing_psd**](CadApi.md#put_drawing_psd) | **PUT** /cad/psd | Export drawing to PSD format. Drawing data is passed as zero-indexed multipart/form-data as well as export PSD options serialized as JSON. Order of drawing data and PSD options could vary.
-[**put_drawing_svg**](CadApi.md#put_drawing_svg) | **PUT** /cad/svg | Export drawing to SVG format. Drawing data is passed as zero-indexed multipart/form-data as well as export SVG options serialized as JSON. Order of drawing data and SVG options could vary.
-[**put_drawing_tiff**](CadApi.md#put_drawing_tiff) | **PUT** /cad/tiff | Export drawing to TIFF format. Drawing data is passed as zero-indexed multipart/form-data as well as export TIFF options serialized as JSON. Order of drawing data and TIFF options could vary.
-[**put_drawing_wmf**](CadApi.md#put_drawing_wmf) | **PUT** /cad/wmf | Export drawing to WMF format. Drawing data is passed as zero-indexed multipart/form-data as well as export WMF options serialized as JSON. Order of drawing data and WMF options could vary.
-
-
+<a name="get_drawing_properties"></a>
 # **get_drawing_properties**
-> CadResponse get_drawing_properties(name, folder=folder, storage=storage)
+> get_drawing_properties(self, get_drawing_properties_request)
 
 Retrieves info about an existing drawing.             
 
-### Example
+### Return type
+
+[**CadResponse**](CadResponse.md)
+
+<a name="get_drawing_properties_async"></a>
+# **get_drawing_properties_async**
+> get_drawing_properties_async(self, get_drawing_properties_request)
+
+Retrieves info about an existing drawing.             
+
+Performs operation asynchronously.
+
+### Return type
+
+[**CadResponse**](CadResponse.md)
+
+### GetDrawingPropertiesRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-folder = 'folder_example' # str | Folder with a drawing to get properties for. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Retrieves info about an existing drawing.             
-    api_response = api_instance.get_drawing_properties(name, folder=folder, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->get_drawing_properties: %s\n" % e)
+__init__(self, 
+    name, 
+    folder=folder, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -73,57 +36,41 @@ Name | Type | Description  | Notes
  **folder** | **str**| Folder with a drawing to get properties for. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**CadResponse**](CadResponse.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="get_drawing_resize"></a>
 # **get_drawing_resize**
-> file get_drawing_resize(name, output_format, new_width, new_height, folder=folder, out_path=out_path, storage=storage)
+> get_drawing_resize(self, get_drawing_resize_request)
 
 Resize an existing drawing.
 
-### Example
+### Return type
+
+**file**
+
+<a name="get_drawing_resize_async"></a>
+# **get_drawing_resize_async**
+> get_drawing_resize_async(self, get_drawing_resize_request)
+
+Resize an existing drawing.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### GetDrawingResizeRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of a drawing.
-output_format = 'output_format_example' # str | Resulting file format.
-new_width = 56 # int | New width.
-new_height = 56 # int | New height.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Resize an existing drawing.
-    api_response = api_instance.get_drawing_resize(name, output_format, new_width, new_height, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->get_drawing_resize: %s\n" % e)
+__init__(self, 
+    name, 
+    output_format, 
+    new_width, 
+    new_height, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -135,56 +82,40 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="get_drawing_rotate_flip"></a>
 # **get_drawing_rotate_flip**
-> file get_drawing_rotate_flip(name, output_format, rotate_flip_type, folder=folder, out_path=out_path, storage=storage)
+> get_drawing_rotate_flip(self, get_drawing_rotate_flip_request)
 
 Rotate/flip an existing drawing.
 
-### Example
+### Return type
+
+**file**
+
+<a name="get_drawing_rotate_flip_async"></a>
+# **get_drawing_rotate_flip_async**
+> get_drawing_rotate_flip_async(self, get_drawing_rotate_flip_request)
+
+Rotate/flip an existing drawing.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### GetDrawingRotateFlipRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of a drawing.
-output_format = 'output_format_example' # str | Resulting file format.
-rotate_flip_type = 'rotate_flip_type_example' # str | Rotate/flip operation to apply.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Rotate/flip an existing drawing.
-    api_response = api_instance.get_drawing_rotate_flip(name, output_format, rotate_flip_type, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->get_drawing_rotate_flip: %s\n" % e)
+__init__(self, 
+    name, 
+    output_format, 
+    rotate_flip_type, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -195,55 +126,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="get_drawing_save_as"></a>
 # **get_drawing_save_as**
-> file get_drawing_save_as(name, output_format, folder=folder, out_path=out_path, storage=storage)
+> get_drawing_save_as(self, get_drawing_save_as_request)
 
 Export an existing drawing to another format.
 
-### Example
+### Return type
+
+**file**
+
+<a name="get_drawing_save_as_async"></a>
+# **get_drawing_save_as_async**
+> get_drawing_save_as_async(self, get_drawing_save_as_request)
+
+Export an existing drawing to another format.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### GetDrawingSaveAsRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-output_format = 'output_format_example' # str | Resulting file format.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing to another format.
-    api_response = api_instance.get_drawing_save_as(name, output_format, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->get_drawing_save_as: %s\n" % e)
+__init__(self, 
+    name, 
+    output_format, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -253,55 +168,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_bmp"></a>
 # **post_drawing_bmp**
-> file post_drawing_bmp(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_bmp(self, post_drawing_bmp_request)
 
 Export an existing drawing to BMP format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_bmp_async"></a>
+# **post_drawing_bmp_async**
+> post_drawing_bmp_async(self, post_drawing_bmp_request)
+
+Export an existing drawing to BMP format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingBmpRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.BmpOptionsDTO() # BmpOptionsDTO | Export BMP options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing to BMP format with export settings specified.
-    api_response = api_instance.post_drawing_bmp(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_bmp: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -311,55 +210,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_gif"></a>
 # **post_drawing_gif**
-> file post_drawing_gif(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_gif(self, post_drawing_gif_request)
 
 Export an existing drawing into GIF format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_gif_async"></a>
+# **post_drawing_gif_async**
+> post_drawing_gif_async(self, post_drawing_gif_request)
+
+Export an existing drawing into GIF format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingGifRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.GifOptionsDTO() # GifOptionsDTO | Export GIF options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing into GIF format with export settings specified.
-    api_response = api_instance.post_drawing_gif(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_gif: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -369,55 +252,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_jpeg"></a>
 # **post_drawing_jpeg**
-> file post_drawing_jpeg(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_jpeg(self, post_drawing_jpeg_request)
 
 Export an existing drawing into JPEG format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_jpeg_async"></a>
+# **post_drawing_jpeg_async**
+> post_drawing_jpeg_async(self, post_drawing_jpeg_request)
+
+Export an existing drawing into JPEG format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingJpegRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.JpegOptionsDTO() # JpegOptionsDTO | Export JPEG options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing into JPEG format with export settings specified.
-    api_response = api_instance.post_drawing_jpeg(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_jpeg: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -427,55 +294,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_jpeg2000"></a>
 # **post_drawing_jpeg2000**
-> file post_drawing_jpeg2000(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_jpeg2000(self, post_drawing_jpeg2000_request)
 
 Export an existing drawing into JPEG2000 format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_jpeg2000_async"></a>
+# **post_drawing_jpeg2000_async**
+> post_drawing_jpeg2000_async(self, post_drawing_jpeg2000_request)
+
+Export an existing drawing into JPEG2000 format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingJpeg2000Request Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.Jpeg2000OptionsDTO() # Jpeg2000OptionsDTO | Export JPEG2000 options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing into JPEG2000 format with export settings specified.
-    api_response = api_instance.post_drawing_jpeg2000(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_jpeg2000: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -485,55 +336,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_pdf"></a>
 # **post_drawing_pdf**
-> file post_drawing_pdf(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_pdf(self, post_drawing_pdf_request)
 
 Export an existing drawing to PDF format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_pdf_async"></a>
+# **post_drawing_pdf_async**
+> post_drawing_pdf_async(self, post_drawing_pdf_request)
+
+Export an existing drawing to PDF format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingPdfRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.PdfOptionsDTO() # PdfOptionsDTO | Export PDF options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing to PDF format with export settings specified.
-    api_response = api_instance.post_drawing_pdf(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_pdf: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -543,55 +378,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_png"></a>
 # **post_drawing_png**
-> file post_drawing_png(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_png(self, post_drawing_png_request)
 
 Export an existing drawing into PNG format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_png_async"></a>
+# **post_drawing_png_async**
+> post_drawing_png_async(self, post_drawing_png_request)
+
+Export an existing drawing into PNG format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingPngRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.PngOptionsDTO() # PngOptionsDTO | Export PNG options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing into PNG format with export settings specified.
-    api_response = api_instance.post_drawing_png(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_png: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -601,105 +420,73 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_properties"></a>
 # **post_drawing_properties**
-> CadResponse post_drawing_properties(drawing_data)
+> post_drawing_properties(self, post_drawing_properties_request)
 
 Retrieves info about drawing which is passed as a zero-indexed multipart/form-data content or as raw body stream.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-
-try:
-    # Retrieves info about drawing which is passed as a zero-indexed multipart/form-data content or as raw body stream.
-    api_response = api_instance.post_drawing_properties(drawing_data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_properties: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **drawing_data** | **file**| Input drawing | 
 
 ### Return type
 
 [**CadResponse**](CadResponse.md)
 
-### Authorization
+<a name="post_drawing_properties_async"></a>
+# **post_drawing_properties_async**
+> post_drawing_properties_async(self, post_drawing_properties_request)
 
-[JWT](../README.md#JWT)
+Retrieves info about drawing which is passed as a zero-indexed multipart/form-data content or as raw body stream.
 
-### HTTP request headers
+Performs operation asynchronously.
 
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
+### Return type
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[**CadResponse**](CadResponse.md)
 
+### PostDrawingPropertiesRequest Parameters
+```python
+__init__(self, 
+    drawing_data)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="post_drawing_psd"></a>
 # **post_drawing_psd**
-> file post_drawing_psd(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_psd(self, post_drawing_psd_request)
 
 Export an existing drawing into PSD format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_psd_async"></a>
+# **post_drawing_psd_async**
+> post_drawing_psd_async(self, post_drawing_psd_request)
+
+Export an existing drawing into PSD format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingPsdRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.PsdOptionsDTO() # PsdOptionsDTO | Export PSD options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing into PSD format with export settings specified.
-    api_response = api_instance.post_drawing_psd(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_psd: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -709,56 +496,40 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_resize"></a>
 # **post_drawing_resize**
-> file post_drawing_resize(drawing_data, output_format, new_width, new_height, out_path=out_path, storage=storage)
+> post_drawing_resize(self, post_drawing_resize_request)
 
 Resize a drawing. Drawing data is passed as a zero-indexed multipart/form-data content or as raw body stream.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_resize_async"></a>
+# **post_drawing_resize_async**
+> post_drawing_resize_async(self, post_drawing_resize_request)
+
+Resize a drawing. Drawing data is passed as a zero-indexed multipart/form-data content or as raw body stream.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingResizeRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-output_format = 'output_format_example' # str | Resulting file format.
-new_width = 56 # int | New width.
-new_height = 56 # int | New height.
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Resize a drawing. Drawing data is passed as a zero-indexed multipart/form-data content or as raw body stream.
-    api_response = api_instance.post_drawing_resize(drawing_data, output_format, new_width, new_height, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_resize: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    output_format, 
+    new_width, 
+    new_height, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -769,55 +540,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/octet-stream, multipart/form-data
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_rotate_flip"></a>
 # **post_drawing_rotate_flip**
-> file post_drawing_rotate_flip(drawing_data, output_format, rotate_flip_type, out_path=out_path, storage=storage)
+> post_drawing_rotate_flip(self, post_drawing_rotate_flip_request)
 
 Rotate/flip a drawing. Drawing data is passed as a zero-indexed multipart/form-data content or as raw body stream.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_rotate_flip_async"></a>
+# **post_drawing_rotate_flip_async**
+> post_drawing_rotate_flip_async(self, post_drawing_rotate_flip_request)
+
+Rotate/flip a drawing. Drawing data is passed as a zero-indexed multipart/form-data content or as raw body stream.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingRotateFlipRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-output_format = 'output_format_example' # str | Resulting file format.
-rotate_flip_type = 'rotate_flip_type_example' # str | Rotate/flip operation to apply.
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Rotate/flip a drawing. Drawing data is passed as a zero-indexed multipart/form-data content or as raw body stream.
-    api_response = api_instance.post_drawing_rotate_flip(drawing_data, output_format, rotate_flip_type, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_rotate_flip: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    output_format, 
+    rotate_flip_type, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -827,54 +582,38 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/octet-stream, multipart/form-data
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_save_as"></a>
 # **post_drawing_save_as**
-> file post_drawing_save_as(drawing_data, output_format, out_path=out_path, storage=storage)
+> post_drawing_save_as(self, post_drawing_save_as_request)
 
 Export existing drawing to another format. Drawing data is passed as zero-indexed multipart/form-data content or as raw body stream.             
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_save_as_async"></a>
+# **post_drawing_save_as_async**
+> post_drawing_save_as_async(self, post_drawing_save_as_request)
+
+Export existing drawing to another format. Drawing data is passed as zero-indexed multipart/form-data content or as raw body stream.             
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingSaveAsRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-output_format = 'output_format_example' # str | Resulting file format.
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export existing drawing to another format. Drawing data is passed as zero-indexed multipart/form-data content or as raw body stream.             
-    api_response = api_instance.post_drawing_save_as(drawing_data, output_format, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_save_as: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    output_format, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -883,55 +622,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/octet-stream, multipart/form-data
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_svg"></a>
 # **post_drawing_svg**
-> file post_drawing_svg(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_svg(self, post_drawing_svg_request)
 
 Export an existing drawing to SVG format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_svg_async"></a>
+# **post_drawing_svg_async**
+> post_drawing_svg_async(self, post_drawing_svg_request)
+
+Export an existing drawing to SVG format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingSvgRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.SvgOptionsDTO() # SvgOptionsDTO | Export SVG options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing to SVG format with export settings specified.
-    api_response = api_instance.post_drawing_svg(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_svg: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -941,55 +664,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_tiff"></a>
 # **post_drawing_tiff**
-> file post_drawing_tiff(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_tiff(self, post_drawing_tiff_request)
 
 Export an existing drawing into TIFF format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_tiff_async"></a>
+# **post_drawing_tiff_async**
+> post_drawing_tiff_async(self, post_drawing_tiff_request)
+
+Export an existing drawing into TIFF format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingTiffRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.TiffOptionsDTO() # TiffOptionsDTO | Export TIFF options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing into TIFF format with export settings specified.
-    api_response = api_instance.post_drawing_tiff(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_tiff: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -999,55 +706,39 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="post_drawing_wmf"></a>
 # **post_drawing_wmf**
-> file post_drawing_wmf(name, options, folder=folder, out_path=out_path, storage=storage)
+> post_drawing_wmf(self, post_drawing_wmf_request)
 
 Export an existing drawing to WMF format with export settings specified.
 
-### Example
+### Return type
+
+**file**
+
+<a name="post_drawing_wmf_async"></a>
+# **post_drawing_wmf_async**
+> post_drawing_wmf_async(self, post_drawing_wmf_request)
+
+Export an existing drawing to WMF format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingWmfRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-name = 'name_example' # str | Filename of an input drawing on a storage.
-options = asposecadcloud.WmfOptionsDTO() # WmfOptionsDTO | Export WMF options passed as a JSON on a request body.
-folder = 'folder_example' # str | Folder with a drawing to process. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export an existing drawing to WMF format with export settings specified.
-    api_response = api_instance.post_drawing_wmf(name, options, folder=folder, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->post_drawing_wmf: %s\n" % e)
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1057,54 +748,38 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_bmp"></a>
 # **put_drawing_bmp**
-> file put_drawing_bmp(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
+> put_drawing_bmp(self, put_drawing_bmp_request)
 
 Export drawing to BMP format. Drawing data is passed as zero-indexed multipart/form-data as well as export BMP options serialized as JSON. Order of drawing data and BMP options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_bmp_async"></a>
+# **put_drawing_bmp_async**
+> put_drawing_bmp_async(self, put_drawing_bmp_request)
+
+Export drawing to BMP format. Drawing data is passed as zero-indexed multipart/form-data as well as export BMP options serialized as JSON. Order of drawing data and BMP options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingBmpRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/BmpOptionsDTO model definition. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to BMP format. Drawing data is passed as zero-indexed multipart/form-data as well as export BMP options serialized as JSON. Order of drawing data and BMP options could vary.
-    api_response = api_instance.put_drawing_bmp(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_bmp: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1113,54 +788,38 @@ Name | Type | Description  | Notes
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/BmpOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/octet-stream, multipart/form-data
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_gif"></a>
 # **put_drawing_gif**
-> file put_drawing_gif(drawing_data, export_options=export_options, out_path=out_path, storage=storage)
+> put_drawing_gif(self, put_drawing_gif_request)
 
 Export drawing to GIF format. Drawing data is passed as zero-indexed multipart/form-data as well as export GIF options serialized as JSON. Order of drawing data and GIF options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_gif_async"></a>
+# **put_drawing_gif_async**
+> put_drawing_gif_async(self, put_drawing_gif_request)
+
+Export drawing to GIF format. Drawing data is passed as zero-indexed multipart/form-data as well as export GIF options serialized as JSON. Order of drawing data and GIF options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingGifRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/GifOptionsDTO model definition. (optional)
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to GIF format. Drawing data is passed as zero-indexed multipart/form-data as well as export GIF options serialized as JSON. Order of drawing data and GIF options could vary.
-    api_response = api_instance.put_drawing_gif(drawing_data, export_options=export_options, out_path=out_path, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_gif: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    export_options=export_options, 
+    out_path=out_path, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1169,54 +828,38 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_jpeg"></a>
 # **put_drawing_jpeg**
-> file put_drawing_jpeg(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
+> put_drawing_jpeg(self, put_drawing_jpeg_request)
 
 Export drawing to JPEG format. Drawing data is passed as zero-indexed multipart/form-data as well as export JPEG options serialized as JSON. Order of drawing data and JPEG options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_jpeg_async"></a>
+# **put_drawing_jpeg_async**
+> put_drawing_jpeg_async(self, put_drawing_jpeg_request)
+
+Export drawing to JPEG format. Drawing data is passed as zero-indexed multipart/form-data as well as export JPEG options serialized as JSON. Order of drawing data and JPEG options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingJpegRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/JpegOptionsDTO model definition. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to JPEG format. Drawing data is passed as zero-indexed multipart/form-data as well as export JPEG options serialized as JSON. Order of drawing data and JPEG options could vary.
-    api_response = api_instance.put_drawing_jpeg(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_jpeg: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1225,54 +868,38 @@ Name | Type | Description  | Notes
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/JpegOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_jpeg2000"></a>
 # **put_drawing_jpeg2000**
-> file put_drawing_jpeg2000(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
+> put_drawing_jpeg2000(self, put_drawing_jpeg2000_request)
 
 Export drawing to JPEG2000 format. Drawing data is passed as zero-indexed multipart/form-data as well as export JPEG2000 options serialized as JSON. Order of drawing data and JPEG2000 options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_jpeg2000_async"></a>
+# **put_drawing_jpeg2000_async**
+> put_drawing_jpeg2000_async(self, put_drawing_jpeg2000_request)
+
+Export drawing to JPEG2000 format. Drawing data is passed as zero-indexed multipart/form-data as well as export JPEG2000 options serialized as JSON. Order of drawing data and JPEG2000 options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingJpeg2000Request Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/Jpeg2000OptionsDTO model definition. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to JPEG2000 format. Drawing data is passed as zero-indexed multipart/form-data as well as export JPEG2000 options serialized as JSON. Order of drawing data and JPEG2000 options could vary.
-    api_response = api_instance.put_drawing_jpeg2000(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_jpeg2000: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1281,54 +908,38 @@ Name | Type | Description  | Notes
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/Jpeg2000OptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_pdf"></a>
 # **put_drawing_pdf**
-> file put_drawing_pdf(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
+> put_drawing_pdf(self, put_drawing_pdf_request)
 
 Export drawing to PDF format. Drawing data is passed as zero-indexed multipart/form-data as well as export PDF options serialized as JSON. Order of drawing data and PDF options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_pdf_async"></a>
+# **put_drawing_pdf_async**
+> put_drawing_pdf_async(self, put_drawing_pdf_request)
+
+Export drawing to PDF format. Drawing data is passed as zero-indexed multipart/form-data as well as export PDF options serialized as JSON. Order of drawing data and PDF options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingPdfRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/PdfOptionsDTO model definition. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to PDF format. Drawing data is passed as zero-indexed multipart/form-data as well as export PDF options serialized as JSON. Order of drawing data and PDF options could vary.
-    api_response = api_instance.put_drawing_pdf(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_pdf: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1337,54 +948,38 @@ Name | Type | Description  | Notes
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/PdfOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_png"></a>
 # **put_drawing_png**
-> file put_drawing_png(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
+> put_drawing_png(self, put_drawing_png_request)
 
 Export drawing to PNG format. Drawing data is passed as zero-indexed multipart/form-data as well as export PNG options serialized as JSON. Order of drawing data and PNG options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_png_async"></a>
+# **put_drawing_png_async**
+> put_drawing_png_async(self, put_drawing_png_request)
+
+Export drawing to PNG format. Drawing data is passed as zero-indexed multipart/form-data as well as export PNG options serialized as JSON. Order of drawing data and PNG options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingPngRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/PngOptionsDTO model definition. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to PNG format. Drawing data is passed as zero-indexed multipart/form-data as well as export PNG options serialized as JSON. Order of drawing data and PNG options could vary.
-    api_response = api_instance.put_drawing_png(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_png: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1393,54 +988,38 @@ Name | Type | Description  | Notes
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/PngOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_psd"></a>
 # **put_drawing_psd**
-> file put_drawing_psd(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
+> put_drawing_psd(self, put_drawing_psd_request)
 
 Export drawing to PSD format. Drawing data is passed as zero-indexed multipart/form-data as well as export PSD options serialized as JSON. Order of drawing data and PSD options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_psd_async"></a>
+# **put_drawing_psd_async**
+> put_drawing_psd_async(self, put_drawing_psd_request)
+
+Export drawing to PSD format. Drawing data is passed as zero-indexed multipart/form-data as well as export PSD options serialized as JSON. Order of drawing data and PSD options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingPsdRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/PsdOptionsDTO model definition. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to PSD format. Drawing data is passed as zero-indexed multipart/form-data as well as export PSD options serialized as JSON. Order of drawing data and PSD options could vary.
-    api_response = api_instance.put_drawing_psd(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_psd: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1449,54 +1028,38 @@ Name | Type | Description  | Notes
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/PsdOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_svg"></a>
 # **put_drawing_svg**
-> file put_drawing_svg(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
+> put_drawing_svg(self, put_drawing_svg_request)
 
 Export drawing to SVG format. Drawing data is passed as zero-indexed multipart/form-data as well as export SVG options serialized as JSON. Order of drawing data and SVG options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_svg_async"></a>
+# **put_drawing_svg_async**
+> put_drawing_svg_async(self, put_drawing_svg_request)
+
+Export drawing to SVG format. Drawing data is passed as zero-indexed multipart/form-data as well as export SVG options serialized as JSON. Order of drawing data and SVG options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingSvgRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/SvgOptionsDTO model definition. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to SVG format. Drawing data is passed as zero-indexed multipart/form-data as well as export SVG options serialized as JSON. Order of drawing data and SVG options could vary.
-    api_response = api_instance.put_drawing_svg(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_svg: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1505,54 +1068,38 @@ Name | Type | Description  | Notes
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/SvgOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_tiff"></a>
 # **put_drawing_tiff**
-> file put_drawing_tiff(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
+> put_drawing_tiff(self, put_drawing_tiff_request)
 
 Export drawing to TIFF format. Drawing data is passed as zero-indexed multipart/form-data as well as export TIFF options serialized as JSON. Order of drawing data and TIFF options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_tiff_async"></a>
+# **put_drawing_tiff_async**
+> put_drawing_tiff_async(self, put_drawing_tiff_request)
+
+Export drawing to TIFF format. Drawing data is passed as zero-indexed multipart/form-data as well as export TIFF options serialized as JSON. Order of drawing data and TIFF options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingTiffRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/TiffOptionsDTO model definition. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to TIFF format. Drawing data is passed as zero-indexed multipart/form-data as well as export TIFF options serialized as JSON. Order of drawing data and TIFF options could vary.
-    api_response = api_instance.put_drawing_tiff(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_tiff: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1561,54 +1108,38 @@ Name | Type | Description  | Notes
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/TiffOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
+<a name="put_drawing_wmf"></a>
 # **put_drawing_wmf**
-> file put_drawing_wmf(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
+> put_drawing_wmf(self, put_drawing_wmf_request)
 
 Export drawing to WMF format. Drawing data is passed as zero-indexed multipart/form-data as well as export WMF options serialized as JSON. Order of drawing data and WMF options could vary.
 
-### Example
+### Return type
+
+**file**
+
+<a name="put_drawing_wmf_async"></a>
+# **put_drawing_wmf_async**
+> put_drawing_wmf_async(self, put_drawing_wmf_request)
+
+Export drawing to WMF format. Drawing data is passed as zero-indexed multipart/form-data as well as export WMF options serialized as JSON. Order of drawing data and WMF options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingWmfRequest Parameters
 ```python
-from __future__ import print_function
-import time
-import asposecadcloud
-from asposecadcloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposecadcloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposecadcloud.CadApi(asposecadcloud.ApiClient(configuration))
-drawing_data = '/path/to/file.txt' # file | Input drawing
-out_path = 'out_path_example' # str | Path to updated file (if this is empty, response contains streamed file). (optional)
-export_options = 'export_options_example' # str | JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/WmfOptionsDTO model definition. (optional)
-storage = 'storage_example' # str | Your Aspose Cloud Storage name. (optional)
-
-try:
-    # Export drawing to WMF format. Drawing data is passed as zero-indexed multipart/form-data as well as export WMF options serialized as JSON. Order of drawing data and WMF options could vary.
-    api_response = api_instance.put_drawing_wmf(drawing_data, out_path=out_path, export_options=export_options, storage=storage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CadApi->put_drawing_wmf: %s\n" % e)
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
 ```
-
-### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1617,18 +1148,5 @@ Name | Type | Description  | Notes
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/WmfOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
-### Return type
-
-[**file**](file.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/octet-stream
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 

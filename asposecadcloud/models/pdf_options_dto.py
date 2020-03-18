@@ -1,35 +1,41 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="PdfOptionsDTO.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="PdfOptionsDTO.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
+from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
+from asposecadcloud.models.drawing_options_base_dto import DrawingOptionsBaseDTO
+from asposecadcloud.models.pdf_document_info import PdfDocumentInfo
+from asposecadcloud.models.pdf_document_options import PdfDocumentOptions
+from asposecadcloud.models.resolution_setting import ResolutionSetting
 
-class PdfOptionsDTO(object):
+
+class PdfOptionsDTO(DrawingOptionsBaseDTO):
     """Export options for PDF format
     """
 
@@ -50,12 +56,12 @@ class PdfOptionsDTO(object):
         'core_pdf_options': 'CorePdfOptions'
     }
 
-    def __init__(self, pdf_document_info=None, core_pdf_options=None):  # noqa: E501
-        """PdfOptionsDTO - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, pdf_document_info=None, core_pdf_options=None):
+        """PdfOptionsDTO - a model defined in Swagger"""
+        super(PdfOptionsDTO, self).__init__()
 
         self._pdf_document_info = None
         self._core_pdf_options = None
-        self.discriminator = None
 
         if pdf_document_info is not None:
             self.pdf_document_info = pdf_document_info
@@ -64,11 +70,11 @@ class PdfOptionsDTO(object):
 
     @property
     def pdf_document_info(self):
-        """Gets the pdf_document_info of this PdfOptionsDTO.  # noqa: E501
+        """Gets the pdf_document_info of this PdfOptionsDTO.
 
-        Document metadata  # noqa: E501
+        Document metadata
 
-        :return: The pdf_document_info of this PdfOptionsDTO.  # noqa: E501
+        :return: The pdf_document_info of this PdfOptionsDTO.
         :rtype: PdfDocumentInfo
         """
         return self._pdf_document_info
@@ -77,19 +83,20 @@ class PdfOptionsDTO(object):
     def pdf_document_info(self, pdf_document_info):
         """Sets the pdf_document_info of this PdfOptionsDTO.
 
-        Document metadata  # noqa: E501
+        Document metadata
 
-        :param pdf_document_info: The pdf_document_info of this PdfOptionsDTO.  # noqa: E501
+        :param pdf_document_info: The pdf_document_info of this PdfOptionsDTO.
         :type: PdfDocumentInfo
         """
         self._pdf_document_info = pdf_document_info
+
     @property
     def core_pdf_options(self):
-        """Gets the core_pdf_options of this PdfOptionsDTO.  # noqa: E501
+        """Gets the core_pdf_options of this PdfOptionsDTO.
 
-        Core PDF rendering options  # noqa: E501
+        Core PDF rendering options
 
-        :return: The core_pdf_options of this PdfOptionsDTO.  # noqa: E501
+        :return: The core_pdf_options of this PdfOptionsDTO.
         :rtype: PdfDocumentOptions
         """
         return self._core_pdf_options
@@ -98,12 +105,13 @@ class PdfOptionsDTO(object):
     def core_pdf_options(self, core_pdf_options):
         """Sets the core_pdf_options of this PdfOptionsDTO.
 
-        Core PDF rendering options  # noqa: E501
+        Core PDF rendering options
 
-        :param core_pdf_options: The core_pdf_options of this PdfOptionsDTO.  # noqa: E501
+        :param core_pdf_options: The core_pdf_options of this PdfOptionsDTO.
         :type: PdfDocumentOptions
         """
         self._core_pdf_options = core_pdf_options
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

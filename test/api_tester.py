@@ -24,6 +24,15 @@
 #  </summary>
 #  ----------------------------------------------------------------------------
 
+import os
+
+proxy = 'http://127.0.0.1:8888'
+
+os.environ['http_proxy'] = proxy 
+os.environ['HTTP_PROXY'] = proxy
+os.environ['https_proxy'] = proxy
+os.environ['HTTPS_PROXY'] = proxy
+
 import getpass
 import json
 import os
@@ -32,7 +41,13 @@ from distutils.util import strtobool
 import six
 
 import asposecadcloud.models.requests as requests
+from asposecadcloud.api_client import ApiClient
 from asposecadcloud import CadApi
+
+import asposestoragecloud.models as storageApiResponses
+from asposestoragecloud.configuration import Configuration as StorageApiConfiguration
+from asposestoragecloud.api_client import ApiClient as StorageApiClient
+from asposestoragecloud import StorageApi
 
 if six.PY2:
     import unittest2 as unittest
@@ -52,8 +67,7 @@ class ApiTester(unittest.TestCase):
         self._api_version = 'v3.0'
         self._base_url = 'https://api.aspose.cloud/'
         self._local_test_folder = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            'TestData/')
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'TestData/')
         self.remove_result = True
 
         self.temp_folder = '{0}_{1}'.format(
@@ -146,10 +160,18 @@ class ApiTester(unittest.TestCase):
 
         self.cad_api = CadApi(app_key, app_sid, base_url, api_version)
 
-        self.input_test_files = self.cad_api.get_files_list(
-            requests.GetFilesListRequest(
-                self.original_data_folder,
-                self.test_storage)).value
+        self.storage_api_config = StorageApiConfiguration()
+        self.storage_api_config.debug = True
+        self.storage_api_config.host = base_url
+        self.storage_api_config.api_key = app_key
+        self.storage_api_config.proxy = "http://127.0.0.1:8888"
+
+        self.storage_api_client = StorageApiClient(app_key, app_sid, base_url, self.storage_api_config)
+        self.storage_api = StorageApi(self.storage_api_client)
+
+        self.input_test_files = self.storage_api.get_list_files(
+                path = self.original_data_folder,
+                storage = self.test_storage).value
 
     def __request_tester(
             self,

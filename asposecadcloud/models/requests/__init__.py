@@ -1,3 +1,5 @@
+from asposecadcloud.models.requests.http_request import HttpRequest
+from asposecadcloud.models.requests.cad_request import CadRequest
 from asposecadcloud.models.requests.put_drawing_wmf_request import PutDrawingWmfRequest
 from asposecadcloud.models.requests.put_drawing_tiff_request import PutDrawingTiffRequest
 from asposecadcloud.models.requests.put_drawing_svg_request import PutDrawingSvgRequest

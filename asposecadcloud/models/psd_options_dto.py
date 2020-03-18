@@ -1,35 +1,39 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="PsdOptionsDTO.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="PsdOptionsDTO.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
+from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
+from asposecadcloud.models.drawing_options_base_dto import DrawingOptionsBaseDTO
+from asposecadcloud.models.resolution_setting import ResolutionSetting
 
-class PsdOptionsDTO(object):
+
+class PsdOptionsDTO(DrawingOptionsBaseDTO):
     """Export options for PSD format
     """
 
@@ -42,8 +46,8 @@ class PsdOptionsDTO(object):
     """
     swagger_types = {
         'version': 'int',
-        'compression_method': 'str',
-        'color_mode': 'str',
+        'compression_method': 'object',
+        'color_mode': 'object',
         'channel_bits_count': 'int',
         'channels_count': 'int'
     }
@@ -56,15 +60,15 @@ class PsdOptionsDTO(object):
         'channels_count': 'ChannelsCount'
     }
 
-    def __init__(self, version=None, compression_method=None, color_mode=None, channel_bits_count=None, channels_count=None):  # noqa: E501
-        """PsdOptionsDTO - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, version=None, compression_method=None, color_mode=None, channel_bits_count=None, channels_count=None):
+        """PsdOptionsDTO - a model defined in Swagger"""
+        super(PsdOptionsDTO, self).__init__()
 
         self._version = None
         self._compression_method = None
         self._color_mode = None
         self._channel_bits_count = None
         self._channels_count = None
-        self.discriminator = None
 
         if version is not None:
             self.version = version
@@ -79,11 +83,11 @@ class PsdOptionsDTO(object):
 
     @property
     def version(self):
-        """Gets the version of this PsdOptionsDTO.  # noqa: E501
+        """Gets the version of this PsdOptionsDTO.
 
-        PSD format version  # noqa: E501
+        PSD format version
 
-        :return: The version of this PsdOptionsDTO.  # noqa: E501
+        :return: The version of this PsdOptionsDTO.
         :rtype: int
         """
         return self._version
@@ -92,22 +96,23 @@ class PsdOptionsDTO(object):
     def version(self, version):
         """Sets the version of this PsdOptionsDTO.
 
-        PSD format version  # noqa: E501
+        PSD format version
 
-        :param version: The version of this PsdOptionsDTO.  # noqa: E501
+        :param version: The version of this PsdOptionsDTO.
         :type: int
         """
         if version is None:
-            raise ValueError("Invalid value for `version`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `version`, must not be `None`")
         self._version = version
+
     @property
     def compression_method(self):
-        """Gets the compression_method of this PsdOptionsDTO.  # noqa: E501
+        """Gets the compression_method of this PsdOptionsDTO.
 
-        Compression method  # noqa: E501
+        Compression method
 
-        :return: The compression_method of this PsdOptionsDTO.  # noqa: E501
-        :rtype: str
+        :return: The compression_method of this PsdOptionsDTO.
+        :rtype: object
         """
         return self._compression_method
 
@@ -115,30 +120,23 @@ class PsdOptionsDTO(object):
     def compression_method(self, compression_method):
         """Sets the compression_method of this PsdOptionsDTO.
 
-        Compression method  # noqa: E501
+        Compression method
 
-        :param compression_method: The compression_method of this PsdOptionsDTO.  # noqa: E501
-        :type: str
+        :param compression_method: The compression_method of this PsdOptionsDTO.
+        :type: object
         """
         if compression_method is None:
-            raise ValueError("Invalid value for `compression_method`, must not be `None`")  # noqa: E501
-        allowed_values = ["Raw", "RLE", "ZipWithoutPrediction", "ZipWithPrediction"]  # noqa: E501
-        if not compression_method.isdigit():	
-            if compression_method not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `compression_method` ({0}), must be one of {1}"  # noqa: E501
-                    .format(compression_method, allowed_values))
-            self._compression_method = compression_method
-        else:
-            self._compression_method = allowed_values[int(compression_method) if six.PY3 else long(compression_method)]
+            raise ValueError("Invalid value for `compression_method`, must not be `None`")
+        self._compression_method = compression_method
+
     @property
     def color_mode(self):
-        """Gets the color_mode of this PsdOptionsDTO.  # noqa: E501
+        """Gets the color_mode of this PsdOptionsDTO.
 
-        Color mode  # noqa: E501
+        Color mode
 
-        :return: The color_mode of this PsdOptionsDTO.  # noqa: E501
-        :rtype: str
+        :return: The color_mode of this PsdOptionsDTO.
+        :rtype: object
         """
         return self._color_mode
 
@@ -146,29 +144,22 @@ class PsdOptionsDTO(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this PsdOptionsDTO.
 
-        Color mode  # noqa: E501
+        Color mode
 
-        :param color_mode: The color_mode of this PsdOptionsDTO.  # noqa: E501
-        :type: str
+        :param color_mode: The color_mode of this PsdOptionsDTO.
+        :type: object
         """
         if color_mode is None:
-            raise ValueError("Invalid value for `color_mode`, must not be `None`")  # noqa: E501
-        allowed_values = ["Bitmap", "Grayscale", "Indexed", "Rgb", "Cmyk", "Multichannel", "Duotone", "Lab"]  # noqa: E501
-        if not color_mode.isdigit():	
-            if color_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `color_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(color_mode, allowed_values))
-            self._color_mode = color_mode
-        else:
-            self._color_mode = allowed_values[int(color_mode) if six.PY3 else long(color_mode)]
+            raise ValueError("Invalid value for `color_mode`, must not be `None`")
+        self._color_mode = color_mode
+
     @property
     def channel_bits_count(self):
-        """Gets the channel_bits_count of this PsdOptionsDTO.  # noqa: E501
+        """Gets the channel_bits_count of this PsdOptionsDTO.
 
-        Bits count per channel  # noqa: E501
+        Bits count per channel
 
-        :return: The channel_bits_count of this PsdOptionsDTO.  # noqa: E501
+        :return: The channel_bits_count of this PsdOptionsDTO.
         :rtype: int
         """
         return self._channel_bits_count
@@ -177,21 +168,22 @@ class PsdOptionsDTO(object):
     def channel_bits_count(self, channel_bits_count):
         """Sets the channel_bits_count of this PsdOptionsDTO.
 
-        Bits count per channel  # noqa: E501
+        Bits count per channel
 
-        :param channel_bits_count: The channel_bits_count of this PsdOptionsDTO.  # noqa: E501
+        :param channel_bits_count: The channel_bits_count of this PsdOptionsDTO.
         :type: int
         """
         if channel_bits_count is None:
-            raise ValueError("Invalid value for `channel_bits_count`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `channel_bits_count`, must not be `None`")
         self._channel_bits_count = channel_bits_count
+
     @property
     def channels_count(self):
-        """Gets the channels_count of this PsdOptionsDTO.  # noqa: E501
+        """Gets the channels_count of this PsdOptionsDTO.
 
-        Channels count  # noqa: E501
+        Channels count
 
-        :return: The channels_count of this PsdOptionsDTO.  # noqa: E501
+        :return: The channels_count of this PsdOptionsDTO.
         :rtype: int
         """
         return self._channels_count
@@ -200,14 +192,15 @@ class PsdOptionsDTO(object):
     def channels_count(self, channels_count):
         """Sets the channels_count of this PsdOptionsDTO.
 
-        Channels count  # noqa: E501
+        Channels count
 
-        :param channels_count: The channels_count of this PsdOptionsDTO.  # noqa: E501
+        :param channels_count: The channels_count of this PsdOptionsDTO.
         :type: int
         """
         if channels_count is None:
-            raise ValueError("Invalid value for `channels_count`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `channels_count`, must not be `None`")
         self._channels_count = channels_count
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

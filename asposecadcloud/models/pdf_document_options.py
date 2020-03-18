@@ -1,31 +1,31 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="PdfDocumentOptions.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="PdfDocumentOptions.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
 
@@ -41,30 +41,30 @@ class PdfDocumentOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'compliance': 'str'
+        'compliance': 'object'
     }
 
     attribute_map = {
         'compliance': 'Compliance'
     }
 
-    def __init__(self, compliance=None):  # noqa: E501
-        """PdfDocumentOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, compliance=None):
+        """PdfDocumentOptions - a model defined in Swagger"""
+        super(PdfDocumentOptions, self).__init__()
 
         self._compliance = None
-        self.discriminator = None
 
         if compliance is not None:
             self.compliance = compliance
 
     @property
     def compliance(self):
-        """Gets the compliance of this PdfDocumentOptions.  # noqa: E501
+        """Gets the compliance of this PdfDocumentOptions.
 
-        Desired conformance level for generated PDF document. Important note: This option should not be changed after PdfDocument object is constructed. Default is Pdf15.  # noqa: E501
+        Desired conformance level for generated PDF document. Important note: This option should not be changed after PdfDocument object is constructed. Default is Pdf15.
 
-        :return: The compliance of this PdfDocumentOptions.  # noqa: E501
-        :rtype: str
+        :return: The compliance of this PdfDocumentOptions.
+        :rtype: object
         """
         return self._compliance
 
@@ -72,22 +72,15 @@ class PdfDocumentOptions(object):
     def compliance(self, compliance):
         """Sets the compliance of this PdfDocumentOptions.
 
-        Desired conformance level for generated PDF document. Important note: This option should not be changed after PdfDocument object is constructed. Default is Pdf15.  # noqa: E501
+        Desired conformance level for generated PDF document. Important note: This option should not be changed after PdfDocument object is constructed. Default is Pdf15.
 
-        :param compliance: The compliance of this PdfDocumentOptions.  # noqa: E501
-        :type: str
+        :param compliance: The compliance of this PdfDocumentOptions.
+        :type: object
         """
         if compliance is None:
-            raise ValueError("Invalid value for `compliance`, must not be `None`")  # noqa: E501
-        allowed_values = ["Pdf15", "PdfA1a", "PdfA1b"]  # noqa: E501
-        if not compliance.isdigit():	
-            if compliance not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `compliance` ({0}), must be one of {1}"  # noqa: E501
-                    .format(compliance, allowed_values))
-            self._compliance = compliance
-        else:
-            self._compliance = allowed_values[int(compliance) if six.PY3 else long(compliance)]
+            raise ValueError("Invalid value for `compliance`, must not be `None`")
+        self._compliance = compliance
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

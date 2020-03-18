@@ -1,4 +1,4 @@
-# RdOptimizerSettings
+# asposecadcloud.models.RdOptimizerSettings
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **psnr_max** | **int** | Gets the PSNR maximum expected value. | 
 **discretized_bpp_max** | **int** | Gets the maximum R value for consideration. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](API_README.md#documentation-for-models) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to API_README]](API_README.md)
 
 

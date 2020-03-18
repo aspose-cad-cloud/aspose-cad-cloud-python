@@ -1,32 +1,41 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="CadResponse.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="CadResponse.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
+
+from asposecadcloud.models.cff2_properties import Cff2Properties
+from asposecadcloud.models.dgn_properties import DgnProperties
+from asposecadcloud.models.dwf_properties import DwfProperties
+from asposecadcloud.models.dwg_properties import DwgProperties
+from asposecadcloud.models.dxf_properties import DxfProperties
+from asposecadcloud.models.ifc_properties import IfcProperties
+from asposecadcloud.models.igs_properties import IgsProperties
+from asposecadcloud.models.stl_properties import StlProperties
 
 
 class CadResponse(object):
@@ -68,8 +77,9 @@ class CadResponse(object):
         'cff2_properties': 'Cff2Properties'
     }
 
-    def __init__(self, height=None, width=None, dwg_properties=None, dxf_properties=None, dwt_properties=None, dgn_properties=None, ifc_properties=None, igs_properties=None, stl_properties=None, dwf_properties=None, cff2_properties=None):  # noqa: E501
-        """CadResponse - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, height=None, width=None, dwg_properties=None, dxf_properties=None, dwt_properties=None, dgn_properties=None, ifc_properties=None, igs_properties=None, stl_properties=None, dwf_properties=None, cff2_properties=None):
+        """CadResponse - a model defined in Swagger"""
+        super(CadResponse, self).__init__()
 
         self._height = None
         self._width = None
@@ -82,7 +92,6 @@ class CadResponse(object):
         self._stl_properties = None
         self._dwf_properties = None
         self._cff2_properties = None
-        self.discriminator = None
 
         if height is not None:
             self.height = height
@@ -109,11 +118,11 @@ class CadResponse(object):
 
     @property
     def height(self):
-        """Gets the height of this CadResponse.  # noqa: E501
+        """Gets the height of this CadResponse.
 
-        Gets or sets the height of a drawing.  # noqa: E501
+        Gets or sets the height of a drawing.
 
-        :return: The height of this CadResponse.  # noqa: E501
+        :return: The height of this CadResponse.
         :rtype: int
         """
         return self._height
@@ -122,21 +131,22 @@ class CadResponse(object):
     def height(self, height):
         """Sets the height of this CadResponse.
 
-        Gets or sets the height of a drawing.  # noqa: E501
+        Gets or sets the height of a drawing.
 
-        :param height: The height of this CadResponse.  # noqa: E501
+        :param height: The height of this CadResponse.
         :type: int
         """
         if height is None:
-            raise ValueError("Invalid value for `height`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `height`, must not be `None`")
         self._height = height
+
     @property
     def width(self):
-        """Gets the width of this CadResponse.  # noqa: E501
+        """Gets the width of this CadResponse.
 
-        Gets or sets the width of a drawing.  # noqa: E501
+        Gets or sets the width of a drawing.
 
-        :return: The width of this CadResponse.  # noqa: E501
+        :return: The width of this CadResponse.
         :rtype: int
         """
         return self._width
@@ -145,21 +155,22 @@ class CadResponse(object):
     def width(self, width):
         """Sets the width of this CadResponse.
 
-        Gets or sets the width of a drawing.  # noqa: E501
+        Gets or sets the width of a drawing.
 
-        :param width: The width of this CadResponse.  # noqa: E501
+        :param width: The width of this CadResponse.
         :type: int
         """
         if width is None:
-            raise ValueError("Invalid value for `width`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `width`, must not be `None`")
         self._width = width
+
     @property
     def dwg_properties(self):
-        """Gets the dwg_properties of this CadResponse.  # noqa: E501
+        """Gets the dwg_properties of this CadResponse.
 
-        Gets or sets the DWG properties.  # noqa: E501
+        Gets or sets the DWG properties.
 
-        :return: The dwg_properties of this CadResponse.  # noqa: E501
+        :return: The dwg_properties of this CadResponse.
         :rtype: DwgProperties
         """
         return self._dwg_properties
@@ -168,19 +179,20 @@ class CadResponse(object):
     def dwg_properties(self, dwg_properties):
         """Sets the dwg_properties of this CadResponse.
 
-        Gets or sets the DWG properties.  # noqa: E501
+        Gets or sets the DWG properties.
 
-        :param dwg_properties: The dwg_properties of this CadResponse.  # noqa: E501
+        :param dwg_properties: The dwg_properties of this CadResponse.
         :type: DwgProperties
         """
         self._dwg_properties = dwg_properties
+
     @property
     def dxf_properties(self):
-        """Gets the dxf_properties of this CadResponse.  # noqa: E501
+        """Gets the dxf_properties of this CadResponse.
 
-        Gets or sets the DXF properties.  # noqa: E501
+        Gets or sets the DXF properties.
 
-        :return: The dxf_properties of this CadResponse.  # noqa: E501
+        :return: The dxf_properties of this CadResponse.
         :rtype: DxfProperties
         """
         return self._dxf_properties
@@ -189,19 +201,20 @@ class CadResponse(object):
     def dxf_properties(self, dxf_properties):
         """Sets the dxf_properties of this CadResponse.
 
-        Gets or sets the DXF properties.  # noqa: E501
+        Gets or sets the DXF properties.
 
-        :param dxf_properties: The dxf_properties of this CadResponse.  # noqa: E501
+        :param dxf_properties: The dxf_properties of this CadResponse.
         :type: DxfProperties
         """
         self._dxf_properties = dxf_properties
+
     @property
     def dwt_properties(self):
-        """Gets the dwt_properties of this CadResponse.  # noqa: E501
+        """Gets the dwt_properties of this CadResponse.
 
-        Gets or sets the DWT properties.  # noqa: E501
+        Gets or sets the DWT properties.
 
-        :return: The dwt_properties of this CadResponse.  # noqa: E501
+        :return: The dwt_properties of this CadResponse.
         :rtype: DwgProperties
         """
         return self._dwt_properties
@@ -210,19 +223,20 @@ class CadResponse(object):
     def dwt_properties(self, dwt_properties):
         """Sets the dwt_properties of this CadResponse.
 
-        Gets or sets the DWT properties.  # noqa: E501
+        Gets or sets the DWT properties.
 
-        :param dwt_properties: The dwt_properties of this CadResponse.  # noqa: E501
+        :param dwt_properties: The dwt_properties of this CadResponse.
         :type: DwgProperties
         """
         self._dwt_properties = dwt_properties
+
     @property
     def dgn_properties(self):
-        """Gets the dgn_properties of this CadResponse.  # noqa: E501
+        """Gets the dgn_properties of this CadResponse.
 
-        Gets or sets the DGN properties.  # noqa: E501
+        Gets or sets the DGN properties.
 
-        :return: The dgn_properties of this CadResponse.  # noqa: E501
+        :return: The dgn_properties of this CadResponse.
         :rtype: DgnProperties
         """
         return self._dgn_properties
@@ -231,19 +245,20 @@ class CadResponse(object):
     def dgn_properties(self, dgn_properties):
         """Sets the dgn_properties of this CadResponse.
 
-        Gets or sets the DGN properties.  # noqa: E501
+        Gets or sets the DGN properties.
 
-        :param dgn_properties: The dgn_properties of this CadResponse.  # noqa: E501
+        :param dgn_properties: The dgn_properties of this CadResponse.
         :type: DgnProperties
         """
         self._dgn_properties = dgn_properties
+
     @property
     def ifc_properties(self):
-        """Gets the ifc_properties of this CadResponse.  # noqa: E501
+        """Gets the ifc_properties of this CadResponse.
 
-        Gets or sets the IFC properties.  # noqa: E501
+        Gets or sets the IFC properties.
 
-        :return: The ifc_properties of this CadResponse.  # noqa: E501
+        :return: The ifc_properties of this CadResponse.
         :rtype: IfcProperties
         """
         return self._ifc_properties
@@ -252,19 +267,20 @@ class CadResponse(object):
     def ifc_properties(self, ifc_properties):
         """Sets the ifc_properties of this CadResponse.
 
-        Gets or sets the IFC properties.  # noqa: E501
+        Gets or sets the IFC properties.
 
-        :param ifc_properties: The ifc_properties of this CadResponse.  # noqa: E501
+        :param ifc_properties: The ifc_properties of this CadResponse.
         :type: IfcProperties
         """
         self._ifc_properties = ifc_properties
+
     @property
     def igs_properties(self):
-        """Gets the igs_properties of this CadResponse.  # noqa: E501
+        """Gets the igs_properties of this CadResponse.
 
-        Gets or sets the IGS properties.  # noqa: E501
+        Gets or sets the IGS properties.
 
-        :return: The igs_properties of this CadResponse.  # noqa: E501
+        :return: The igs_properties of this CadResponse.
         :rtype: IgsProperties
         """
         return self._igs_properties
@@ -273,19 +289,20 @@ class CadResponse(object):
     def igs_properties(self, igs_properties):
         """Sets the igs_properties of this CadResponse.
 
-        Gets or sets the IGS properties.  # noqa: E501
+        Gets or sets the IGS properties.
 
-        :param igs_properties: The igs_properties of this CadResponse.  # noqa: E501
+        :param igs_properties: The igs_properties of this CadResponse.
         :type: IgsProperties
         """
         self._igs_properties = igs_properties
+
     @property
     def stl_properties(self):
-        """Gets the stl_properties of this CadResponse.  # noqa: E501
+        """Gets the stl_properties of this CadResponse.
 
-        Gets or sets the STL properties.  # noqa: E501
+        Gets or sets the STL properties.
 
-        :return: The stl_properties of this CadResponse.  # noqa: E501
+        :return: The stl_properties of this CadResponse.
         :rtype: StlProperties
         """
         return self._stl_properties
@@ -294,19 +311,20 @@ class CadResponse(object):
     def stl_properties(self, stl_properties):
         """Sets the stl_properties of this CadResponse.
 
-        Gets or sets the STL properties.  # noqa: E501
+        Gets or sets the STL properties.
 
-        :param stl_properties: The stl_properties of this CadResponse.  # noqa: E501
+        :param stl_properties: The stl_properties of this CadResponse.
         :type: StlProperties
         """
         self._stl_properties = stl_properties
+
     @property
     def dwf_properties(self):
-        """Gets the dwf_properties of this CadResponse.  # noqa: E501
+        """Gets the dwf_properties of this CadResponse.
 
-        Gets or sets the DWF properties.  # noqa: E501
+        Gets or sets the DWF properties.
 
-        :return: The dwf_properties of this CadResponse.  # noqa: E501
+        :return: The dwf_properties of this CadResponse.
         :rtype: DwfProperties
         """
         return self._dwf_properties
@@ -315,19 +333,20 @@ class CadResponse(object):
     def dwf_properties(self, dwf_properties):
         """Sets the dwf_properties of this CadResponse.
 
-        Gets or sets the DWF properties.  # noqa: E501
+        Gets or sets the DWF properties.
 
-        :param dwf_properties: The dwf_properties of this CadResponse.  # noqa: E501
+        :param dwf_properties: The dwf_properties of this CadResponse.
         :type: DwfProperties
         """
         self._dwf_properties = dwf_properties
+
     @property
     def cff2_properties(self):
-        """Gets the cff2_properties of this CadResponse.  # noqa: E501
+        """Gets the cff2_properties of this CadResponse.
 
-        Gets or sets the CFF2 properties.  # noqa: E501
+        Gets or sets the CFF2 properties.
 
-        :return: The cff2_properties of this CadResponse.  # noqa: E501
+        :return: The cff2_properties of this CadResponse.
         :rtype: Cff2Properties
         """
         return self._cff2_properties
@@ -336,12 +355,13 @@ class CadResponse(object):
     def cff2_properties(self, cff2_properties):
         """Sets the cff2_properties of this CadResponse.
 
-        Gets or sets the CFF2 properties.  # noqa: E501
+        Gets or sets the CFF2 properties.
 
-        :param cff2_properties: The cff2_properties of this CadResponse.  # noqa: E501
+        :param cff2_properties: The cff2_properties of this CadResponse.
         :type: Cff2Properties
         """
         self._cff2_properties = cff2_properties
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,4 +1,4 @@
-# Color
+# asposecadcloud.models.Color
 
 ## Properties
 Name | Type | Description | Notes
@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **is_named_color** | **bool** | Gets a value indicating whether this Color structure is a named color or a member of the KnownColor enumeration. | 
 **name** | **str** | Gets the name of this Color. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](API_README.md#documentation-for-models) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to API_README]](API_README.md)
 
 

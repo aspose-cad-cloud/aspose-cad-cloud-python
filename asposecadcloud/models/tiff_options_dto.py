@@ -1,35 +1,39 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="TiffOptionsDTO.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="TiffOptionsDTO.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
+from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
+from asposecadcloud.models.drawing_options_base_dto import DrawingOptionsBaseDTO
+from asposecadcloud.models.resolution_setting import ResolutionSetting
 
-class TiffOptionsDTO(object):
+
+class TiffOptionsDTO(DrawingOptionsBaseDTO):
     """Export options for TIFF format
     """
 
@@ -41,11 +45,11 @@ class TiffOptionsDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'byte_order': 'str',
-        'compression': 'str',
-        'expected_format': 'str',
+        'byte_order': 'object',
+        'compression': 'object',
+        'expected_format': 'object',
         'bits_per_sample': 'list[int]',
-        'photometric': 'str'
+        'photometric': 'object'
     }
 
     attribute_map = {
@@ -56,15 +60,15 @@ class TiffOptionsDTO(object):
         'photometric': 'Photometric'
     }
 
-    def __init__(self, byte_order=None, compression=None, expected_format=None, bits_per_sample=None, photometric=None):  # noqa: E501
-        """TiffOptionsDTO - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, byte_order=None, compression=None, expected_format=None, bits_per_sample=None, photometric=None):
+        """TiffOptionsDTO - a model defined in Swagger"""
+        super(TiffOptionsDTO, self).__init__()
 
         self._byte_order = None
         self._compression = None
         self._expected_format = None
         self._bits_per_sample = None
         self._photometric = None
-        self.discriminator = None
 
         if byte_order is not None:
             self.byte_order = byte_order
@@ -79,12 +83,12 @@ class TiffOptionsDTO(object):
 
     @property
     def byte_order(self):
-        """Gets the byte_order of this TiffOptionsDTO.  # noqa: E501
+        """Gets the byte_order of this TiffOptionsDTO.
 
-        Bytes order (little/big-endian notation)  # noqa: E501
+        Bytes order (little/big-endian notation)
 
-        :return: The byte_order of this TiffOptionsDTO.  # noqa: E501
-        :rtype: str
+        :return: The byte_order of this TiffOptionsDTO.
+        :rtype: object
         """
         return self._byte_order
 
@@ -92,30 +96,23 @@ class TiffOptionsDTO(object):
     def byte_order(self, byte_order):
         """Sets the byte_order of this TiffOptionsDTO.
 
-        Bytes order (little/big-endian notation)  # noqa: E501
+        Bytes order (little/big-endian notation)
 
-        :param byte_order: The byte_order of this TiffOptionsDTO.  # noqa: E501
-        :type: str
+        :param byte_order: The byte_order of this TiffOptionsDTO.
+        :type: object
         """
         if byte_order is None:
-            raise ValueError("Invalid value for `byte_order`, must not be `None`")  # noqa: E501
-        allowed_values = ["LittleEndian", "BigEndian"]  # noqa: E501
-        if not byte_order.isdigit():	
-            if byte_order not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `byte_order` ({0}), must be one of {1}"  # noqa: E501
-                    .format(byte_order, allowed_values))
-            self._byte_order = byte_order
-        else:
-            self._byte_order = allowed_values[int(byte_order) if six.PY3 else long(byte_order)]
+            raise ValueError("Invalid value for `byte_order`, must not be `None`")
+        self._byte_order = byte_order
+
     @property
     def compression(self):
-        """Gets the compression of this TiffOptionsDTO.  # noqa: E501
+        """Gets the compression of this TiffOptionsDTO.
 
-        Compression level  # noqa: E501
+        Compression level
 
-        :return: The compression of this TiffOptionsDTO.  # noqa: E501
-        :rtype: str
+        :return: The compression of this TiffOptionsDTO.
+        :rtype: object
         """
         return self._compression
 
@@ -123,30 +120,23 @@ class TiffOptionsDTO(object):
     def compression(self, compression):
         """Sets the compression of this TiffOptionsDTO.
 
-        Compression level  # noqa: E501
+        Compression level
 
-        :param compression: The compression of this TiffOptionsDTO.  # noqa: E501
-        :type: str
+        :param compression: The compression of this TiffOptionsDTO.
+        :type: object
         """
         if compression is None:
-            raise ValueError("Invalid value for `compression`, must not be `None`")  # noqa: E501
-        allowed_values = ["None", "CcittRle", "CcittFax3", "CcittFax4", "Lzw", "Ojpeg", "Jpeg", "AdobeDeflate", "Next", "CcittRleW", "Packbits", "Thunderscan", "It8Ctpad", "It8Lw", "It8Mp", "It8Bl", "PixarFilm", "PixarLog", "Deflate", "Dcs", "Jbig", "Sgilog", "Sgilog24", "Jp2000"]  # noqa: E501
-        if not compression.isdigit():	
-            if compression not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `compression` ({0}), must be one of {1}"  # noqa: E501
-                    .format(compression, allowed_values))
-            self._compression = compression
-        else:
-            self._compression = allowed_values[int(compression) if six.PY3 else long(compression)]
+            raise ValueError("Invalid value for `compression`, must not be `None`")
+        self._compression = compression
+
     @property
     def expected_format(self):
-        """Gets the expected_format of this TiffOptionsDTO.  # noqa: E501
+        """Gets the expected_format of this TiffOptionsDTO.
 
-        Expected TIFF sub-format  # noqa: E501
+        Expected TIFF sub-format
 
-        :return: The expected_format of this TiffOptionsDTO.  # noqa: E501
-        :rtype: str
+        :return: The expected_format of this TiffOptionsDTO.
+        :rtype: object
         """
         return self._expected_format
 
@@ -154,29 +144,22 @@ class TiffOptionsDTO(object):
     def expected_format(self, expected_format):
         """Sets the expected_format of this TiffOptionsDTO.
 
-        Expected TIFF sub-format  # noqa: E501
+        Expected TIFF sub-format
 
-        :param expected_format: The expected_format of this TiffOptionsDTO.  # noqa: E501
-        :type: str
+        :param expected_format: The expected_format of this TiffOptionsDTO.
+        :type: object
         """
         if expected_format is None:
-            raise ValueError("Invalid value for `expected_format`, must not be `None`")  # noqa: E501
-        allowed_values = ["Default", "TiffLzwBw", "TiffLzwRgb", "TiffLzwRgba", "TiffLzwCmyk", "TiffCcittFax3", "TiffCcittFax4", "TiffDeflateBw", "TiffDeflateRgb", "TiffDeflateRgba", "TiffCcitRle", "TiffJpegRgb", "TiffJpegYCbCr", "TiffNoCompressionBw", "TiffNoCompressionRgb", "TiffNoCompressionRgba"]  # noqa: E501
-        if not expected_format.isdigit():	
-            if expected_format not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `expected_format` ({0}), must be one of {1}"  # noqa: E501
-                    .format(expected_format, allowed_values))
-            self._expected_format = expected_format
-        else:
-            self._expected_format = allowed_values[int(expected_format) if six.PY3 else long(expected_format)]
+            raise ValueError("Invalid value for `expected_format`, must not be `None`")
+        self._expected_format = expected_format
+
     @property
     def bits_per_sample(self):
-        """Gets the bits_per_sample of this TiffOptionsDTO.  # noqa: E501
+        """Gets the bits_per_sample of this TiffOptionsDTO.
 
-        Bits per pixel  # noqa: E501
+        Bits per pixel
 
-        :return: The bits_per_sample of this TiffOptionsDTO.  # noqa: E501
+        :return: The bits_per_sample of this TiffOptionsDTO.
         :rtype: list[int]
         """
         return self._bits_per_sample
@@ -185,20 +168,21 @@ class TiffOptionsDTO(object):
     def bits_per_sample(self, bits_per_sample):
         """Sets the bits_per_sample of this TiffOptionsDTO.
 
-        Bits per pixel  # noqa: E501
+        Bits per pixel
 
-        :param bits_per_sample: The bits_per_sample of this TiffOptionsDTO.  # noqa: E501
+        :param bits_per_sample: The bits_per_sample of this TiffOptionsDTO.
         :type: list[int]
         """
         self._bits_per_sample = bits_per_sample
+
     @property
     def photometric(self):
-        """Gets the photometric of this TiffOptionsDTO.  # noqa: E501
+        """Gets the photometric of this TiffOptionsDTO.
 
-        Photometric options  # noqa: E501
+        Photometric options
 
-        :return: The photometric of this TiffOptionsDTO.  # noqa: E501
-        :rtype: str
+        :return: The photometric of this TiffOptionsDTO.
+        :rtype: object
         """
         return self._photometric
 
@@ -206,22 +190,15 @@ class TiffOptionsDTO(object):
     def photometric(self, photometric):
         """Sets the photometric of this TiffOptionsDTO.
 
-        Photometric options  # noqa: E501
+        Photometric options
 
-        :param photometric: The photometric of this TiffOptionsDTO.  # noqa: E501
-        :type: str
+        :param photometric: The photometric of this TiffOptionsDTO.
+        :type: object
         """
         if photometric is None:
-            raise ValueError("Invalid value for `photometric`, must not be `None`")  # noqa: E501
-        allowed_values = ["MinIsWhite", "MinIsBlack", "Rgb", "Palette", "Mask", "Separated", "Ycbcr", "Cielab", "Icclab", "Itulab", "Logl", "Logluv"]  # noqa: E501
-        if not photometric.isdigit():	
-            if photometric not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `photometric` ({0}), must be one of {1}"  # noqa: E501
-                    .format(photometric, allowed_values))
-            self._photometric = photometric
-        else:
-            self._photometric = allowed_values[int(photometric) if six.PY3 else long(photometric)]
+            raise ValueError("Invalid value for `photometric`, must not be `None`")
+        self._photometric = photometric
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

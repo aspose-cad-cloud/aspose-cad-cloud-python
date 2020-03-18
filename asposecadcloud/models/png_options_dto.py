@@ -1,35 +1,39 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="PngOptionsDTO.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="PngOptionsDTO.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
+from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
+from asposecadcloud.models.drawing_options_base_dto import DrawingOptionsBaseDTO
+from asposecadcloud.models.resolution_setting import ResolutionSetting
 
-class PngOptionsDTO(object):
+
+class PngOptionsDTO(DrawingOptionsBaseDTO):
     """Export options for PNG format
     """
 
@@ -41,9 +45,9 @@ class PngOptionsDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'color_type': 'str',
+        'color_type': 'object',
         'progressive': 'bool',
-        'filter_type': 'str',
+        'filter_type': 'object',
         'compression_level': 'int',
         'bit_depth': 'int'
     }
@@ -56,15 +60,15 @@ class PngOptionsDTO(object):
         'bit_depth': 'BitDepth'
     }
 
-    def __init__(self, color_type=None, progressive=None, filter_type=None, compression_level=None, bit_depth=None):  # noqa: E501
-        """PngOptionsDTO - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, color_type=None, progressive=None, filter_type=None, compression_level=None, bit_depth=None):
+        """PngOptionsDTO - a model defined in Swagger"""
+        super(PngOptionsDTO, self).__init__()
 
         self._color_type = None
         self._progressive = None
         self._filter_type = None
         self._compression_level = None
         self._bit_depth = None
-        self.discriminator = None
 
         if color_type is not None:
             self.color_type = color_type
@@ -79,12 +83,12 @@ class PngOptionsDTO(object):
 
     @property
     def color_type(self):
-        """Gets the color_type of this PngOptionsDTO.  # noqa: E501
+        """Gets the color_type of this PngOptionsDTO.
 
-        Color type  # noqa: E501
+        Color type
 
-        :return: The color_type of this PngOptionsDTO.  # noqa: E501
-        :rtype: str
+        :return: The color_type of this PngOptionsDTO.
+        :rtype: object
         """
         return self._color_type
 
@@ -92,29 +96,22 @@ class PngOptionsDTO(object):
     def color_type(self, color_type):
         """Sets the color_type of this PngOptionsDTO.
 
-        Color type  # noqa: E501
+        Color type
 
-        :param color_type: The color_type of this PngOptionsDTO.  # noqa: E501
-        :type: str
+        :param color_type: The color_type of this PngOptionsDTO.
+        :type: object
         """
         if color_type is None:
-            raise ValueError("Invalid value for `color_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["Grayscale", "Truecolor", "IndexedColor", "GrayscaleWithAlpha", "TruecolorWithAlpha"]  # noqa: E501
-        if not color_type.isdigit():	
-            if color_type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `color_type` ({0}), must be one of {1}"  # noqa: E501
-                    .format(color_type, allowed_values))
-            self._color_type = color_type
-        else:
-            self._color_type = allowed_values[int(color_type) if six.PY3 else long(color_type)]
+            raise ValueError("Invalid value for `color_type`, must not be `None`")
+        self._color_type = color_type
+
     @property
     def progressive(self):
-        """Gets the progressive of this PngOptionsDTO.  # noqa: E501
+        """Gets the progressive of this PngOptionsDTO.
 
-        Determines whether 'progressive' method is used  # noqa: E501
+        Determines whether 'progressive' method is used
 
-        :return: The progressive of this PngOptionsDTO.  # noqa: E501
+        :return: The progressive of this PngOptionsDTO.
         :rtype: bool
         """
         return self._progressive
@@ -123,22 +120,23 @@ class PngOptionsDTO(object):
     def progressive(self, progressive):
         """Sets the progressive of this PngOptionsDTO.
 
-        Determines whether 'progressive' method is used  # noqa: E501
+        Determines whether 'progressive' method is used
 
-        :param progressive: The progressive of this PngOptionsDTO.  # noqa: E501
+        :param progressive: The progressive of this PngOptionsDTO.
         :type: bool
         """
         if progressive is None:
-            raise ValueError("Invalid value for `progressive`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `progressive`, must not be `None`")
         self._progressive = progressive
+
     @property
     def filter_type(self):
-        """Gets the filter_type of this PngOptionsDTO.  # noqa: E501
+        """Gets the filter_type of this PngOptionsDTO.
 
-        Filter type  # noqa: E501
+        Filter type
 
-        :return: The filter_type of this PngOptionsDTO.  # noqa: E501
-        :rtype: str
+        :return: The filter_type of this PngOptionsDTO.
+        :rtype: object
         """
         return self._filter_type
 
@@ -146,29 +144,22 @@ class PngOptionsDTO(object):
     def filter_type(self, filter_type):
         """Sets the filter_type of this PngOptionsDTO.
 
-        Filter type  # noqa: E501
+        Filter type
 
-        :param filter_type: The filter_type of this PngOptionsDTO.  # noqa: E501
-        :type: str
+        :param filter_type: The filter_type of this PngOptionsDTO.
+        :type: object
         """
         if filter_type is None:
-            raise ValueError("Invalid value for `filter_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["None", "Sub", "Up", "Avg", "Paeth", "Adaptive"]  # noqa: E501
-        if not filter_type.isdigit():	
-            if filter_type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `filter_type` ({0}), must be one of {1}"  # noqa: E501
-                    .format(filter_type, allowed_values))
-            self._filter_type = filter_type
-        else:
-            self._filter_type = allowed_values[int(filter_type) if six.PY3 else long(filter_type)]
+            raise ValueError("Invalid value for `filter_type`, must not be `None`")
+        self._filter_type = filter_type
+
     @property
     def compression_level(self):
-        """Gets the compression_level of this PngOptionsDTO.  # noqa: E501
+        """Gets the compression_level of this PngOptionsDTO.
 
-        Compression level  # noqa: E501
+        Compression level
 
-        :return: The compression_level of this PngOptionsDTO.  # noqa: E501
+        :return: The compression_level of this PngOptionsDTO.
         :rtype: int
         """
         return self._compression_level
@@ -177,21 +168,22 @@ class PngOptionsDTO(object):
     def compression_level(self, compression_level):
         """Sets the compression_level of this PngOptionsDTO.
 
-        Compression level  # noqa: E501
+        Compression level
 
-        :param compression_level: The compression_level of this PngOptionsDTO.  # noqa: E501
+        :param compression_level: The compression_level of this PngOptionsDTO.
         :type: int
         """
         if compression_level is None:
-            raise ValueError("Invalid value for `compression_level`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `compression_level`, must not be `None`")
         self._compression_level = compression_level
+
     @property
     def bit_depth(self):
-        """Gets the bit_depth of this PngOptionsDTO.  # noqa: E501
+        """Gets the bit_depth of this PngOptionsDTO.
 
-        Bits depth  # noqa: E501
+        Bits depth
 
-        :return: The bit_depth of this PngOptionsDTO.  # noqa: E501
+        :return: The bit_depth of this PngOptionsDTO.
         :rtype: int
         """
         return self._bit_depth
@@ -200,14 +192,15 @@ class PngOptionsDTO(object):
     def bit_depth(self, bit_depth):
         """Sets the bit_depth of this PngOptionsDTO.
 
-        Bits depth  # noqa: E501
+        Bits depth
 
-        :param bit_depth: The bit_depth of this PngOptionsDTO.  # noqa: E501
+        :param bit_depth: The bit_depth of this PngOptionsDTO.
         :type: int
         """
         if bit_depth is None:
-            raise ValueError("Invalid value for `bit_depth`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `bit_depth`, must not be `None`")
         self._bit_depth = bit_depth
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

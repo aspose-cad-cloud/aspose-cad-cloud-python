@@ -1,31 +1,31 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="PenOptions.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="PenOptions.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
 
@@ -41,8 +41,8 @@ class PenOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'start_cap': 'str',
-        'end_cap': 'str'
+        'start_cap': 'object',
+        'end_cap': 'object'
     }
 
     attribute_map = {
@@ -50,12 +50,12 @@ class PenOptions(object):
         'end_cap': 'EndCap'
     }
 
-    def __init__(self, start_cap=None, end_cap=None):  # noqa: E501
-        """PenOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, start_cap=None, end_cap=None):
+        """PenOptions - a model defined in Swagger"""
+        super(PenOptions, self).__init__()
 
         self._start_cap = None
         self._end_cap = None
-        self.discriminator = None
 
         if start_cap is not None:
             self.start_cap = start_cap
@@ -64,12 +64,12 @@ class PenOptions(object):
 
     @property
     def start_cap(self):
-        """Gets the start_cap of this PenOptions.  # noqa: E501
+        """Gets the start_cap of this PenOptions.
 
-        Gets or sets the start cap.  # noqa: E501
+        Gets or sets the start cap.
 
-        :return: The start_cap of this PenOptions.  # noqa: E501
-        :rtype: str
+        :return: The start_cap of this PenOptions.
+        :rtype: object
         """
         return self._start_cap
 
@@ -77,30 +77,23 @@ class PenOptions(object):
     def start_cap(self, start_cap):
         """Sets the start_cap of this PenOptions.
 
-        Gets or sets the start cap.  # noqa: E501
+        Gets or sets the start cap.
 
-        :param start_cap: The start_cap of this PenOptions.  # noqa: E501
-        :type: str
+        :param start_cap: The start_cap of this PenOptions.
+        :type: object
         """
         if start_cap is None:
-            raise ValueError("Invalid value for `start_cap`, must not be `None`")  # noqa: E501
-        allowed_values = ["Flat", "Square", "Round", "Triangle", "NoAnchor", "SquareAnchor", "RoundAnchor", "DiamondAnchor", "ArrowAnchor", "AnchorMask", "Custom"]  # noqa: E501
-        if not start_cap.isdigit():	
-            if start_cap not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `start_cap` ({0}), must be one of {1}"  # noqa: E501
-                    .format(start_cap, allowed_values))
-            self._start_cap = start_cap
-        else:
-            self._start_cap = allowed_values[int(start_cap) if six.PY3 else long(start_cap)]
+            raise ValueError("Invalid value for `start_cap`, must not be `None`")
+        self._start_cap = start_cap
+
     @property
     def end_cap(self):
-        """Gets the end_cap of this PenOptions.  # noqa: E501
+        """Gets the end_cap of this PenOptions.
 
-        Gets or sets the end cap.  # noqa: E501
+        Gets or sets the end cap.
 
-        :return: The end_cap of this PenOptions.  # noqa: E501
-        :rtype: str
+        :return: The end_cap of this PenOptions.
+        :rtype: object
         """
         return self._end_cap
 
@@ -108,22 +101,15 @@ class PenOptions(object):
     def end_cap(self, end_cap):
         """Sets the end_cap of this PenOptions.
 
-        Gets or sets the end cap.  # noqa: E501
+        Gets or sets the end cap.
 
-        :param end_cap: The end_cap of this PenOptions.  # noqa: E501
-        :type: str
+        :param end_cap: The end_cap of this PenOptions.
+        :type: object
         """
         if end_cap is None:
-            raise ValueError("Invalid value for `end_cap`, must not be `None`")  # noqa: E501
-        allowed_values = ["Flat", "Square", "Round", "Triangle", "NoAnchor", "SquareAnchor", "RoundAnchor", "DiamondAnchor", "ArrowAnchor", "AnchorMask", "Custom"]  # noqa: E501
-        if not end_cap.isdigit():	
-            if end_cap not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `end_cap` ({0}), must be one of {1}"  # noqa: E501
-                    .format(end_cap, allowed_values))
-            self._end_cap = end_cap
-        else:
-            self._end_cap = allowed_values[int(end_cap) if six.PY3 else long(end_cap)]
+            raise ValueError("Invalid value for `end_cap`, must not be `None`")
+        self._end_cap = end_cap
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

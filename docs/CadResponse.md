@@ -1,4 +1,4 @@
-# CadResponse
+# asposecadcloud.models.CadResponse
 
 ## Properties
 Name | Type | Description | Notes
@@ -15,6 +15,6 @@ Name | Type | Description | Notes
 **dwf_properties** | [**DwfProperties**](DwfProperties.md) | Gets or sets the DWF properties. | [optional] 
 **cff2_properties** | [**Cff2Properties**](Cff2Properties.md) | Gets or sets the CFF2 properties. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](API_README.md#documentation-for-models) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to API_README]](API_README.md)
 
 

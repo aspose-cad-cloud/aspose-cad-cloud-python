@@ -1,31 +1,31 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="PdfDocumentInfo.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="PdfDocumentInfo.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
 
@@ -54,14 +54,14 @@ class PdfDocumentInfo(object):
         'subject': 'Subject'
     }
 
-    def __init__(self, keywords=None, title=None, author=None, subject=None):  # noqa: E501
-        """PdfDocumentInfo - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, keywords=None, title=None, author=None, subject=None):
+        """PdfDocumentInfo - a model defined in Swagger"""
+        super(PdfDocumentInfo, self).__init__()
 
         self._keywords = None
         self._title = None
         self._author = None
         self._subject = None
-        self.discriminator = None
 
         if keywords is not None:
             self.keywords = keywords
@@ -74,11 +74,11 @@ class PdfDocumentInfo(object):
 
     @property
     def keywords(self):
-        """Gets the keywords of this PdfDocumentInfo.  # noqa: E501
+        """Gets the keywords of this PdfDocumentInfo.
 
-        Gets or sets keywords of the document.  # noqa: E501
+        Gets or sets keywords of the document.
 
-        :return: The keywords of this PdfDocumentInfo.  # noqa: E501
+        :return: The keywords of this PdfDocumentInfo.
         :rtype: str
         """
         return self._keywords
@@ -87,19 +87,20 @@ class PdfDocumentInfo(object):
     def keywords(self, keywords):
         """Sets the keywords of this PdfDocumentInfo.
 
-        Gets or sets keywords of the document.  # noqa: E501
+        Gets or sets keywords of the document.
 
-        :param keywords: The keywords of this PdfDocumentInfo.  # noqa: E501
+        :param keywords: The keywords of this PdfDocumentInfo.
         :type: str
         """
         self._keywords = keywords
+
     @property
     def title(self):
-        """Gets the title of this PdfDocumentInfo.  # noqa: E501
+        """Gets the title of this PdfDocumentInfo.
 
-        Gets or sets title of the document.  # noqa: E501
+        Gets or sets title of the document.
 
-        :return: The title of this PdfDocumentInfo.  # noqa: E501
+        :return: The title of this PdfDocumentInfo.
         :rtype: str
         """
         return self._title
@@ -108,19 +109,20 @@ class PdfDocumentInfo(object):
     def title(self, title):
         """Sets the title of this PdfDocumentInfo.
 
-        Gets or sets title of the document.  # noqa: E501
+        Gets or sets title of the document.
 
-        :param title: The title of this PdfDocumentInfo.  # noqa: E501
+        :param title: The title of this PdfDocumentInfo.
         :type: str
         """
         self._title = title
+
     @property
     def author(self):
-        """Gets the author of this PdfDocumentInfo.  # noqa: E501
+        """Gets the author of this PdfDocumentInfo.
 
-        Gets or sets author of the document.  # noqa: E501
+        Gets or sets author of the document.
 
-        :return: The author of this PdfDocumentInfo.  # noqa: E501
+        :return: The author of this PdfDocumentInfo.
         :rtype: str
         """
         return self._author
@@ -129,19 +131,20 @@ class PdfDocumentInfo(object):
     def author(self, author):
         """Sets the author of this PdfDocumentInfo.
 
-        Gets or sets author of the document.  # noqa: E501
+        Gets or sets author of the document.
 
-        :param author: The author of this PdfDocumentInfo.  # noqa: E501
+        :param author: The author of this PdfDocumentInfo.
         :type: str
         """
         self._author = author
+
     @property
     def subject(self):
-        """Gets the subject of this PdfDocumentInfo.  # noqa: E501
+        """Gets the subject of this PdfDocumentInfo.
 
-        Gets or sets subject of the document.  # noqa: E501
+        Gets or sets subject of the document.
 
-        :return: The subject of this PdfDocumentInfo.  # noqa: E501
+        :return: The subject of this PdfDocumentInfo.
         :rtype: str
         """
         return self._subject
@@ -150,12 +153,13 @@ class PdfDocumentInfo(object):
     def subject(self, subject):
         """Sets the subject of this PdfDocumentInfo.
 
-        Gets or sets subject of the document.  # noqa: E501
+        Gets or sets subject of the document.
 
-        :param subject: The subject of this PdfDocumentInfo.  # noqa: E501
+        :param subject: The subject of this PdfDocumentInfo.
         :type: str
         """
         self._subject = subject
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

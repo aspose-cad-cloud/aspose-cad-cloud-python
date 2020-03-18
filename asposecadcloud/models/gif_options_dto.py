@@ -1,35 +1,39 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="GifOptionsDTO.py">
-#   Copyright (c) 2018 Aspose.CAD Cloud
-# </copyright>
-# <summary>
-#   Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
+#  coding: utf-8
+#  ----------------------------------------------------------------------------
+#  <copyright company="Aspose" file="GifOptionsDTO.py">
+#    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
+#  </copyright>
+#  <summary>
+#    Permission is hereby granted, free of charge, to any person obtaining a
+#   copy  of this software and associated documentation files (the "Software"),
+#   to deal  in the Software without restriction, including without limitation
+#   the rights  to use, copy, modify, merge, publish, distribute, sublicense,
+#   and/or sell  copies of the Software, and to permit persons to whom the
+#   Software is  furnished to do so, subject to the following conditions:
 #
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
+#   The above copyright notice and this permission notice shall be included in
+#   all  copies or substantial portions of the Software.
 #
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE.
-# </summary>
-# -----------------------------------------------------------------------------------
-import pprint
-import re  # noqa: F401
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#   DEALINGS IN THE SOFTWARE.
+#  </summary>
+#  ----------------------------------------------------------------------------
 
+import pprint
+import re
 import six
 
+from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
+from asposecadcloud.models.drawing_options_base_dto import DrawingOptionsBaseDTO
+from asposecadcloud.models.resolution_setting import ResolutionSetting
 
-class GifOptionsDTO(object):
+
+class GifOptionsDTO(DrawingOptionsBaseDTO):
     """Export options for GIF format
     """
 
@@ -60,8 +64,9 @@ class GifOptionsDTO(object):
         'interlaced': 'Interlaced'
     }
 
-    def __init__(self, do_palette_correction=None, color_resolution=None, is_palette_sorted=None, pixel_aspect_ratio=None, background_color_index=None, has_trailer=None, interlaced=None):  # noqa: E501
-        """GifOptionsDTO - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, do_palette_correction=None, color_resolution=None, is_palette_sorted=None, pixel_aspect_ratio=None, background_color_index=None, has_trailer=None, interlaced=None):
+        """GifOptionsDTO - a model defined in Swagger"""
+        super(GifOptionsDTO, self).__init__()
 
         self._do_palette_correction = None
         self._color_resolution = None
@@ -70,7 +75,6 @@ class GifOptionsDTO(object):
         self._background_color_index = None
         self._has_trailer = None
         self._interlaced = None
-        self.discriminator = None
 
         if do_palette_correction is not None:
             self.do_palette_correction = do_palette_correction
@@ -89,11 +93,11 @@ class GifOptionsDTO(object):
 
     @property
     def do_palette_correction(self):
-        """Gets the do_palette_correction of this GifOptionsDTO.  # noqa: E501
+        """Gets the do_palette_correction of this GifOptionsDTO.
 
-        Determines whether to do auto-correction of a palette  # noqa: E501
+        Determines whether to do auto-correction of a palette
 
-        :return: The do_palette_correction of this GifOptionsDTO.  # noqa: E501
+        :return: The do_palette_correction of this GifOptionsDTO.
         :rtype: bool
         """
         return self._do_palette_correction
@@ -102,21 +106,22 @@ class GifOptionsDTO(object):
     def do_palette_correction(self, do_palette_correction):
         """Sets the do_palette_correction of this GifOptionsDTO.
 
-        Determines whether to do auto-correction of a palette  # noqa: E501
+        Determines whether to do auto-correction of a palette
 
-        :param do_palette_correction: The do_palette_correction of this GifOptionsDTO.  # noqa: E501
+        :param do_palette_correction: The do_palette_correction of this GifOptionsDTO.
         :type: bool
         """
         if do_palette_correction is None:
-            raise ValueError("Invalid value for `do_palette_correction`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `do_palette_correction`, must not be `None`")
         self._do_palette_correction = do_palette_correction
+
     @property
     def color_resolution(self):
-        """Gets the color_resolution of this GifOptionsDTO.  # noqa: E501
+        """Gets the color_resolution of this GifOptionsDTO.
 
-        Color resolution  # noqa: E501
+        Color resolution
 
-        :return: The color_resolution of this GifOptionsDTO.  # noqa: E501
+        :return: The color_resolution of this GifOptionsDTO.
         :rtype: int
         """
         return self._color_resolution
@@ -125,21 +130,22 @@ class GifOptionsDTO(object):
     def color_resolution(self, color_resolution):
         """Sets the color_resolution of this GifOptionsDTO.
 
-        Color resolution  # noqa: E501
+        Color resolution
 
-        :param color_resolution: The color_resolution of this GifOptionsDTO.  # noqa: E501
+        :param color_resolution: The color_resolution of this GifOptionsDTO.
         :type: int
         """
         if color_resolution is None:
-            raise ValueError("Invalid value for `color_resolution`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `color_resolution`, must not be `None`")
         self._color_resolution = color_resolution
+
     @property
     def is_palette_sorted(self):
-        """Gets the is_palette_sorted of this GifOptionsDTO.  # noqa: E501
+        """Gets the is_palette_sorted of this GifOptionsDTO.
 
-        Determines whether a palette is sorted  # noqa: E501
+        Determines whether a palette is sorted
 
-        :return: The is_palette_sorted of this GifOptionsDTO.  # noqa: E501
+        :return: The is_palette_sorted of this GifOptionsDTO.
         :rtype: bool
         """
         return self._is_palette_sorted
@@ -148,21 +154,22 @@ class GifOptionsDTO(object):
     def is_palette_sorted(self, is_palette_sorted):
         """Sets the is_palette_sorted of this GifOptionsDTO.
 
-        Determines whether a palette is sorted  # noqa: E501
+        Determines whether a palette is sorted
 
-        :param is_palette_sorted: The is_palette_sorted of this GifOptionsDTO.  # noqa: E501
+        :param is_palette_sorted: The is_palette_sorted of this GifOptionsDTO.
         :type: bool
         """
         if is_palette_sorted is None:
-            raise ValueError("Invalid value for `is_palette_sorted`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `is_palette_sorted`, must not be `None`")
         self._is_palette_sorted = is_palette_sorted
+
     @property
     def pixel_aspect_ratio(self):
-        """Gets the pixel_aspect_ratio of this GifOptionsDTO.  # noqa: E501
+        """Gets the pixel_aspect_ratio of this GifOptionsDTO.
 
-        Pixel aspect ration  # noqa: E501
+        Pixel aspect ration
 
-        :return: The pixel_aspect_ratio of this GifOptionsDTO.  # noqa: E501
+        :return: The pixel_aspect_ratio of this GifOptionsDTO.
         :rtype: int
         """
         return self._pixel_aspect_ratio
@@ -171,21 +178,22 @@ class GifOptionsDTO(object):
     def pixel_aspect_ratio(self, pixel_aspect_ratio):
         """Sets the pixel_aspect_ratio of this GifOptionsDTO.
 
-        Pixel aspect ration  # noqa: E501
+        Pixel aspect ration
 
-        :param pixel_aspect_ratio: The pixel_aspect_ratio of this GifOptionsDTO.  # noqa: E501
+        :param pixel_aspect_ratio: The pixel_aspect_ratio of this GifOptionsDTO.
         :type: int
         """
         if pixel_aspect_ratio is None:
-            raise ValueError("Invalid value for `pixel_aspect_ratio`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `pixel_aspect_ratio`, must not be `None`")
         self._pixel_aspect_ratio = pixel_aspect_ratio
+
     @property
     def background_color_index(self):
-        """Gets the background_color_index of this GifOptionsDTO.  # noqa: E501
+        """Gets the background_color_index of this GifOptionsDTO.
 
-        Background color index  # noqa: E501
+        Background color index
 
-        :return: The background_color_index of this GifOptionsDTO.  # noqa: E501
+        :return: The background_color_index of this GifOptionsDTO.
         :rtype: int
         """
         return self._background_color_index
@@ -194,21 +202,22 @@ class GifOptionsDTO(object):
     def background_color_index(self, background_color_index):
         """Sets the background_color_index of this GifOptionsDTO.
 
-        Background color index  # noqa: E501
+        Background color index
 
-        :param background_color_index: The background_color_index of this GifOptionsDTO.  # noqa: E501
+        :param background_color_index: The background_color_index of this GifOptionsDTO.
         :type: int
         """
         if background_color_index is None:
-            raise ValueError("Invalid value for `background_color_index`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `background_color_index`, must not be `None`")
         self._background_color_index = background_color_index
+
     @property
     def has_trailer(self):
-        """Gets the has_trailer of this GifOptionsDTO.  # noqa: E501
+        """Gets the has_trailer of this GifOptionsDTO.
 
-        Determines whether image has to have a trailer  # noqa: E501
+        Determines whether image has to have a trailer
 
-        :return: The has_trailer of this GifOptionsDTO.  # noqa: E501
+        :return: The has_trailer of this GifOptionsDTO.
         :rtype: bool
         """
         return self._has_trailer
@@ -217,21 +226,22 @@ class GifOptionsDTO(object):
     def has_trailer(self, has_trailer):
         """Sets the has_trailer of this GifOptionsDTO.
 
-        Determines whether image has to have a trailer  # noqa: E501
+        Determines whether image has to have a trailer
 
-        :param has_trailer: The has_trailer of this GifOptionsDTO.  # noqa: E501
+        :param has_trailer: The has_trailer of this GifOptionsDTO.
         :type: bool
         """
         if has_trailer is None:
-            raise ValueError("Invalid value for `has_trailer`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `has_trailer`, must not be `None`")
         self._has_trailer = has_trailer
+
     @property
     def interlaced(self):
-        """Gets the interlaced of this GifOptionsDTO.  # noqa: E501
+        """Gets the interlaced of this GifOptionsDTO.
 
-        Determines whether an image has to be interlaced  # noqa: E501
+        Determines whether an image has to be interlaced
 
-        :return: The interlaced of this GifOptionsDTO.  # noqa: E501
+        :return: The interlaced of this GifOptionsDTO.
         :rtype: bool
         """
         return self._interlaced
@@ -240,14 +250,15 @@ class GifOptionsDTO(object):
     def interlaced(self, interlaced):
         """Sets the interlaced of this GifOptionsDTO.
 
-        Determines whether an image has to be interlaced  # noqa: E501
+        Determines whether an image has to be interlaced
 
-        :param interlaced: The interlaced of this GifOptionsDTO.  # noqa: E501
+        :param interlaced: The interlaced of this GifOptionsDTO.
         :type: bool
         """
         if interlaced is None:
-            raise ValueError("Invalid value for `interlaced`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `interlaced`, must not be `None`")
         self._interlaced = interlaced
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
