@@ -35,7 +35,7 @@ class CadRequest(object):
         """
         Prepares initial info for HTTP request
 
-        :param config: Imaging API configuration.
+        :param config: CAD API configuration.
         :type: asposecadcloud.Configuration
         :return: http_request configured http request
         :rtype: Configuration.models.requests.HttpRequest

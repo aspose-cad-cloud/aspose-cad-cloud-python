@@ -35,7 +35,7 @@ class PostDrawingRotateFlipRequest(CadRequest):
 
     :param drawing_data Input drawing
     :param output_format Resulting file format.
-    :param rotate_flip_type Rotate/flip operation to apply.
+    :param rotate_flip_type Rotate/flip operation to apply. Possible values: RotateNoneFlipNone, Rotate90FlipNone, Rotate180FlipNone, Rotate270FlipNone, RotateNoneFlipX, Rotate90FlipX, Rotate180FlipX, Rotate270FlipX, RotateNoneFlipY, Rotate90FlipY, Rotate180FlipY, Rotate270FlipY, RotateNoneFlipXY, Rotate90FlipXY, Rotate180FlipXY, Rotate270FlipXY
     :param out_path Path to updated file (if this is empty, response contains streamed file).
     :param storage Your Aspose Cloud Storage name.
     """
@@ -52,7 +52,7 @@ class PostDrawingRotateFlipRequest(CadRequest):
         """
         Prepares initial info for HTTP request
 
-        :param config: Imaging API configuration
+        :param config: CAD API configuration
         :type: asposecadcloud.Configuration
         :return: http_request configured http request
         :rtype: Configuration.models.requests.HttpRequest
@@ -107,7 +107,7 @@ class PostDrawingRotateFlipRequest(CadRequest):
             ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = 'multipart/form-data' if form_params else self._select_header_content_type(
+        header_params['Content-Type'] = 'multipart/form-data' if form_params or local_var_files else self._select_header_content_type(
             ['application/octet-stream', 'multipart/form-data'])
 
         # Authentication setting

@@ -337,7 +337,7 @@ class RESTClientObject(object):
 
 class ApiException(Exception):
     """
-    Imaging API Exception
+    CAD API Exception
     """
 
     def __init__(self, message, code, error=None):

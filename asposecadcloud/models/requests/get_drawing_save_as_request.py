@@ -52,7 +52,7 @@ class GetDrawingSaveAsRequest(CadRequest):
         """
         Prepares initial info for HTTP request
 
-        :param config: Imaging API configuration
+        :param config: CAD API configuration
         :type: asposecadcloud.Configuration
         :return: http_request configured http request
         :rtype: Configuration.models.requests.HttpRequest
@@ -101,7 +101,7 @@ class GetDrawingSaveAsRequest(CadRequest):
             ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = 'multipart/form-data' if form_params else self._select_header_content_type(
+        header_params['Content-Type'] = 'multipart/form-data' if form_params or local_var_files else self._select_header_content_type(
             ['application/json'])
 
         # Authentication setting

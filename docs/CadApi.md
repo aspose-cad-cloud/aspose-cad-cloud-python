@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Filename of a drawing. | 
  **output_format** | **str**| Resulting file format. | 
- **rotate_flip_type** | **str**| Rotate/flip operation to apply. | 
+ **rotate_flip_type** | **str**| Rotate/flip operation to apply. Possible values: RotateNoneFlipNone, Rotate90FlipNone, Rotate180FlipNone, Rotate270FlipNone, RotateNoneFlipX, Rotate90FlipX, Rotate180FlipX, Rotate270FlipX, RotateNoneFlipY, Rotate90FlipY, Rotate180FlipY, Rotate270FlipY, RotateNoneFlipXY, Rotate90FlipXY, Rotate180FlipXY, Rotate270FlipXY | 
  **folder** | **str**| Folder with a drawing to process. | [optional] 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **drawing_data** | **file**| Input drawing | 
  **output_format** | **str**| Resulting file format. | 
- **rotate_flip_type** | **str**| Rotate/flip operation to apply. | 
+ **rotate_flip_type** | **str**| Rotate/flip operation to apply. Possible values: RotateNoneFlipNone, Rotate90FlipNone, Rotate180FlipNone, Rotate270FlipNone, RotateNoneFlipX, Rotate90FlipX, Rotate180FlipX, Rotate270FlipX, RotateNoneFlipY, Rotate90FlipY, Rotate180FlipY, Rotate270FlipY, RotateNoneFlipXY, Rotate90FlipXY, Rotate180FlipXY, Rotate270FlipXY | 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 

@@ -31,171 +31,113 @@ from test.api import CadApiTester
 
 
 class TestRotateFlipApi(CadApiTester):
-    """ Class for testing RotateFlipApi """
+    """ Class for testing RotateFlipAPI """
 
-    def test_rotate_flip_image(self):
-        """ Test rotate_flip_image """
-
-        additional_export_formats = set()
-        if not self.EXTENDED_TEST:
-            format_extension_test_cases = ['.jpg']
-        else:
-            format_extension_test_cases = [
-                '.jpg',
-                '.bmp',
-                '.dicom',
-                '.gif',
-                '.j2k',
-                '.png',
-                '.psd',
-                '.tiff',
-                '.webp']
-
-        for format_extension in format_extension_test_cases:
-            with self.subTest('format_extension: ' + str(format_extension)):
-
-                method = 'Rotate90FlipX'
-                folder = self.temp_folder
-                storage = self.test_storage
-
-                formats_to_export = set(
-                    self.basic_export_formats).union(additional_export_formats)
-
-                def request_invoker():
-                    return self.cad_api.rotate_flip_image(
-                        requests.RotateFlipImageRequest(
-                            name, format, method, folder, storage))
-
-                def properties_tester(
-                        original_properties,
-                        result_properties,
-                        result_stream):
-                    try:
-                        self.assertEqual(
-                            original_properties.height,
-                            result_properties.width)
-                    except BaseException:
-                        self.assertEqual(
-                            original_properties.height - 1,
-                            result_properties.width)
-
-                    try:
-                        self.assertEqual(
-                            original_properties.width,
-                            result_properties.height)
-                    except BaseException:
-                        self.assertEqual(
-                            original_properties.width - 1,
-                            result_properties.height)
-
-                for input_file in self.input_test_files:
-                    if not str(input_file.name).endswith(format_extension):
-                        continue
-
-                    name = input_file.name
-
-                    for format in formats_to_export:
-                        out_name = '{0}_crop.{1}'.format(name, format)
-
-                        self.get_request_tester(
-                            'RotateFlipImageTest',
-                            'Input image: {0}; Output format: {1}; Method: '
-                            '{2}'.format(
-                                name,
-                                format,
-                                method),
-                            name,
-                            request_invoker,
-                            properties_tester,
-                            folder,
-                            storage)
-
-    def test_create_rotate_flipped_image(self):
-        """ Test create_rotate_flipped_image """
+    def test_get_rotate_flip_image(self):
+        """
+        Performs RotateFlip (export to another format) operation test with GET
+        method, taking input data from storage
+        """
 
         additional_export_formats = set()
         if not self.EXTENDED_TEST:
-            format_extension_test_cases = ['.jpg']
+            format_extension_test_cases = ['bmp']
         else:
-            format_extension_test_cases = [
-                '.jpg',
-                '.bmp',
-                '.dicom',
-                '.gif',
-                '.j2k',
-                '.png',
-                '.psd',
-                '.tiff',
-                '.webp']
+            format_extension_test_cases = ['jpg']
 
-        save_result_to_storage_test_cases = [True, False]
+        formats_to_export = set(self.basic_export_formats).union(additional_export_formats)
 
-        for (
-                save_result_to_storage,
-                format_extension) in list(
-                product(
-                save_result_to_storage_test_cases,
-                format_extension_test_cases)):
-            with self.subTest('save_result_to_storage: ' + str(save_result_to_storage)) and \
-                    self.subTest('format_extension: ' + str(format_extension)):
-                method = 'Rotate90FlipX'
-                folder = self.temp_folder
-                storage = self.test_storage
+        for save_to_storage in [ True, False ]:
+            for format_extension in format_extension_test_cases:
+                with self.subTest('format_extension: ' + str(format_extension) + ' save to storage: ' + str(save_to_storage)):
 
-                formats_to_export = set(
-                    self.basic_export_formats).union(additional_export_formats)
+                    folder = self.original_data_folder
+                    storage = self.test_storage
 
-                def request_invoker(input_stream, out_path):
-                    kwargs = {"storage": storage}
-                    if out_path:
-                        kwargs["out_path"] = out_path
+                    for input_file in self.input_test_files:
+                        has_to_be_exported = False
+                        for input_format in formats_to_export:
+                            if str(input_file.name).endswith(input_format):
+                                has_to_be_exported = True
+                                break
 
-                    return self.cad_api.create_rotate_flipped_image(
-                        requests.CreateRotateFlippedImageRequest(
-                            input_stream, format, method, out_path, storage))
+                        if not has_to_be_exported:
+                            continue
 
-                def properties_tester(
-                        original_properties,
-                        result_properties,
-                        result_stream):
-                    try:
-                        self.assertEqual(
-                            original_properties.height,
-                            result_properties.width)
-                    except BaseException:
-                        self.assertEqual(
-                            original_properties.height - 1,
-                            result_properties.width)
+                        name = input_file.name
+                        operation = '_rotate_flip_get'
 
-                    try:
-                        self.assertEqual(
-                            original_properties.width,
-                            result_properties.height)
-                    except BaseException:
-                        self.assertEqual(
-                            original_properties.width - 1,
-                            result_properties.height)
+                        output_path = None
+                        if save_to_storage:
+                            output_path = self.temp_folder + "/" + name + operation + "." + format_extension                    
 
-                for input_file in self.input_test_files:
-                    if not str(input_file.name).endswith(format_extension):
-                        continue
+                        def request_invoker():
+                            return self.cad_api.get_drawing_rotate_flip(
+                                requests.GetDrawingRotateFlipRequest(name, format_extension, "Rotate180FlipNone", self.original_data_folder, output_path, storage))
 
-                    name = input_file.name
-
-                    for format in formats_to_export:
-                        out_name = '{0}_crop.{1}'.format(name, format)
-
-                        self.post_request_tester(
-                            'CreateRotateFlippedImageTest',
-                            save_result_to_storage,
-                            'Input image: {0}; Output format: {1}; Method: '
-                            '{2}'.format(
-                                name,
-                                format,
-                                method),
+                    self.get_request_tester(
+                            operation,
+                            'Input image: {0}; Output format: {1}, out path: {2}'.format(name, format_extension, output_path),
                             name,
-                            out_name,
+                            output_path,
                             request_invoker,
-                            properties_tester,
+                            lambda x, y, z: None,
                             folder,
                             storage)
+
+    def test_post_rotate_flip_image(self):
+        """
+        Performs RotateFlip (export to another format) operation test with POST
+        method, sending input data in request stream.
+        """
+
+        additional_export_formats = set()
+        if not self.EXTENDED_TEST:
+            format_extension_test_cases = ['gif']
+        else:
+            format_extension_test_cases = ['tiff']
+
+        formats_to_export = set(self.basic_export_formats).union(additional_export_formats)
+
+        for save_to_storage in [ True, False ]:
+            for format_extension in format_extension_test_cases:
+                with self.subTest('format_extension: ' + str(format_extension) + ' save to storage: ' + str(save_to_storage)):
+
+                    folder = self.original_data_folder
+                    storage = self.test_storage
+
+                    for input_file in self.input_test_files:
+                        has_to_be_exported = False
+                        for input_format in formats_to_export:
+                            if str(input_file.name).endswith(input_format):
+                                has_to_be_exported = True
+                                break
+
+                        if not has_to_be_exported:
+                            continue
+
+                        name = input_file.name
+                        operation = '_rotate_flip_post'
+
+                        output_path = None
+                        if save_to_storage:
+                            output_path = folder + "/" + name + operation + "." + format_extension                    
+
+                        def request_invoker(input_stream, out_path):
+                            return self.cad_api.post_drawing_rotate_flip(
+                                requests.PostDrawingRotateFlipRequest(input_stream, format_extension, "RotateNoneFlipY", output_path, storage))
+
+                    self.post_request_tester(
+                            operation,
+                            'Input image: {0}; Output format: {1}, out path: {2}'.format(name, format_extension, output_path),
+                            name,
+                            output_path,
+                            request_invoker,
+                            lambda x, y, z: None,
+                            folder,
+                            storage)
+
+#t = TestRotateFlipApi()
+#t.setUp()
+#t.test_get_rotate_flip_image()
+#t.test_post_rotate_flip_image()

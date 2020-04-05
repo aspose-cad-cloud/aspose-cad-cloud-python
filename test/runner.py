@@ -65,17 +65,13 @@ suites_dict = {}
 
 # TODO: move test discovery to lambda to discovery only required categories?
 
+save_as_suite = unittest.TestSuite(
+    loader.loadTestsFromModule(sys.modules['test.api.test_save_as_api']))
+suites_dict['SaveAs'] = save_as_suite
+
 bmp_suite = unittest.TestSuite(
     loader.loadTestsFromModule(sys.modules['test.api.test_bmp_api']))
 suites_dict['Bmp'] = bmp_suite
-
-crop_suite = unittest.TestSuite(
-    loader.loadTestsFromModule(sys.modules['test.api.test_crop_api']))
-suites_dict['Crop'] = crop_suite
-
-examples_suite = unittest.TestSuite(
-    loader.loadTestsFromModule(sys.modules['test.api.test_examples']))
-suites_dict['Examples'] = examples_suite
 
 resize_suite = unittest.TestSuite(
     loader.loadTestsFromModule(sys.modules['test.api.test_resize_api']))
@@ -85,16 +81,12 @@ rotate_flip_suite = unittest.TestSuite(
     loader.loadTestsFromModule(sys.modules['test.api.test_rotate_flip_api']))
 suites_dict['RotateFlip'] = rotate_flip_suite
 
-save_as_suite = unittest.TestSuite(
-    loader.loadTestsFromModule(sys.modules['test.api.test_save_as_api']))
-suites_dict['SaveAs'] = save_as_suite
-
 cad_suit = unittest.TestSuite(
-    [bmp_suite, crop_suite, examples_suite, resize_suite, rotate_flip_suite, save_as_suite])
+    [bmp_suite, resize_suite, rotate_flip_suite, save_as_suite])
 suites_dict['CAD'] = cad_suit
 
 v3_suite = unittest.TestSuite(
-    [bmp_suite, crop_suite, examples_suite, resize_suite, rotate_flip_suite, save_as_suite])
+    [bmp_suite, resize_suite, rotate_flip_suite, save_as_suite])
 suites_dict['v3.0'] = v3_suite
 
 suite = unittest.TestSuite()

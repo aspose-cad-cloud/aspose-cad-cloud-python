@@ -44,7 +44,7 @@ class Configuration(object):
     default_api_version = 'v3.0'
 
     def __init__(self, app_key=None, app_sid=None, base_url=None,
-                 api_version=None, debug=False):
+                 api_version=None, debug=False, proxy=None):
         """Constructor"""
         # Base url
         if base_url:
@@ -57,7 +57,7 @@ class Configuration(object):
         # Default api version is v3
         if api_version:
             if api_version.startswith('v1') or api_version.startswith('v2'):
-                raise Exception('This Aspose.Imaging Cloud SDK version is '
+                raise Exception('This Aspose.CAD Cloud SDK version is '
                                 'intended to be used with API v3.0 or later!')
             self.api_version = api_version
         else:
@@ -124,7 +124,7 @@ class Configuration(object):
         self.connection_pool_maxsize = multiprocessing.cpu_count() * 5
 
         # Proxy URL
-        self.proxy = None
+        self.proxy = proxy
         # Safe chars for path_param
         self.safe_chars_for_path_param = ''
 

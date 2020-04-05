@@ -35,20 +35,21 @@ from asposecadcloud.rest import ApiException
 
 class CadApi(object):
     """
-    Aspose.Imaging Cloud API
+    Aspose.CAD Cloud API
 
     """
 
     def __init__(self, app_key=None, app_sid=None, base_url=None,
-                 api_version=None, debug=False):
+                 api_version=None, debug=False, proxy=None):
         """
-        Initializes a new instance of the ImagingApi class.
+        Initializes a new instance of the CadApi class.
 
         :param app_key: The app key.
         :param app_sid: The app sid.
         :param base_url: The base URL.
         :param api_version: API version.
         :param debug: If debug mode is enabled. False by default.
+		:param proxy: proxy url if needed.
         :param on_premise:
             True for on-premise solution with metered license usage.
             False for Aspose Cloud-hosted solution usage, default.
@@ -57,7 +58,8 @@ class CadApi(object):
                                       app_sid=app_sid,
                                       base_url=base_url,
                                       api_version=api_version,
-                                      debug=debug)
+                                      debug=debug,
+									  proxy=proxy)
         self.api_client = ApiClient(configuration)
 
     def get_drawing_properties(self, request):

@@ -31,142 +31,113 @@ from test.api import CadApiTester
 
 
 class TestResizeApi(CadApiTester):
-    """ Class for testing ResizeAPI"""
+    """ Class for testing ResizeAPI """
 
-    def test_resize_image(self):
-        """  Test resize_image """
-
-        additional_export_formats = set()
-        if not self.EXTENDED_TEST:
-            format_extension_test_cases = ['.jpg']
-        else:
-            format_extension_test_cases = [
-                '.jpg',
-                '.bmp',
-                '.dicom',
-                '.gif',
-                '.j2k',
-                '.png',
-                '.psd',
-                '.tiff',
-                '.webp']
-
-        for format_extension in format_extension_test_cases:
-            with self.subTest('format_extension: ' + str(format_extension)):
-
-                new_width = 100
-                new_height = 150
-                folder = self.temp_folder
-                storage = self.test_storage
-
-                formats_to_export = set(
-                    self.basic_export_formats).union(additional_export_formats)
-
-                def request_invoker():
-                    return self.cad_api.resize_image(
-                        requests.ResizeImageRequest(
-                            name, format, new_width, new_height, folder,
-                            storage))
-
-                def properties_tester(
-                        original_properties,
-                        result_properties,
-                        result_stream):
-                    self.assertEqual(new_width, result_properties.width)
-                    self.assertEqual(new_height, result_properties.height)
-
-                for input_file in self.input_test_files:
-                    if not str(input_file.name).endswith(format_extension):
-                        continue
-
-                    name = input_file.name
-
-                    for format in formats_to_export:
-                        out_name = '{0}_crop.{1}'.format(name, format)
-
-                        self.get_request_tester(
-                            'ResizeImageTest',
-                            'Input image: {0}; Output format: {1}; New width: {2}; New height: '
-                            '{3};'.format(
-                                name,
-                                format,
-                                new_width,
-                                new_height),
-                            name,
-                            request_invoker,
-                            properties_tester,
-                            folder,
-                            storage)
-
-    def test_create_resized_image(self):
-        """ Test create_resized_image """
+    def test_get_resize_image(self):
+        """
+        Performs Resize (export to another format) operation test with GET
+        method, taking input data from storage
+        """
 
         additional_export_formats = set()
         if not self.EXTENDED_TEST:
-            format_extension_test_cases = ['.jpg']
+            format_extension_test_cases = ['bmp']
         else:
-            format_extension_test_cases = [
-                '.jpg',
-                '.bmp',
-                '.dicom',
-                '.gif',
-                '.j2k',
-                '.png',
-                '.psd',
-                '.tiff',
-                '.webp']
+            format_extension_test_cases = ['jpg']
 
-        save_result_to_storage_test_cases = [True, False]
+        formats_to_export = set(self.basic_export_formats).union(additional_export_formats)
 
-        for (
-                save_result_to_storage,
-                format_extension) in list(
-                product(
-                save_result_to_storage_test_cases,
-                format_extension_test_cases)):
-            with self.subTest('save_result_to_storage: ' + str(save_result_to_storage)) and \
-                    self.subTest('format_extension: ' + str(format_extension)):
-                new_width = 100
-                new_height = 150
-                folder = self.temp_folder
-                storage = self.test_storage
+        for save_to_storage in [ True, False ]:
+            for format_extension in format_extension_test_cases:
+                with self.subTest('format_extension: ' + str(format_extension) + ' save to storage: ' + str(save_to_storage)):
 
-                formats_to_export = set(
-                    self.basic_export_formats).union(additional_export_formats)
+                    folder = self.original_data_folder
+                    storage = self.test_storage
 
-                def request_invoker(input_stream, out_path):
-                    return self.cad_api.create_resized_image(
-                        requests.CreateResizedImageRequest(
-                        input_stream, format, new_width, new_height, out_path, storage))
+                    for input_file in self.input_test_files:
+                        has_to_be_exported = False
+                        for input_format in formats_to_export:
+                            if str(input_file.name).endswith(input_format):
+                                has_to_be_exported = True
+                                break
 
-                def properties_tester(
-                        original_properties,
-                        result_properties,
-                        result_stream):
-                    self.assertEqual(new_width, result_properties.width)
-                    self.assertEqual(new_height, result_properties.height)
+                        if not has_to_be_exported:
+                            continue
 
-                for input_file in self.input_test_files:
-                    if not str(input_file.name).endswith(format_extension):
-                        continue
+                        name = input_file.name
+                        operation = '_resize_get'
 
-                    name = input_file.name
+                        output_path = None
+                        if save_to_storage:
+                            output_path = self.temp_folder + "/" + name + operation + "." + format_extension                    
 
-                    for format in formats_to_export:
-                        out_name = '{0}_crop.{1}'.format(name, format)
+                        def request_invoker():
+                            return self.cad_api.get_drawing_resize(
+                                requests.GetDrawingResizeRequest(name, format_extension, 640, 480, self.original_data_folder, output_path, storage))
 
-                        self.post_request_tester(
-                            'CreateResizedImageTest',
-                            save_result_to_storage,
-                            'Input image: {0}; Output format: {1}; New width: {2}; New height: '
-                            '{3};'.format(
-                                name,
-                                format,
-                                new_width,
-                                new_height),
+                    self.get_request_tester(
+                            operation,
+                            'Input image: {0}; Output format: {1}, out path: {2}'.format(name, format_extension, output_path),
                             name,
-                            out_name,
+                            output_path,
                             request_invoker,
-                            properties_tester,
+                            lambda x, y, z: None,
                             folder,
                             storage)
+
+    def test_post_resize_image(self):
+        """
+        Performs Resize (export to another format) operation test with POST
+        method, sending input data in request stream.
+        """
+
+        additional_export_formats = set()
+        if not self.EXTENDED_TEST:
+            format_extension_test_cases = ['gif']
+        else:
+            format_extension_test_cases = ['tiff']
+
+        formats_to_export = set(self.basic_export_formats).union(additional_export_formats)
+
+        for save_to_storage in [ True, False ]:
+            for format_extension in format_extension_test_cases:
+                with self.subTest('format_extension: ' + str(format_extension) + ' save to storage: ' + str(save_to_storage)):
+
+                    folder = self.original_data_folder
+                    storage = self.test_storage
+
+                    for input_file in self.input_test_files:
+                        has_to_be_exported = False
+                        for input_format in formats_to_export:
+                            if str(input_file.name).endswith(input_format):
+                                has_to_be_exported = True
+                                break
+
+                        if not has_to_be_exported:
+                            continue
+
+                        name = input_file.name
+                        operation = '_resize_post'
+
+                        output_path = None
+                        if save_to_storage:
+                            output_path = folder + "/" + name + operation + "." + format_extension                    
+
+                        def request_invoker(input_stream, out_path):
+                            return self.cad_api.post_drawing_resize(
+                                requests.PostDrawingResizeRequest(input_stream, format_extension, 320, 240, output_path, storage))
+
+                    self.post_request_tester(
+                            operation,
+                            'Input image: {0}; Output format: {1}, out path: {2}'.format(name, format_extension, output_path),
+                            name,
+                            output_path,
+                            request_invoker,
+                            lambda x, y, z: None,
+                            folder,
+                            storage)
+
+#t = TestResizeApi()
+#t.setUp()
+#t.test_get_resize_image()
+#t.test_post_resize_image()
