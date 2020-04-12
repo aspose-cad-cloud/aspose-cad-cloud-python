@@ -7,6 +7,7 @@ This repository contains Aspose.CAD Cloud SDK for .NET source code. This SDK all
 * Convert CAD drawing to high quality raster images
 * Convert CAD drawing to high quality vector files like SVG and WMF
 * Modify and convert CAD drawing to DXF
+* Modify and convert CAD drawing to DWF
 * Select and modify specific entities
 * Select and convert specific layouts
 * Select and convert specific layers
@@ -16,7 +17,7 @@ See [API Reference](https://apireference.aspose.cloud/cad/) for full API specifi
 
 To use this SDK, you will need App SID and App Key which can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (free registration in Aspose Cloud is required for this).
 
-The solution is updated using [code generator](https://github.com/aspose-cad-cloud/aspose-CAD-cloud-codegen).
+The solution is updated using [code generator](https://github.com/aspose-cad-cloud/aspose-cad-cloud-codegen).
 
 ## Key Features
 #### Drawing Formats Support
@@ -64,7 +65,7 @@ Detalied official documentation can be found at the [following link](https://doc
 
 Please, add the following [PyPi package](https://pypi.org/project/aspose-cad-cloud/) to your requirements.txt.
 ```
-aspose-CAD-cloud>=19.11
+aspose-cad-cloud>=19.11
 ```
 Or install it using command line.
 ```
