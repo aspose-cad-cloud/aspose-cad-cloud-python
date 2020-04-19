@@ -1,5 +1,10 @@
-# Aspose.CAD Cloud .NET SDK
-This repository contains Aspose.CAD Cloud SDK for .NET source code. This SDK allows you to perform a wide range of CAD drawing processing operations including creation, manipulation and conversion in the cloud, with zero initial costs and gain all benefits of strong types and IDE highlights.
+# Aspose.CAD Cloud Python SDK
+[Aspose.CAD Cloud](https://products.aspose.cloud/cad) is a true [REST API](https://apireference.aspose.cloud/cad/) that enables you to perform a wide range of drawing processing operations including manipulation, editing, conversion and export in the cloud, with zero initial costs. Our Cloud SDKs are wrappers around REST API in various programming languages, allowing you to process images in language of your choice quickly and easily, gaining all benefits of strong types and IDE highlights. 
+
+This repository contains [Aspose.CAD Cloud Python SDK](https://products.aspose.cloud/cad/python) source code which is written in TypeScript. This SDK allows you to work with Aspose.CAD Cloud REST APIs in your Node.js applications quickly and easily, with zero initial cost and gain all benefits of strong types and IDE highlights.
+
+To use this SDK, you will need App SID and App Key which can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (free registration in Aspose Cloud is required for this).
+[Aspose.CAD Cloud](https://products.aspose.cloud/cad) is a true [REST API](https://apireference.aspose.cloud/cad/) that enables you to perform a wide range of drawing processing operations including manipulation, editing, conversion and export in the cloud, with zero initial costs. Our Cloud SDKs are wrappers around REST API in various programming languages, allowing you to process images in language of your choice quickly and easily, gaining all benefits of strong types and IDE highlights. 
 
 # Key Features
 * Supports the latest versions of AutoCAD DWG, DXF, DWF, DWT, STL, IGS, DGN, OBJ and CF2 files
@@ -9,17 +14,11 @@ This repository contains Aspose.CAD Cloud SDK for .NET source code. This SDK all
 * Modify and convert CAD drawing to DXF
 * Modify and convert CAD drawing to DWF
 * Select and modify specific entities
+* Retrieve & update drawing properties and metadata
 * Select and convert specific layouts
 * Select and convert specific layers
 * Track the file conversion process
 
-See [API Reference](https://apireference.aspose.cloud/cad/) for full API specification.
-
-To use this SDK, you will need App SID and App Key which can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (free registration in Aspose Cloud is required for this).
-
-The solution is updated using [code generator](https://github.com/aspose-cad-cloud/aspose-cad-cloud-codegen).
-
-## Key Features
 #### Drawing Formats Support
 Export the following drawing to various formats (generally supported ones are BMP, PSD, JPEG, TIFF, GIF, PNG, JPEG2000, SVG, WMF and PDF):
 * DWG
@@ -54,6 +53,10 @@ Output formats to export:
 * Crop
 * Rotate and Flip
 
+Look at [API Reference](https://apireference.aspose.cloud/cad/) for full API specification.
+
+The solution is updated using [code generator](https://github.com/aspose-cad-cloud/aspose-cad-cloud-codegen).
+
 For the complete list of use-cases, please refer to the [format support document](https://docs.aspose.cloud/display/cadcloud/Supported+File+Formats) to see what you can achieve!
 
 Detalied official documentation can be found at the [following link](https://docs.aspose.cloud/display/cadcloud).
@@ -78,14 +81,7 @@ import aspose-cad-cloud
 4. **Using the SDK**. The best way to become familiar with how to use the SDK is to read the [Developer Guide](https://docs.aspose.cloud/display/cadcloud/Developer+Guide). The [Getting Started Guide](https://docs.aspose.cloud/display/cadcloud/Getting+Started) will help you to become familiar with the common concepts.
 
 ## Quick Examples
-Please, look at [Examples](EXAMPLES.md) document.
-
-To succeed with your on-premise service usage by the SDK, you need to:
-1. Use the new API class constructor with base URL required parameter, API version and debug mode optional parameters.
-```python
-CadApi(base_url='yourServiceUrl')
-```
-2. Set *storage* or *storageName* parameters for each request where they're present (mandatory!).
+Please, look at [Examples](EXAMPLES.md) document for basic usage or use the [Examples](Examples) folder for more sophisticated scenarios.
 
 ## Content
 You may check our full [API endpoints list](docs/API_README.md#documentation-for-api-endpoints) or [models available](docs/API_README.md#documentation-for-models) in the SDK.
@@ -112,4 +108,4 @@ Your feedback is very important to us. Please feel free to contact via
 We generate our SDKs in different languages so you may check if yours is available in our [repository](https://github.com/aspose-cad-cloud). If you don't find your language in the list, feel free to request it from us, or use raw REST API requests as you can find it [here](https://products.aspose.cloud/cad/curl).
 
 ## Code generator
-The solution is updated using [code generator](https://github.com/aspose-CAD-cloud/aspose-cad-cloud-codegen).
+The solution is updated using [code generator](https://github.com/aspose-cad-cloud/aspose-cad-cloud-codegen).
