@@ -69,10 +69,6 @@ save_as_suite = unittest.TestSuite(
     loader.loadTestsFromModule(sys.modules['test.api.test_save_as_api']))
 suites_dict['SaveAs'] = save_as_suite
 
-bmp_suite = unittest.TestSuite(
-    loader.loadTestsFromModule(sys.modules['test.api.test_bmp_api']))
-suites_dict['Bmp'] = bmp_suite
-
 resize_suite = unittest.TestSuite(
     loader.loadTestsFromModule(sys.modules['test.api.test_resize_api']))
 suites_dict['Resize'] = resize_suite
@@ -82,11 +78,11 @@ rotate_flip_suite = unittest.TestSuite(
 suites_dict['RotateFlip'] = rotate_flip_suite
 
 cad_suit = unittest.TestSuite(
-    [bmp_suite, resize_suite, rotate_flip_suite, save_as_suite])
+    [resize_suite, rotate_flip_suite, save_as_suite])
 suites_dict['CAD'] = cad_suit
 
 v3_suite = unittest.TestSuite(
-    [bmp_suite, resize_suite, rotate_flip_suite, save_as_suite])
+    [resize_suite, rotate_flip_suite, save_as_suite])
 suites_dict['v3.0'] = v3_suite
 
 suite = unittest.TestSuite()

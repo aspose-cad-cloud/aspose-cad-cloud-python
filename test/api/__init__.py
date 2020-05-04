@@ -25,4 +25,3 @@
 #  ----------------------------------------------------------------------------
 
 from test.api.cad_api_tester import CadApiTester
-from test.api.test_bmp_api import TestBmpApi

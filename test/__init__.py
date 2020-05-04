@@ -25,7 +25,6 @@
 #  ----------------------------------------------------------------------------
 
 from test import api_tester
-from test.api.test_bmp_api import TestBmpApi
 from test.api.test_resize_api import TestResizeApi
 from test.api.test_rotate_flip_api import TestRotateFlipApi
 from test.api.test_save_as_api import TestSaveAsApi
