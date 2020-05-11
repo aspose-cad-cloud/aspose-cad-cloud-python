@@ -130,7 +130,7 @@ class ApiTester(unittest.TestCase):
                 self.default_storage = server_file_info['Storage']
                 print('Set default and test storage')
 
-            if server_file_info['Proxy'] and not on_premise:
+            if 'Proxy' in server_file_info and not on_premise:
                 proxy = server_file_info['Proxy']
                 print('Set proxy')
 
