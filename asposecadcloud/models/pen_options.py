@@ -30,7 +30,7 @@ import six
 
 
 class PenOptions(object):
-    """Drawing pen options
+    """
     """
 
     """
@@ -41,8 +41,8 @@ class PenOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'start_cap': 'object',
-        'end_cap': 'object'
+        'start_cap': 'str',
+        'end_cap': 'str'
     }
 
     attribute_map = {
@@ -66,10 +66,9 @@ class PenOptions(object):
     def start_cap(self):
         """Gets the start_cap of this PenOptions.
 
-        Gets or sets the start cap.
 
         :return: The start_cap of this PenOptions.
-        :rtype: object
+        :rtype: str
         """
         return self._start_cap
 
@@ -77,23 +76,29 @@ class PenOptions(object):
     def start_cap(self, start_cap):
         """Sets the start_cap of this PenOptions.
 
-        Gets or sets the start cap.
 
         :param start_cap: The start_cap of this PenOptions.
-        :type: object
+        :type: str
         """
         if start_cap is None:
             raise ValueError("Invalid value for `start_cap`, must not be `None`")
-        self._start_cap = start_cap
+        allowed_values = ["Flat", "Square", "Round", "Triangle", "NoAnchor", "SquareAnchor", "RoundAnchor", "DiamondAnchor", "ArrowAnchor", "AnchorMask", "Custom"]
+        if not start_cap.isdigit():
+            if start_cap not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `start_cap` ({0}), must be one of {1}"
+                    .format(start_cap, allowed_values))
+            self._start_cap = start_cap
+        else:
+            self._start_cap = allowed_values[int(start_cap) if six.PY3 else long(start_cap)]
 
     @property
     def end_cap(self):
         """Gets the end_cap of this PenOptions.
 
-        Gets or sets the end cap.
 
         :return: The end_cap of this PenOptions.
-        :rtype: object
+        :rtype: str
         """
         return self._end_cap
 
@@ -101,14 +106,21 @@ class PenOptions(object):
     def end_cap(self, end_cap):
         """Sets the end_cap of this PenOptions.
 
-        Gets or sets the end cap.
 
         :param end_cap: The end_cap of this PenOptions.
-        :type: object
+        :type: str
         """
         if end_cap is None:
             raise ValueError("Invalid value for `end_cap`, must not be `None`")
-        self._end_cap = end_cap
+        allowed_values = ["Flat", "Square", "Round", "Triangle", "NoAnchor", "SquareAnchor", "RoundAnchor", "DiamondAnchor", "ArrowAnchor", "AnchorMask", "Custom"]
+        if not end_cap.isdigit():
+            if end_cap not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `end_cap` ({0}), must be one of {1}"
+                    .format(end_cap, allowed_values))
+            self._end_cap = end_cap
+        else:
+            self._end_cap = allowed_values[int(end_cap) if six.PY3 else long(end_cap)]
 
     def to_dict(self):
         """Returns the model properties as a dict"""

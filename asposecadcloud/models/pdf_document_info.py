@@ -30,7 +30,7 @@ import six
 
 
 class PdfDocumentInfo(object):
-    """This class represents set of metadata for document description.
+    """
     """
 
     """
@@ -76,7 +76,6 @@ class PdfDocumentInfo(object):
     def keywords(self):
         """Gets the keywords of this PdfDocumentInfo.
 
-        Gets or sets keywords of the document.
 
         :return: The keywords of this PdfDocumentInfo.
         :rtype: str
@@ -87,7 +86,6 @@ class PdfDocumentInfo(object):
     def keywords(self, keywords):
         """Sets the keywords of this PdfDocumentInfo.
 
-        Gets or sets keywords of the document.
 
         :param keywords: The keywords of this PdfDocumentInfo.
         :type: str
@@ -98,7 +96,6 @@ class PdfDocumentInfo(object):
     def title(self):
         """Gets the title of this PdfDocumentInfo.
 
-        Gets or sets title of the document.
 
         :return: The title of this PdfDocumentInfo.
         :rtype: str
@@ -109,7 +106,6 @@ class PdfDocumentInfo(object):
     def title(self, title):
         """Sets the title of this PdfDocumentInfo.
 
-        Gets or sets title of the document.
 
         :param title: The title of this PdfDocumentInfo.
         :type: str
@@ -120,7 +116,6 @@ class PdfDocumentInfo(object):
     def author(self):
         """Gets the author of this PdfDocumentInfo.
 
-        Gets or sets author of the document.
 
         :return: The author of this PdfDocumentInfo.
         :rtype: str
@@ -131,7 +126,6 @@ class PdfDocumentInfo(object):
     def author(self, author):
         """Sets the author of this PdfDocumentInfo.
 
-        Gets or sets author of the document.
 
         :param author: The author of this PdfDocumentInfo.
         :type: str
@@ -142,7 +136,6 @@ class PdfDocumentInfo(object):
     def subject(self):
         """Gets the subject of this PdfDocumentInfo.
 
-        Gets or sets subject of the document.
 
         :return: The subject of this PdfDocumentInfo.
         :rtype: str
@@ -153,7 +146,6 @@ class PdfDocumentInfo(object):
     def subject(self, subject):
         """Sets the subject of this PdfDocumentInfo.
 
-        Gets or sets subject of the document.
 
         :param subject: The subject of this PdfDocumentInfo.
         :type: str

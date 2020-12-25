@@ -1,5 +1,271 @@
 # asposecadcloud.CadApi
 
+<a name="copy_file"></a>
+# **copy_file**
+> copy_file(self, copy_file_request)
+
+Copy file
+
+### Return type
+
+void (empty response body)
+
+<a name="copy_file_async"></a>
+# **copy_file_async**
+> copy_file_async(self, copy_file_request)
+
+Copy file
+
+Performs operation asynchronously.
+
+### Return type
+
+void (empty response body)
+
+### CopyFileRequest Parameters
+```python
+__init__(self, 
+    src_path, 
+    dest_path, 
+    src_storage_name=src_storage_name, 
+    dest_storage_name=dest_storage_name, 
+    version_id=version_id)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **src_path** | **str**| Source file path e.g. &#39;/folder/file.ext&#39; | 
+ **dest_path** | **str**| Destination file path | 
+ **src_storage_name** | **str**| Source storage name | [optional] 
+ **dest_storage_name** | **str**| Destination storage name | [optional] 
+ **version_id** | **str**| File version ID to copy | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="copy_folder"></a>
+# **copy_folder**
+> copy_folder(self, copy_folder_request)
+
+Copy folder
+
+### Return type
+
+void (empty response body)
+
+<a name="copy_folder_async"></a>
+# **copy_folder_async**
+> copy_folder_async(self, copy_folder_request)
+
+Copy folder
+
+Performs operation asynchronously.
+
+### Return type
+
+void (empty response body)
+
+### CopyFolderRequest Parameters
+```python
+__init__(self, 
+    src_path, 
+    dest_path, 
+    src_storage_name=src_storage_name, 
+    dest_storage_name=dest_storage_name)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **src_path** | **str**| Source folder path e.g. &#39;/src&#39; | 
+ **dest_path** | **str**| Destination folder path e.g. &#39;/dst&#39; | 
+ **src_storage_name** | **str**| Source storage name | [optional] 
+ **dest_storage_name** | **str**| Destination storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="create_folder"></a>
+# **create_folder**
+> create_folder(self, create_folder_request)
+
+Create the folder
+
+### Return type
+
+void (empty response body)
+
+<a name="create_folder_async"></a>
+# **create_folder_async**
+> create_folder_async(self, create_folder_request)
+
+Create the folder
+
+Performs operation asynchronously.
+
+### Return type
+
+void (empty response body)
+
+### CreateFolderRequest Parameters
+```python
+__init__(self, 
+    path, 
+    storage_name=storage_name)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **str**| Folder path to create e.g. &#39;folder_1/folder_2/&#39; | 
+ **storage_name** | **str**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="delete_file"></a>
+# **delete_file**
+> delete_file(self, delete_file_request)
+
+Delete file
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_file_async"></a>
+# **delete_file_async**
+> delete_file_async(self, delete_file_request)
+
+Delete file
+
+Performs operation asynchronously.
+
+### Return type
+
+void (empty response body)
+
+### DeleteFileRequest Parameters
+```python
+__init__(self, 
+    path, 
+    storage_name=storage_name, 
+    version_id=version_id)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **str**| File path e.g. &#39;/folder/file.ext&#39; | 
+ **storage_name** | **str**| Storage name | [optional] 
+ **version_id** | **str**| File version ID to delete | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="delete_folder"></a>
+# **delete_folder**
+> delete_folder(self, delete_folder_request)
+
+Delete folder
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_folder_async"></a>
+# **delete_folder_async**
+> delete_folder_async(self, delete_folder_request)
+
+Delete folder
+
+Performs operation asynchronously.
+
+### Return type
+
+void (empty response body)
+
+### DeleteFolderRequest Parameters
+```python
+__init__(self, 
+    path, 
+    storage_name=storage_name, 
+    recursive=recursive)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **str**| Folder path e.g. &#39;/folder&#39; | 
+ **storage_name** | **str**| Storage name | [optional] 
+ **recursive** | **bool**| Enable to delete folders, subfolders and files | [optional] [default to false]
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="download_file"></a>
+# **download_file**
+> download_file(self, download_file_request)
+
+Download file
+
+### Return type
+
+**file**
+
+<a name="download_file_async"></a>
+# **download_file_async**
+> download_file_async(self, download_file_request)
+
+Download file
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### DownloadFileRequest Parameters
+```python
+__init__(self, 
+    path, 
+    storage_name=storage_name, 
+    version_id=version_id)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **str**| File path e.g. &#39;/folder/file.ext&#39; | 
+ **storage_name** | **str**| Storage name | [optional] 
+ **version_id** | **str**| File version ID to download | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="get_disc_usage"></a>
+# **get_disc_usage**
+> get_disc_usage(self, get_disc_usage_request)
+
+Get disc usage
+
+### Return type
+
+[**DiscUsage**](DiscUsage.md)
+
+<a name="get_disc_usage_async"></a>
+# **get_disc_usage_async**
+> get_disc_usage_async(self, get_disc_usage_request)
+
+Get disc usage
+
+Performs operation asynchronously.
+
+### Return type
+
+[**DiscUsage**](DiscUsage.md)
+
+### GetDiscUsageRequest Parameters
+```python
+__init__(self, 
+    storage_name=storage_name)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **storage_name** | **str**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
 <a name="get_drawing_properties"></a>
 # **get_drawing_properties**
 > get_drawing_properties(self, get_drawing_properties_request)
@@ -167,6 +433,198 @@ Name | Type | Description  | Notes
  **folder** | **str**| Folder with a drawing to process. | [optional] 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="get_file_versions"></a>
+# **get_file_versions**
+> get_file_versions(self, get_file_versions_request)
+
+Get file versions
+
+### Return type
+
+[**FileVersions**](FileVersions.md)
+
+<a name="get_file_versions_async"></a>
+# **get_file_versions_async**
+> get_file_versions_async(self, get_file_versions_request)
+
+Get file versions
+
+Performs operation asynchronously.
+
+### Return type
+
+[**FileVersions**](FileVersions.md)
+
+### GetFileVersionsRequest Parameters
+```python
+__init__(self, 
+    path, 
+    storage_name=storage_name)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **str**| File path e.g. &#39;/file.ext&#39; | 
+ **storage_name** | **str**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="get_files_list"></a>
+# **get_files_list**
+> get_files_list(self, get_files_list_request)
+
+Get all files and folders within a folder
+
+### Return type
+
+[**FilesList**](FilesList.md)
+
+<a name="get_files_list_async"></a>
+# **get_files_list_async**
+> get_files_list_async(self, get_files_list_request)
+
+Get all files and folders within a folder
+
+Performs operation asynchronously.
+
+### Return type
+
+[**FilesList**](FilesList.md)
+
+### GetFilesListRequest Parameters
+```python
+__init__(self, 
+    path, 
+    storage_name=storage_name)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **str**| Folder path e.g. &#39;/folder&#39; | 
+ **storage_name** | **str**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="move_file"></a>
+# **move_file**
+> move_file(self, move_file_request)
+
+Move file
+
+### Return type
+
+void (empty response body)
+
+<a name="move_file_async"></a>
+# **move_file_async**
+> move_file_async(self, move_file_request)
+
+Move file
+
+Performs operation asynchronously.
+
+### Return type
+
+void (empty response body)
+
+### MoveFileRequest Parameters
+```python
+__init__(self, 
+    src_path, 
+    dest_path, 
+    src_storage_name=src_storage_name, 
+    dest_storage_name=dest_storage_name, 
+    version_id=version_id)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **src_path** | **str**| Source file path e.g. &#39;/src.ext&#39; | 
+ **dest_path** | **str**| Destination file path e.g. &#39;/dest.ext&#39; | 
+ **src_storage_name** | **str**| Source storage name | [optional] 
+ **dest_storage_name** | **str**| Destination storage name | [optional] 
+ **version_id** | **str**| File version ID to move | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="move_folder"></a>
+# **move_folder**
+> move_folder(self, move_folder_request)
+
+Move folder
+
+### Return type
+
+void (empty response body)
+
+<a name="move_folder_async"></a>
+# **move_folder_async**
+> move_folder_async(self, move_folder_request)
+
+Move folder
+
+Performs operation asynchronously.
+
+### Return type
+
+void (empty response body)
+
+### MoveFolderRequest Parameters
+```python
+__init__(self, 
+    src_path, 
+    dest_path, 
+    src_storage_name=src_storage_name, 
+    dest_storage_name=dest_storage_name)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **src_path** | **str**| Folder path to move e.g. &#39;/folder&#39; | 
+ **dest_path** | **str**| Destination folder path to move to e.g &#39;/dst&#39; | 
+ **src_storage_name** | **str**| Source storage name | [optional] 
+ **dest_storage_name** | **str**| Destination storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="object_exists"></a>
+# **object_exists**
+> object_exists(self, object_exists_request)
+
+Check if file or folder exists
+
+### Return type
+
+[**ObjectExist**](ObjectExist.md)
+
+<a name="object_exists_async"></a>
+# **object_exists_async**
+> object_exists_async(self, object_exists_request)
+
+Check if file or folder exists
+
+Performs operation asynchronously.
+
+### Return type
+
+[**ObjectExist**](ObjectExist.md)
+
+### ObjectExistsRequest Parameters
+```python
+__init__(self, 
+    path, 
+    storage_name=storage_name, 
+    version_id=version_id)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **str**| File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; | 
+ **storage_name** | **str**| Storage name | [optional] 
+ **version_id** | **str**| File version ID | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
@@ -1147,6 +1605,78 @@ Name | Type | Description  | Notes
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/WmfOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="storage_exists"></a>
+# **storage_exists**
+> storage_exists(self, storage_exists_request)
+
+Check if storage exists
+
+### Return type
+
+[**StorageExist**](StorageExist.md)
+
+<a name="storage_exists_async"></a>
+# **storage_exists_async**
+> storage_exists_async(self, storage_exists_request)
+
+Check if storage exists
+
+Performs operation asynchronously.
+
+### Return type
+
+[**StorageExist**](StorageExist.md)
+
+### StorageExistsRequest Parameters
+```python
+__init__(self, 
+    storage_name)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **storage_name** | **str**| Storage name | 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="upload_file"></a>
+# **upload_file**
+> upload_file(self, upload_file_request)
+
+Upload file
+
+### Return type
+
+[**FilesUploadResult**](FilesUploadResult.md)
+
+<a name="upload_file_async"></a>
+# **upload_file_async**
+> upload_file_async(self, upload_file_request)
+
+Upload file
+
+Performs operation asynchronously.
+
+### Return type
+
+[**FilesUploadResult**](FilesUploadResult.md)
+
+### UploadFileRequest Parameters
+```python
+__init__(self, 
+    path, 
+    file, 
+    storage_name=storage_name)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **str**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.              | 
+ **file** | **file**| File to upload | 
+ **storage_name** | **str**| Storage name | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 

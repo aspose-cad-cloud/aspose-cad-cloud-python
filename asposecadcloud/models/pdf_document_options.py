@@ -30,7 +30,7 @@ import six
 
 
 class PdfDocumentOptions(object):
-    """The PDF options.
+    """
     """
 
     """
@@ -41,7 +41,7 @@ class PdfDocumentOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'compliance': 'object'
+        'compliance': 'str'
     }
 
     attribute_map = {
@@ -61,10 +61,9 @@ class PdfDocumentOptions(object):
     def compliance(self):
         """Gets the compliance of this PdfDocumentOptions.
 
-        Desired conformance level for generated PDF document. Important note: This option should not be changed after PdfDocument object is constructed. Default is Pdf15.
 
         :return: The compliance of this PdfDocumentOptions.
-        :rtype: object
+        :rtype: str
         """
         return self._compliance
 
@@ -72,14 +71,21 @@ class PdfDocumentOptions(object):
     def compliance(self, compliance):
         """Sets the compliance of this PdfDocumentOptions.
 
-        Desired conformance level for generated PDF document. Important note: This option should not be changed after PdfDocument object is constructed. Default is Pdf15.
 
         :param compliance: The compliance of this PdfDocumentOptions.
-        :type: object
+        :type: str
         """
         if compliance is None:
             raise ValueError("Invalid value for `compliance`, must not be `None`")
-        self._compliance = compliance
+        allowed_values = ["Pdf15", "PdfA1a", "PdfA1b"]
+        if not compliance.isdigit():
+            if compliance not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compliance` ({0}), must be one of {1}"
+                    .format(compliance, allowed_values))
+            self._compliance = compliance
+        else:
+            self._compliance = allowed_values[int(compliance) if six.PY3 else long(compliance)]
 
     def to_dict(self):
         """Returns the model properties as a dict"""

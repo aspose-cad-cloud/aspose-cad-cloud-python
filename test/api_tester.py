@@ -37,11 +37,6 @@ import asposecadcloud.models.requests as requests
 from asposecadcloud.api_client import ApiClient
 from asposecadcloud import CadApi
 
-import asposestoragecloud.models as storageApiResponses
-from asposestoragecloud.configuration import Configuration as StorageApiConfiguration
-from asposestoragecloud.api_client import ApiClient as StorageApiClient
-from asposestoragecloud import StorageApi
-
 if six.PY2:
     import unittest2 as unittest
 else:
@@ -79,13 +74,13 @@ class ApiTester(unittest.TestCase):
 
         self.__create_api_instance()
 
-        folderExists = self.storage_api.get_is_exist(path = self.temp_folder, storage = self.test_storage)
-        if not folderExists.file_exist.is_exist:
-            self.storage_api.put_create_folder(path = self.temp_folder, storage = self.test_storage)
+        folderExists = self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.temp_folder, storage = self.test_storage))
+        if not folderExists.exists:
+            self.cad_api.create_folder(requests.CreateFolderRequest(path = self.temp_folder, storage = self.test_storage))
 
     def tearDown(self):
-        if not self.failed_any_test and self.remove_result and self.storage_api.get_is_exist(path = self.temp_folder, storage = self.test_storage).file_exist.is_exist:
-            self.storage_api.delete_folder(path = self.temp_folder, storage = self.test_storage)
+        if not self.failed_any_test and self.remove_result and self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.temp_folder, storage = self.test_storage).file_exist.is_exist)):
+            self.cad_api.delete_folder(requests.DeleteFolderRequest(path = self.temp_folder, storage = self.test_storage))
 
     def __create_api_instance(self):
         print('Trying to obtain configuration from environment variables.')
@@ -150,37 +145,27 @@ class ApiTester(unittest.TestCase):
 
         self.cad_api = CadApi(app_key, app_sid, base_url, api_version, True, proxy)
 
-        self.storage_api_config = StorageApiConfiguration()
-        self.storage_api_config.debug = True
-        self.storage_api_config.host = base_url
-        self.storage_api_config.base_url = base_url + "/" + api_version
-        self.storage_api_config.api_key = app_key
-        self.storage_api_config.proxy = proxy
+        testFolderExists = self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.original_data_folder, storage=self.test_storage))
+        if not testFolderExists.exists:
+            self.cad_api.create_folder(requests.CreateFolderRequest(path = self.original_data_folder, storage=self.test_storage))
 
-        self.storage_api_client = StorageApiClient(app_key, app_sid, base_url, self.storage_api_config)
-        self.storage_api = StorageApi(self.storage_api_client)
-
-        testFolderExists = self.storage_api.get_is_exist(path = self.original_data_folder, storage=self.test_storage)
-        if not testFolderExists.file_exist.is_exist:
-            self.storage_api.put_create_folder(path = self.original_data_folder, storage=self.test_storage)
-
-        self.input_test_files = self.storage_api.get_list_files(
+        self.input_test_files = self.cad_api.get_files_list(requests.GetFilesListRequest(
                 path = self.original_data_folder,
-                storage = self.test_storage).files
+                storage = self.test_storage)).value
 
         if len(self.input_test_files) == 0:
             for filename in os.listdir(self._local_test_folder):
                 if not filename.endswith(".json"):
                     remote_file_name = self.original_data_folder + "/" + filename
-                    if not self.storage_api.get_is_exist(path = remote_file_name, storage=self.test_storage).file_exist.is_exist:
+                    if not self.cad_api.object_exists(requests.ObjectExistsRequest(path = remote_file_name, storage=self.test_storage)).exists:
                         f = open(self._local_test_folder + "/" + filename, "rb").read()
-                        self.storage_api.put_create(remote_file_name, f, storage=self.test_storage)
+                        self.cad_api.upload_file(requests.UploadFileRequest(remote_file_name, f, storage=self.test_storage))
                     continue
                 else:
                     continue
-            self.input_test_files = self.storage_api.get_list_files(
+            self.input_test_files = self.cad_api.get_files_list(requests.GetFilesListRequest(
                 path = self.original_data_folder,
-                storage = self.test_storage).files
+                storage = self.test_storage)).value
 
     def __request_tester(
             self,

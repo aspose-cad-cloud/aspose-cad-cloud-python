@@ -27,7 +27,7 @@
 from setuptools import setup, find_packages
 
 NAME = "aspose-cad-cloud"
-VERSION = "19.11.0"
+VERSION = "20.11.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -39,8 +39,7 @@ REQUIRES = [
     "urllib3>=1.22",
     "six>=1.11",
     "certifi>=2018.1",
-    "python_dateutil>=2.8",
-    "asposestoragecloud>=1.0.6"
+    "python_dateutil>=2.8"
 ]
 
 with open("README.md", "r") as fh:

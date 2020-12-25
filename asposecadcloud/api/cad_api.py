@@ -62,6 +62,146 @@ class CadApi(object):
 									  proxy=proxy)
         self.api_client = ApiClient(configuration)
 
+    def copy_file(self, request):
+        """Copy file
+
+
+        :param request CopyFileRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', None)
+
+    def copy_file_async(self, request):
+        """Copy file
+
+
+        :param request CopyFileRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', None)
+
+    def copy_folder(self, request):
+        """Copy folder
+
+
+        :param request CopyFolderRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', None)
+
+    def copy_folder_async(self, request):
+        """Copy folder
+
+
+        :param request CopyFolderRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', None)
+
+    def create_folder(self, request):
+        """Create the folder
+
+
+        :param request CreateFolderRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', None)
+
+    def create_folder_async(self, request):
+        """Create the folder
+
+
+        :param request CreateFolderRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', None)
+
+    def delete_file(self, request):
+        """Delete file
+
+
+        :param request DeleteFileRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'DELETE', None)
+
+    def delete_file_async(self, request):
+        """Delete file
+
+
+        :param request DeleteFileRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'DELETE', None)
+
+    def delete_folder(self, request):
+        """Delete folder
+
+
+        :param request DeleteFolderRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'DELETE', None)
+
+    def delete_folder_async(self, request):
+        """Delete folder
+
+
+        :param request DeleteFolderRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'DELETE', None)
+
+    def download_file(self, request):
+        """Download file
+
+
+        :param request DownloadFileRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'GET', 'file')
+
+    def download_file_async(self, request):
+        """Download file
+
+
+        :param request DownloadFileRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'GET', 'file')
+
+    def get_disc_usage(self, request):
+        """Get disc usage
+
+
+        :param request GetDiscUsageRequest object with parameters
+        :return: DiscUsage
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'GET', 'DiscUsage')
+
+    def get_disc_usage_async(self, request):
+        """Get disc usage
+
+
+        :param request GetDiscUsageRequest object with parameters
+        :return: DiscUsage
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'GET', 'DiscUsage')
+
     def get_drawing_properties(self, request):
         """Retrieves info about an existing drawing.             
 
@@ -141,6 +281,106 @@ class CadApi(object):
         """
         HttpRequest = request.to_http_info(self.api_client.configuration)
         return self.__make_request_async(HttpRequest, 'GET', 'file')
+
+    def get_file_versions(self, request):
+        """Get file versions
+
+
+        :param request GetFileVersionsRequest object with parameters
+        :return: FileVersions
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'GET', 'FileVersions')
+
+    def get_file_versions_async(self, request):
+        """Get file versions
+
+
+        :param request GetFileVersionsRequest object with parameters
+        :return: FileVersions
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'GET', 'FileVersions')
+
+    def get_files_list(self, request):
+        """Get all files and folders within a folder
+
+
+        :param request GetFilesListRequest object with parameters
+        :return: FilesList
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'GET', 'FilesList')
+
+    def get_files_list_async(self, request):
+        """Get all files and folders within a folder
+
+
+        :param request GetFilesListRequest object with parameters
+        :return: FilesList
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'GET', 'FilesList')
+
+    def move_file(self, request):
+        """Move file
+
+
+        :param request MoveFileRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', None)
+
+    def move_file_async(self, request):
+        """Move file
+
+
+        :param request MoveFileRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', None)
+
+    def move_folder(self, request):
+        """Move folder
+
+
+        :param request MoveFolderRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', None)
+
+    def move_folder_async(self, request):
+        """Move folder
+
+
+        :param request MoveFolderRequest object with parameters
+        :return: None
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', None)
+
+    def object_exists(self, request):
+        """Check if file or folder exists
+
+
+        :param request ObjectExistsRequest object with parameters
+        :return: ObjectExist
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'GET', 'ObjectExist')
+
+    def object_exists_async(self, request):
+        """Check if file or folder exists
+
+
+        :param request ObjectExistsRequest object with parameters
+        :return: ObjectExist
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'GET', 'ObjectExist')
 
     def post_drawing_bmp(self, request):
         """Export an existing drawing to BMP format with export settings specified.
@@ -621,6 +861,46 @@ class CadApi(object):
         """
         HttpRequest = request.to_http_info(self.api_client.configuration)
         return self.__make_request_async(HttpRequest, 'PUT', 'file')
+
+    def storage_exists(self, request):
+        """Check if storage exists
+
+
+        :param request StorageExistsRequest object with parameters
+        :return: StorageExist
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'GET', 'StorageExist')
+
+    def storage_exists_async(self, request):
+        """Check if storage exists
+
+
+        :param request StorageExistsRequest object with parameters
+        :return: StorageExist
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'GET', 'StorageExist')
+
+    def upload_file(self, request):
+        """Upload file
+
+
+        :param request UploadFileRequest object with parameters
+        :return: FilesUploadResult
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', 'FilesUploadResult')
+
+    def upload_file_async(self, request):
+        """Upload file
+
+
+        :param request UploadFileRequest object with parameters
+        :return: FilesUploadResult
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', 'FilesUploadResult')
 
     def __make_request(self, HttpRequest, method, return_type):
         def call_api():

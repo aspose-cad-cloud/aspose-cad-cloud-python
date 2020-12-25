@@ -30,7 +30,7 @@ import six
 
 
 class ResolutionSetting(object):
-    """The resolution setting for image save options.
+    """
     """
 
     """
@@ -66,7 +66,6 @@ class ResolutionSetting(object):
     def horizontal_resolution(self):
         """Gets the horizontal_resolution of this ResolutionSetting.
 
-        Gets or sets the horizontal resolution.
 
         :return: The horizontal_resolution of this ResolutionSetting.
         :rtype: float
@@ -77,7 +76,6 @@ class ResolutionSetting(object):
     def horizontal_resolution(self, horizontal_resolution):
         """Sets the horizontal_resolution of this ResolutionSetting.
 
-        Gets or sets the horizontal resolution.
 
         :param horizontal_resolution: The horizontal_resolution of this ResolutionSetting.
         :type: float
@@ -90,7 +88,6 @@ class ResolutionSetting(object):
     def vertical_resolution(self):
         """Gets the vertical_resolution of this ResolutionSetting.
 
-        Gets or sets the vertical resolution.
 
         :return: The vertical_resolution of this ResolutionSetting.
         :rtype: float
@@ -101,7 +98,6 @@ class ResolutionSetting(object):
     def vertical_resolution(self, vertical_resolution):
         """Sets the vertical_resolution of this ResolutionSetting.
 
-        Gets or sets the vertical resolution.
 
         :param vertical_resolution: The vertical_resolution of this ResolutionSetting.
         :type: float

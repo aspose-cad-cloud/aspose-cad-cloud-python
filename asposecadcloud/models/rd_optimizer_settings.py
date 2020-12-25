@@ -30,7 +30,7 @@ import six
 
 
 class RdOptimizerSettings(object):
-    """RD optimizer settings class
+    """
     """
 
     """
@@ -91,7 +91,6 @@ class RdOptimizerSettings(object):
     def bpp_scale(self):
         """Gets the bpp_scale of this RdOptimizerSettings.
 
-        Gets or sets the BPP (bits per pixel) scale factor.
 
         :return: The bpp_scale of this RdOptimizerSettings.
         :rtype: int
@@ -102,7 +101,6 @@ class RdOptimizerSettings(object):
     def bpp_scale(self, bpp_scale):
         """Sets the bpp_scale of this RdOptimizerSettings.
 
-        Gets or sets the BPP (bits per pixel) scale factor.
 
         :param bpp_scale: The bpp_scale of this RdOptimizerSettings.
         :type: int
@@ -115,7 +113,6 @@ class RdOptimizerSettings(object):
     def bpp_max(self):
         """Gets the bpp_max of this RdOptimizerSettings.
 
-        Gets or sets the maximum R value for consideration in  in bits per pixel
 
         :return: The bpp_max of this RdOptimizerSettings.
         :rtype: float
@@ -126,7 +123,6 @@ class RdOptimizerSettings(object):
     def bpp_max(self, bpp_max):
         """Sets the bpp_max of this RdOptimizerSettings.
 
-        Gets or sets the maximum R value for consideration in  in bits per pixel
 
         :param bpp_max: The bpp_max of this RdOptimizerSettings.
         :type: float
@@ -139,7 +135,6 @@ class RdOptimizerSettings(object):
     def max_q(self):
         """Gets the max_q of this RdOptimizerSettings.
 
-        Gets or sets the maximum quantization value.
 
         :return: The max_q of this RdOptimizerSettings.
         :rtype: int
@@ -150,7 +145,6 @@ class RdOptimizerSettings(object):
     def max_q(self, max_q):
         """Sets the max_q of this RdOptimizerSettings.
 
-        Gets or sets the maximum quantization value.
 
         :param max_q: The max_q of this RdOptimizerSettings.
         :type: int
@@ -163,7 +157,6 @@ class RdOptimizerSettings(object):
     def min_q(self):
         """Gets the min_q of this RdOptimizerSettings.
 
-        Gets the minimum allowed quantization value.
 
         :return: The min_q of this RdOptimizerSettings.
         :rtype: int
@@ -174,7 +167,6 @@ class RdOptimizerSettings(object):
     def min_q(self, min_q):
         """Sets the min_q of this RdOptimizerSettings.
 
-        Gets the minimum allowed quantization value.
 
         :param min_q: The min_q of this RdOptimizerSettings.
         :type: int
@@ -187,7 +179,6 @@ class RdOptimizerSettings(object):
     def max_pixel_value(self):
         """Gets the max_pixel_value of this RdOptimizerSettings.
 
-        Gets the maximum pixel value.
 
         :return: The max_pixel_value of this RdOptimizerSettings.
         :rtype: int
@@ -198,7 +189,6 @@ class RdOptimizerSettings(object):
     def max_pixel_value(self, max_pixel_value):
         """Sets the max_pixel_value of this RdOptimizerSettings.
 
-        Gets the maximum pixel value.
 
         :param max_pixel_value: The max_pixel_value of this RdOptimizerSettings.
         :type: int
@@ -211,7 +201,6 @@ class RdOptimizerSettings(object):
     def psnr_max(self):
         """Gets the psnr_max of this RdOptimizerSettings.
 
-        Gets the PSNR maximum expected value.
 
         :return: The psnr_max of this RdOptimizerSettings.
         :rtype: int
@@ -222,7 +211,6 @@ class RdOptimizerSettings(object):
     def psnr_max(self, psnr_max):
         """Sets the psnr_max of this RdOptimizerSettings.
 
-        Gets the PSNR maximum expected value.
 
         :param psnr_max: The psnr_max of this RdOptimizerSettings.
         :type: int
@@ -235,7 +223,6 @@ class RdOptimizerSettings(object):
     def discretized_bpp_max(self):
         """Gets the discretized_bpp_max of this RdOptimizerSettings.
 
-        Gets the maximum R value for consideration.
 
         :return: The discretized_bpp_max of this RdOptimizerSettings.
         :rtype: int
@@ -246,7 +233,6 @@ class RdOptimizerSettings(object):
     def discretized_bpp_max(self, discretized_bpp_max):
         """Sets the discretized_bpp_max of this RdOptimizerSettings.
 
-        Gets the maximum R value for consideration.
 
         :param discretized_bpp_max: The discretized_bpp_max of this RdOptimizerSettings.
         :type: int

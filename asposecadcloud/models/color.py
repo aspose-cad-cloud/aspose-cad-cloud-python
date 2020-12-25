@@ -30,7 +30,7 @@ import six
 
 
 class Color(object):
-    """The color of the pixel.
+    """
     """
 
     """
@@ -96,7 +96,6 @@ class Color(object):
     def r(self):
         """Gets the r of this Color.
 
-        Gets the red component value of this Color structure.
 
         :return: The r of this Color.
         :rtype: int
@@ -107,7 +106,6 @@ class Color(object):
     def r(self, r):
         """Sets the r of this Color.
 
-        Gets the red component value of this Color structure.
 
         :param r: The r of this Color.
         :type: int
@@ -120,7 +118,6 @@ class Color(object):
     def g(self):
         """Gets the g of this Color.
 
-        Gets the green component value of this Color structure.
 
         :return: The g of this Color.
         :rtype: int
@@ -131,7 +128,6 @@ class Color(object):
     def g(self, g):
         """Sets the g of this Color.
 
-        Gets the green component value of this Color structure.
 
         :param g: The g of this Color.
         :type: int
@@ -144,7 +140,6 @@ class Color(object):
     def b(self):
         """Gets the b of this Color.
 
-        Gets the blue component value of this Color structure.
 
         :return: The b of this Color.
         :rtype: int
@@ -155,7 +150,6 @@ class Color(object):
     def b(self, b):
         """Sets the b of this Color.
 
-        Gets the blue component value of this Color structure.
 
         :param b: The b of this Color.
         :type: int
@@ -168,7 +162,6 @@ class Color(object):
     def a(self):
         """Gets the a of this Color.
 
-        Gets the alpha component value of this Color structure.
 
         :return: The a of this Color.
         :rtype: int
@@ -179,7 +172,6 @@ class Color(object):
     def a(self, a):
         """Sets the a of this Color.
 
-        Gets the alpha component value of this Color structure.
 
         :param a: The a of this Color.
         :type: int
@@ -192,7 +184,6 @@ class Color(object):
     def is_known_color(self):
         """Gets the is_known_color of this Color.
 
-        Gets a value indicating whether this Color structure is a predefined color. Predefined colors are represented by the elements of the KnownColor enumeration.
 
         :return: The is_known_color of this Color.
         :rtype: bool
@@ -203,7 +194,6 @@ class Color(object):
     def is_known_color(self, is_known_color):
         """Sets the is_known_color of this Color.
 
-        Gets a value indicating whether this Color structure is a predefined color. Predefined colors are represented by the elements of the KnownColor enumeration.
 
         :param is_known_color: The is_known_color of this Color.
         :type: bool
@@ -216,7 +206,6 @@ class Color(object):
     def is_empty(self):
         """Gets the is_empty of this Color.
 
-        Gets a value indicating whether this Color structure is uninitialized.
 
         :return: The is_empty of this Color.
         :rtype: bool
@@ -227,7 +216,6 @@ class Color(object):
     def is_empty(self, is_empty):
         """Sets the is_empty of this Color.
 
-        Gets a value indicating whether this Color structure is uninitialized.
 
         :param is_empty: The is_empty of this Color.
         :type: bool
@@ -240,7 +228,6 @@ class Color(object):
     def is_named_color(self):
         """Gets the is_named_color of this Color.
 
-        Gets a value indicating whether this Color structure is a named color or a member of the KnownColor enumeration.
 
         :return: The is_named_color of this Color.
         :rtype: bool
@@ -251,7 +238,6 @@ class Color(object):
     def is_named_color(self, is_named_color):
         """Sets the is_named_color of this Color.
 
-        Gets a value indicating whether this Color structure is a named color or a member of the KnownColor enumeration.
 
         :param is_named_color: The is_named_color of this Color.
         :type: bool
@@ -264,7 +250,6 @@ class Color(object):
     def name(self):
         """Gets the name of this Color.
 
-        Gets the name of this Color.
 
         :return: The name of this Color.
         :rtype: str
@@ -275,7 +260,6 @@ class Color(object):
     def name(self, name):
         """Sets the name of this Color.
 
-        Gets the name of this Color.
 
         :param name: The name of this Color.
         :type: str
