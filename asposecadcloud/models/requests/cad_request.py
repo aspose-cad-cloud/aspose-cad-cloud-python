@@ -1,5 +1,5 @@
--8
-#  ----------------------------------------------------------------------------
+#  coding: utf-8
+#  --------------------------------------------------------------
 #  <copyright company="Aspose" file="CadRequest.py">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
@@ -22,7 +22,7 @@
 #   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #   DEALINGS IN THE SOFTWARE.
 #  </summary>
-#  ----------------------------------------------------------------------------
+#  --------------------------------------------------------------
 
 from abc import ABCMeta, abstractmethod
 

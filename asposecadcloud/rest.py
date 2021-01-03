@@ -43,6 +43,7 @@ import six
 from six.moves.urllib.parse import urlencode
 
 import asposecadcloud
+from asposecadcloud.models.error import Error
 
 try:
     import urllib3

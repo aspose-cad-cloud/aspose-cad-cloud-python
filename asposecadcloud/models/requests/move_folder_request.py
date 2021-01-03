@@ -1,5 +1,5 @@
--8
-#  ----------------------------------------------------------------------------
+#  coding: utf-8
+#  ----------------------------------------------------------------
 #  <copyright company="Aspose" file="MoveFolderRequest.py">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
@@ -22,7 +22,7 @@
 #   FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #   DEALINGS IN THE SOFTWARE.
 #  </summary>
-#  ----------------------------------------------------------------------------
+#  -----------------------------------------------------------------
 
 from asposecadcloud.models.requests.cad_request import CadRequest
 from asposecadcloud.models.requests.http_request import HttpRequest
@@ -105,4 +105,3 @@ class MoveFolderRequest(CadRequest):
 
         return HttpRequest(path, path_params, query_params, header_params, form_params, body_params, local_var_files,
                            collection_formats, auth_settings)
-#  coding: utf

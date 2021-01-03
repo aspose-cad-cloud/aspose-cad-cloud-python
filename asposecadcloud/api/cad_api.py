@@ -977,4 +977,3 @@ class CadApi(object):
 
         self.api_client.configuration.api_version = api_version
 
-#  coding: utf
