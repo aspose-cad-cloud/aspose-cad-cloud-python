@@ -74,13 +74,13 @@ class ApiTester(unittest.TestCase):
 
         self.__create_api_instance()
 
-        folderExists = self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.temp_folder, storage = self.test_storage))
+        folderExists = self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.temp_folder, storage_name = self.test_storage))
         if not folderExists.exists:
-            self.cad_api.create_folder(requests.CreateFolderRequest(path = self.temp_folder, storage = self.test_storage))
+            self.cad_api.create_folder(requests.CreateFolderRequest(path = self.temp_folder, storage_name = self.test_storage))
 
     def tearDown(self):
-        if not self.failed_any_test and self.remove_result and self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.temp_folder, storage = self.test_storage).file_exist.is_exist)):
-            self.cad_api.delete_folder(requests.DeleteFolderRequest(path = self.temp_folder, storage = self.test_storage))
+        if not self.failed_any_test and self.remove_result and self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.temp_folder, storage_name = self.test_storage)).exists:
+            self.cad_api.delete_folder(requests.DeleteFolderRequest(path = self.temp_folder, storage_name = self.test_storage))
 
     def __create_api_instance(self):
         print('Trying to obtain configuration from environment variables.')
@@ -143,29 +143,29 @@ class ApiTester(unittest.TestCase):
         print('Base URL: ' + base_url)
         print('API version: ' + api_version)
 
-        self.cad_api = CadApi(app_key, app_sid, base_url, api_version, True, proxy)
+        self.cad_api = CadApi(app_key, app_sid, base_url, api_version, False, proxy)
 
-        testFolderExists = self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.original_data_folder, storage=self.test_storage))
+        testFolderExists = self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.original_data_folder, storage_name=self.test_storage))
         if not testFolderExists.exists:
-            self.cad_api.create_folder(requests.CreateFolderRequest(path = self.original_data_folder, storage=self.test_storage))
+            self.cad_api.create_folder(requests.CreateFolderRequest(path = self.original_data_folder, storage_name=self.test_storage))
 
         self.input_test_files = self.cad_api.get_files_list(requests.GetFilesListRequest(
                 path = self.original_data_folder,
-                storage = self.test_storage)).value
+                storage_name = self.test_storage)).value
 
         if len(self.input_test_files) == 0:
             for filename in os.listdir(self._local_test_folder):
                 if not filename.endswith(".json"):
                     remote_file_name = self.original_data_folder + "/" + filename
-                    if not self.cad_api.object_exists(requests.ObjectExistsRequest(path = remote_file_name, storage=self.test_storage)).exists:
-                        f = open(self._local_test_folder + "/" + filename, "rb").read()
-                        self.cad_api.upload_file(requests.UploadFileRequest(remote_file_name, f, storage=self.test_storage))
+                    if not self.cad_api.object_exists(requests.ObjectExistsRequest(path = remote_file_name, storage_name=self.test_storage)).exists:
+                        f = self._local_test_folder + "/" + filename # open(self._local_test_folder + "/" + filename, "rb").read()
+                        self.cad_api.upload_file(requests.UploadFileRequest(remote_file_name, f, storage_name=self.test_storage))
                     continue
                 else:
                     continue
             self.input_test_files = self.cad_api.get_files_list(requests.GetFilesListRequest(
                 path = self.original_data_folder,
-                storage = self.test_storage)).value
+                storage_name = self.test_storage)).value
 
     def __request_tester(
             self,
@@ -209,7 +209,7 @@ class ApiTester(unittest.TestCase):
             raise
         finally:
             if passed and out_path and self.remove_result:
-                self.storage_api.delete_file(path=out_path, storage=storage)
+                self.cad_api.delete_file(requests.DeleteFileRequest(path=out_path, storage_name=storage))
                 
             print("Test passed: " + str(passed) + os.linesep)
 
@@ -271,7 +271,7 @@ class ApiTester(unittest.TestCase):
         folder = parts[0]
         file_name = parts[1]
 
-        file_list_response = self.storage_api.get_list_files(path=folder, storage=storage).files
+        file_list_response = self.cad_api.get_files_list(requests.GetFilesListRequest(path=folder, storage_name=storage)).value
 
         for storage_file_info in file_list_response:
             if storage_file_info.name == file_name:
@@ -295,7 +295,7 @@ class ApiTester(unittest.TestCase):
             out_path,
             storage,
             request_invoker):
-        res = self.storage_api.get_download(path=input_path, storage=storage)
+        res = self.cad_api.download_file(requests.DownloadFileRequest(path=input_path, storage_name=storage))
 
         response = request_invoker(res, out_path)
 
