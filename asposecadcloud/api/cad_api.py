@@ -402,6 +402,66 @@ class CadApi(object):
         HttpRequest = request.to_http_info(self.api_client.configuration)
         return self.__make_request_async(HttpRequest, 'POST', 'file')
 
+    def post_drawing_dwf(self, request):
+        """Export an existing drawing to Dwf format with export settings specified.
+
+
+        :param request PostDrawingDwfRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'POST', 'file')
+
+    def post_drawing_dwf_async(self, request):
+        """Export an existing drawing to Dwf format with export settings specified.
+
+
+        :param request PostDrawingDwfRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'POST', 'file')
+
+    def post_drawing_dxf(self, request):
+        """Export an existing drawing to DXF format with export settings specified.
+
+
+        :param request PostDrawingDxfRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'POST', 'file')
+
+    def post_drawing_dxf_async(self, request):
+        """Export an existing drawing to DXF format with export settings specified.
+
+
+        :param request PostDrawingDxfRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'POST', 'file')
+
+    def post_drawing_fbx(self, request):
+        """Export an existing drawing to Fbx format with export settings specified.
+
+
+        :param request PostDrawingFbxRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'POST', 'file')
+
+    def post_drawing_fbx_async(self, request):
+        """Export an existing drawing to Fbx format with export settings specified.
+
+
+        :param request PostDrawingFbxRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'POST', 'file')
+
     def post_drawing_gif(self, request):
         """Export an existing drawing into GIF format with export settings specified.
 
@@ -457,6 +517,26 @@ class CadApi(object):
 
 
         :param request PostDrawingJpeg2000Request object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'POST', 'file')
+
+    def post_drawing_obj(self, request):
+        """Export an existing drawing to Obj format with export settings specified.
+
+
+        :param request PostDrawingObjRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'POST', 'file')
+
+    def post_drawing_obj_async(self, request):
+        """Export an existing drawing to Obj format with export settings specified.
+
+
+        :param request PostDrawingObjRequest object with parameters
         :return: file
         """
         HttpRequest = request.to_http_info(self.api_client.configuration)
@@ -682,6 +762,66 @@ class CadApi(object):
         HttpRequest = request.to_http_info(self.api_client.configuration)
         return self.__make_request_async(HttpRequest, 'PUT', 'file')
 
+    def put_drawing_dwf(self, request):
+        """Export drawing to Dwf format. Drawing data is passed as zero-indexed multipart/form-data as well as export Dwf options serialized as JSON. Order of drawing data and Dwf options could vary.
+
+
+        :param request PutDrawingDwfRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', 'file')
+
+    def put_drawing_dwf_async(self, request):
+        """Export drawing to Dwf format. Drawing data is passed as zero-indexed multipart/form-data as well as export Dwf options serialized as JSON. Order of drawing data and Dwf options could vary.
+
+
+        :param request PutDrawingDwfRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', 'file')
+
+    def put_drawing_dxf(self, request):
+        """Export drawing to DXF format. Drawing data is passed as zero-indexed multipart/form-data as well as export DXF options serialized as JSON. Order of drawing data and DXF options could vary.
+
+
+        :param request PutDrawingDxfRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', 'file')
+
+    def put_drawing_dxf_async(self, request):
+        """Export drawing to DXF format. Drawing data is passed as zero-indexed multipart/form-data as well as export DXF options serialized as JSON. Order of drawing data and DXF options could vary.
+
+
+        :param request PutDrawingDxfRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', 'file')
+
+    def put_drawing_fbx(self, request):
+        """Export drawing to Fbx format. Drawing data is passed as zero-indexed multipart/form-data as well as export Fbx options serialized as JSON. Order of drawing data and Fbx options could vary.
+
+
+        :param request PutDrawingFbxRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', 'file')
+
+    def put_drawing_fbx_async(self, request):
+        """Export drawing to Fbx format. Drawing data is passed as zero-indexed multipart/form-data as well as export Fbx options serialized as JSON. Order of drawing data and Fbx options could vary.
+
+
+        :param request PutDrawingFbxRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', 'file')
+
     def put_drawing_gif(self, request):
         """Export drawing to GIF format. Drawing data is passed as zero-indexed multipart/form-data as well as export GIF options serialized as JSON. Order of drawing data and GIF options could vary.
 
@@ -737,6 +877,26 @@ class CadApi(object):
 
 
         :param request PutDrawingJpeg2000Request object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', 'file')
+
+    def put_drawing_obj(self, request):
+        """Export drawing to Obj format. Drawing data is passed as zero-indexed multipart/form-data as well as export Obj options serialized as JSON. Order of drawing data and Obj options could vary.
+
+
+        :param request PutDrawingObjRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', 'file')
+
+    def put_drawing_obj_async(self, request):
+        """Export drawing to Obj format. Drawing data is passed as zero-indexed multipart/form-data as well as export Obj options serialized as JSON. Order of drawing data and Obj options could vary.
+
+
+        :param request PutDrawingObjRequest object with parameters
         :return: file
         """
         HttpRequest = request.to_http_info(self.api_client.configuration)

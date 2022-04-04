@@ -13,7 +13,10 @@ Name | Type | Description | Notes
 **igs_properties** | [**IgsProperties**](IgsProperties.md) | Gets or sets the IGS properties. | [optional] 
 **stl_properties** | [**StlProperties**](StlProperties.md) | Gets or sets the STL properties. | [optional] 
 **dwf_properties** | [**DwfProperties**](DwfProperties.md) | Gets or sets the DWF properties. | [optional] 
-**cff2_properties** | [**Cff2Properties**](Cff2Properties.md) | Gets or sets the CFF2 properties. | [optional] 
+**cf2_properties** | [**Cf2Properties**](Cf2Properties.md) | Gets or sets the Cf2 properties. | [optional] 
+**fbx_properties** | [**FbxProperties**](FbxProperties.md) | Gets or sets the Cf2 properties. | [optional] 
+**obj_properties** | [**ObjProperties**](ObjProperties.md) | Gets or sets the FBX properties. | [optional] 
+**plt_properties** | [**PltProperties**](PltProperties.md) | Gets or sets the Cf2 properties. | [optional] 
 
 [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to API_README]](API_README.md)
 

@@ -670,6 +670,132 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
+<a name="post_drawing_dwf"></a>
+# **post_drawing_dwf**
+> post_drawing_dwf(self, post_drawing_dwf_request)
+
+Export an existing drawing to Dwf format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_dwf_async"></a>
+# **post_drawing_dwf_async**
+> post_drawing_dwf_async(self, post_drawing_dwf_request)
+
+Export an existing drawing to Dwf format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingDwfRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**DwfOptionsDTO**](DwfOptionsDTO.md)| Export Dwf options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="post_drawing_dxf"></a>
+# **post_drawing_dxf**
+> post_drawing_dxf(self, post_drawing_dxf_request)
+
+Export an existing drawing to DXF format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_dxf_async"></a>
+# **post_drawing_dxf_async**
+> post_drawing_dxf_async(self, post_drawing_dxf_request)
+
+Export an existing drawing to DXF format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingDXFRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**DxfOptionsDTO**](DxfOptionsDTO.md)| Export DXF options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="post_drawing_fbx"></a>
+# **post_drawing_fbx**
+> post_drawing_fbx(self, post_drawing_fbx_request)
+
+Export an existing drawing to Fbx format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_fbx_async"></a>
+# **post_drawing_fbx_async**
+> post_drawing_fbx_async(self, post_drawing_fbx_request)
+
+Export an existing drawing to Fbx format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingFbxRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**FbxOptionsDTO**](FbxOptionsDTO.md)| Export Fbx options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
 <a name="post_drawing_gif"></a>
 # **post_drawing_gif**
 > post_drawing_gif(self, post_drawing_gif_request)
@@ -790,6 +916,48 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Filename of an input drawing on a storage. | 
  **options** | [**Jpeg2000OptionsDTO**](Jpeg2000OptionsDTO.md)| Export JPEG2000 options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="post_drawing_obj"></a>
+# **post_drawing_obj**
+> post_drawing_obj(self, post_drawing_obj_request)
+
+Export an existing drawing to Obj format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_obj_async"></a>
+# **post_drawing_obj_async**
+> post_drawing_obj_async(self, post_drawing_obj_request)
+
+Export an existing drawing to Obj format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingObjRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**ObjOptionsDTO**](ObjOptionsDTO.md)| Export Obj options passed as a JSON on a request body. | 
  **folder** | **str**| Folder with a drawing to process. | [optional] 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
@@ -1248,6 +1416,126 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
+<a name="put_drawing_dwf"></a>
+# **put_drawing_dwf**
+> put_drawing_dwf(self, put_drawing_dwf_request)
+
+Export drawing to Dwf format. Drawing data is passed as zero-indexed multipart/form-data as well as export Dwf options serialized as JSON. Order of drawing data and Dwf options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_dwf_async"></a>
+# **put_drawing_dwf_async**
+> put_drawing_dwf_async(self, put_drawing_dwf_request)
+
+Export drawing to Dwf format. Drawing data is passed as zero-indexed multipart/form-data as well as export Dwf options serialized as JSON. Order of drawing data and Dwf options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingDwfRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/DwfOptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="put_drawing_dxf"></a>
+# **put_drawing_dxf**
+> put_drawing_dxf(self, put_drawing_dxf_request)
+
+Export drawing to DXF format. Drawing data is passed as zero-indexed multipart/form-data as well as export DXF options serialized as JSON. Order of drawing data and DXF options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_dxf_async"></a>
+# **put_drawing_dxf_async**
+> put_drawing_dxf_async(self, put_drawing_dxf_request)
+
+Export drawing to DXF format. Drawing data is passed as zero-indexed multipart/form-data as well as export DXF options serialized as JSON. Order of drawing data and DXF options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingDXFRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/DxfOptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="put_drawing_fbx"></a>
+# **put_drawing_fbx**
+> put_drawing_fbx(self, put_drawing_fbx_request)
+
+Export drawing to Fbx format. Drawing data is passed as zero-indexed multipart/form-data as well as export Fbx options serialized as JSON. Order of drawing data and Fbx options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_fbx_async"></a>
+# **put_drawing_fbx_async**
+> put_drawing_fbx_async(self, put_drawing_fbx_request)
+
+Export drawing to Fbx format. Drawing data is passed as zero-indexed multipart/form-data as well as export Fbx options serialized as JSON. Order of drawing data and Fbx options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingFbxRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/FbxOptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
 <a name="put_drawing_gif"></a>
 # **put_drawing_gif**
 > put_drawing_gif(self, put_drawing_gif_request)
@@ -1364,6 +1652,46 @@ Name | Type | Description  | Notes
  **drawing_data** | **file**| Input drawing | 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/Jpeg2000OptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="put_drawing_obj"></a>
+# **put_drawing_obj**
+> put_drawing_obj(self, put_drawing_obj_request)
+
+Export drawing to Obj format. Drawing data is passed as zero-indexed multipart/form-data as well as export Obj options serialized as JSON. Order of drawing data and Obj options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_obj_async"></a>
+# **put_drawing_obj_async**
+> put_drawing_obj_async(self, put_drawing_obj_request)
+
+Export drawing to Obj format. Drawing data is passed as zero-indexed multipart/form-data as well as export Obj options serialized as JSON. Order of drawing data and Obj options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingObjRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/ObjOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)

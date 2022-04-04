@@ -45,9 +45,9 @@ class PngOptionsDTO(DrawingOptionsBaseDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'color_type': 'object',
+        'color_type': 'str',
         'progressive': 'bool',
-        'filter_type': 'object',
+        'filter_type': 'str',
         'compression_level': 'int',
         'bit_depth': 'int'
     }
@@ -88,7 +88,7 @@ class PngOptionsDTO(DrawingOptionsBaseDTO):
         Color type
 
         :return: The color_type of this PngOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._color_type
 
@@ -99,11 +99,19 @@ class PngOptionsDTO(DrawingOptionsBaseDTO):
         Color type
 
         :param color_type: The color_type of this PngOptionsDTO.
-        :type: object
+        :type: str
         """
         if color_type is None:
             raise ValueError("Invalid value for `color_type`, must not be `None`")
-        self._color_type = color_type
+        allowed_values = ["Grayscale", "Truecolor", "IndexedColor", "GrayscaleWithAlpha", "TruecolorWithAlpha"]
+        if not color_type.isdigit():
+            if color_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `color_type` ({0}), must be one of {1}"
+                    .format(color_type, allowed_values))
+            self._color_type = color_type
+        else:
+            self._color_type = allowed_values[int(color_type) if six.PY3 else long(color_type)]
 
     @property
     def progressive(self):
@@ -136,7 +144,7 @@ class PngOptionsDTO(DrawingOptionsBaseDTO):
         Filter type
 
         :return: The filter_type of this PngOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._filter_type
 
@@ -147,11 +155,19 @@ class PngOptionsDTO(DrawingOptionsBaseDTO):
         Filter type
 
         :param filter_type: The filter_type of this PngOptionsDTO.
-        :type: object
+        :type: str
         """
         if filter_type is None:
             raise ValueError("Invalid value for `filter_type`, must not be `None`")
-        self._filter_type = filter_type
+        allowed_values = ["None", "Sub", "Up", "Avg", "Paeth", "Adaptive"]
+        if not filter_type.isdigit():
+            if filter_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `filter_type` ({0}), must be one of {1}"
+                    .format(filter_type, allowed_values))
+            self._filter_type = filter_type
+        else:
+            self._filter_type = allowed_values[int(filter_type) if six.PY3 else long(filter_type)]
 
     @property
     def compression_level(self):

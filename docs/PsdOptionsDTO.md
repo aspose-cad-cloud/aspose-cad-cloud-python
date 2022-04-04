@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **version** | **int** | PSD format version | 
-**compression_method** | **object** | Compression method | 
-**color_mode** | **object** | Color mode | 
+**compression_method** | **str** | Compression method | 
+**color_mode** | **str** | Color mode | 
 **channel_bits_count** | **int** | Bits count per channel | 
 **channels_count** | **int** | Channels count | 
 

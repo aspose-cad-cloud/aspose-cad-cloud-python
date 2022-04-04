@@ -46,8 +46,8 @@ class PsdOptionsDTO(DrawingOptionsBaseDTO):
     """
     swagger_types = {
         'version': 'int',
-        'compression_method': 'object',
-        'color_mode': 'object',
+        'compression_method': 'str',
+        'color_mode': 'str',
         'channel_bits_count': 'int',
         'channels_count': 'int'
     }
@@ -112,7 +112,7 @@ class PsdOptionsDTO(DrawingOptionsBaseDTO):
         Compression method
 
         :return: The compression_method of this PsdOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._compression_method
 
@@ -123,11 +123,19 @@ class PsdOptionsDTO(DrawingOptionsBaseDTO):
         Compression method
 
         :param compression_method: The compression_method of this PsdOptionsDTO.
-        :type: object
+        :type: str
         """
         if compression_method is None:
             raise ValueError("Invalid value for `compression_method`, must not be `None`")
-        self._compression_method = compression_method
+        allowed_values = ["Raw", "RLE", "ZipWithoutPrediction", "ZipWithPrediction"]
+        if not compression_method.isdigit():
+            if compression_method not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compression_method` ({0}), must be one of {1}"
+                    .format(compression_method, allowed_values))
+            self._compression_method = compression_method
+        else:
+            self._compression_method = allowed_values[int(compression_method) if six.PY3 else long(compression_method)]
 
     @property
     def color_mode(self):
@@ -136,7 +144,7 @@ class PsdOptionsDTO(DrawingOptionsBaseDTO):
         Color mode
 
         :return: The color_mode of this PsdOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._color_mode
 
@@ -147,11 +155,19 @@ class PsdOptionsDTO(DrawingOptionsBaseDTO):
         Color mode
 
         :param color_mode: The color_mode of this PsdOptionsDTO.
-        :type: object
+        :type: str
         """
         if color_mode is None:
             raise ValueError("Invalid value for `color_mode`, must not be `None`")
-        self._color_mode = color_mode
+        allowed_values = ["Bitmap", "Grayscale", "Indexed", "Rgb", "Cmyk", "Multichannel", "Duotone", "Lab"]
+        if not color_mode.isdigit():
+            if color_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `color_mode` ({0}), must be one of {1}"
+                    .format(color_mode, allowed_values))
+            self._color_mode = color_mode
+        else:
+            self._color_mode = allowed_values[int(color_mode) if six.PY3 else long(color_mode)]
 
     @property
     def channel_bits_count(self):

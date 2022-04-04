@@ -28,6 +28,8 @@ import pprint
 import re
 import six
 
+from asposecadcloud.models.pdf_digital_signature_details_core import PdfDigitalSignatureDetailsCore
+
 
 class PdfDocumentOptions(object):
     """
@@ -41,21 +43,26 @@ class PdfDocumentOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'compliance': 'str'
+        'compliance': 'str',
+        'digital_signature_details': 'PdfDigitalSignatureDetailsCore'
     }
 
     attribute_map = {
-        'compliance': 'Compliance'
+        'compliance': 'Compliance',
+        'digital_signature_details': 'DigitalSignatureDetails'
     }
 
-    def __init__(self, compliance=None):
+    def __init__(self, compliance=None, digital_signature_details=None):
         """PdfDocumentOptions - a model defined in Swagger"""
         super(PdfDocumentOptions, self).__init__()
 
         self._compliance = None
+        self._digital_signature_details = None
 
         if compliance is not None:
             self.compliance = compliance
+        if digital_signature_details is not None:
+            self.digital_signature_details = digital_signature_details
 
     @property
     def compliance(self):
@@ -86,6 +93,26 @@ class PdfDocumentOptions(object):
             self._compliance = compliance
         else:
             self._compliance = allowed_values[int(compliance) if six.PY3 else long(compliance)]
+
+    @property
+    def digital_signature_details(self):
+        """Gets the digital_signature_details of this PdfDocumentOptions.
+
+
+        :return: The digital_signature_details of this PdfDocumentOptions.
+        :rtype: PdfDigitalSignatureDetailsCore
+        """
+        return self._digital_signature_details
+
+    @digital_signature_details.setter
+    def digital_signature_details(self, digital_signature_details):
+        """Sets the digital_signature_details of this PdfDocumentOptions.
+
+
+        :param digital_signature_details: The digital_signature_details of this PdfDocumentOptions.
+        :type: PdfDigitalSignatureDetailsCore
+        """
+        self._digital_signature_details = digital_signature_details
 
     def to_dict(self):
         """Returns the model properties as a dict"""

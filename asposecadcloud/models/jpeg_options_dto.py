@@ -47,8 +47,8 @@ class JpegOptionsDTO(DrawingOptionsBaseDTO):
     """
     swagger_types = {
         'comment': 'str',
-        'compression_type': 'object',
-        'color_type': 'object',
+        'compression_type': 'str',
+        'color_type': 'str',
         'quality': 'int',
         'rd_opt_settings': 'RdOptimizerSettings'
     }
@@ -111,7 +111,7 @@ class JpegOptionsDTO(DrawingOptionsBaseDTO):
         Compression type
 
         :return: The compression_type of this JpegOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._compression_type
 
@@ -122,11 +122,19 @@ class JpegOptionsDTO(DrawingOptionsBaseDTO):
         Compression type
 
         :param compression_type: The compression_type of this JpegOptionsDTO.
-        :type: object
+        :type: str
         """
         if compression_type is None:
             raise ValueError("Invalid value for `compression_type`, must not be `None`")
-        self._compression_type = compression_type
+        allowed_values = ["Baseline", "Progressive", "Lossless", "JpegLs"]
+        if not compression_type.isdigit():
+            if compression_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compression_type` ({0}), must be one of {1}"
+                    .format(compression_type, allowed_values))
+            self._compression_type = compression_type
+        else:
+            self._compression_type = allowed_values[int(compression_type) if six.PY3 else long(compression_type)]
 
     @property
     def color_type(self):
@@ -135,7 +143,7 @@ class JpegOptionsDTO(DrawingOptionsBaseDTO):
         Color type
 
         :return: The color_type of this JpegOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._color_type
 
@@ -146,11 +154,19 @@ class JpegOptionsDTO(DrawingOptionsBaseDTO):
         Color type
 
         :param color_type: The color_type of this JpegOptionsDTO.
-        :type: object
+        :type: str
         """
         if color_type is None:
             raise ValueError("Invalid value for `color_type`, must not be `None`")
-        self._color_type = color_type
+        allowed_values = ["Grayscale", "YCbCr", "Cmyk", "Ycck", "Rgb"]
+        if not color_type.isdigit():
+            if color_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `color_type` ({0}), must be one of {1}"
+                    .format(color_type, allowed_values))
+            self._color_type = color_type
+        else:
+            self._color_type = allowed_values[int(color_type) if six.PY3 else long(color_type)]
 
     @property
     def quality(self):

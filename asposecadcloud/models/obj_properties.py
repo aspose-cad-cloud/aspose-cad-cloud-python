@@ -1,6 +1,6 @@
 #  coding: utf-8
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="Cff2Properties.py">
+#  <copyright company="Aspose" file="ObjProperties.py">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,8 +29,8 @@ import re
 import six
 
 
-class Cff2Properties(object):
-    """Represents information about CFF2 drawing.
+class ObjProperties(object):
+    """Represents information about OBJ drawing.
     """
 
     """
@@ -47,8 +47,8 @@ class Cff2Properties(object):
     }
 
     def __init__(self):
-        """Cff2Properties - a model defined in Swagger"""
-        super(Cff2Properties, self).__init__()
+        """ObjProperties - a model defined in Swagger"""
+        super(ObjProperties, self).__init__()
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -84,7 +84,7 @@ class Cff2Properties(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Cff2Properties):
+        if not isinstance(other, ObjProperties):
             return False
 
         return self.__dict__ == other.__dict__

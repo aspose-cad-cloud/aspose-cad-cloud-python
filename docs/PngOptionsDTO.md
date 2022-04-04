@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**color_type** | **object** | Color type | 
+**color_type** | **str** | Color type | 
 **progressive** | **bool** | Determines whether &#39;progressive&#39; method is used | 
-**filter_type** | **object** | Filter type | 
+**filter_type** | **str** | Filter type | 
 **compression_level** | **int** | Compression level | 
 **bit_depth** | **int** | Bits depth | 
 

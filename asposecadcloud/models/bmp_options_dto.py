@@ -46,7 +46,7 @@ class BmpOptionsDTO(DrawingOptionsBaseDTO):
     """
     swagger_types = {
         'bits_per_pixel': 'int',
-        'compression': 'object'
+        'compression': 'str'
     }
 
     attribute_map = {
@@ -97,7 +97,7 @@ class BmpOptionsDTO(DrawingOptionsBaseDTO):
         Compression type
 
         :return: The compression of this BmpOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._compression
 
@@ -108,11 +108,19 @@ class BmpOptionsDTO(DrawingOptionsBaseDTO):
         Compression type
 
         :param compression: The compression of this BmpOptionsDTO.
-        :type: object
+        :type: str
         """
         if compression is None:
             raise ValueError("Invalid value for `compression`, must not be `None`")
-        self._compression = compression
+        allowed_values = ["Rgb", "Rle8", "Rle4", "Bitfields", "Jpeg", "Png", "AlphaBitfields", "Dxt1"]
+        if not compression.isdigit():
+            if compression not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compression` ({0}), must be one of {1}"
+                    .format(compression, allowed_values))
+            self._compression = compression
+        else:
+            self._compression = allowed_values[int(compression) if six.PY3 else long(compression)]
 
     def to_dict(self):
         """Returns the model properties as a dict"""

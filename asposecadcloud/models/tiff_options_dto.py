@@ -45,11 +45,11 @@ class TiffOptionsDTO(DrawingOptionsBaseDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'byte_order': 'object',
-        'compression': 'object',
-        'expected_format': 'object',
+        'byte_order': 'str',
+        'compression': 'str',
+        'expected_format': 'str',
         'bits_per_sample': 'list[int]',
-        'photometric': 'object'
+        'photometric': 'str'
     }
 
     attribute_map = {
@@ -88,7 +88,7 @@ class TiffOptionsDTO(DrawingOptionsBaseDTO):
         Bytes order (little/big-endian notation)
 
         :return: The byte_order of this TiffOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._byte_order
 
@@ -99,11 +99,19 @@ class TiffOptionsDTO(DrawingOptionsBaseDTO):
         Bytes order (little/big-endian notation)
 
         :param byte_order: The byte_order of this TiffOptionsDTO.
-        :type: object
+        :type: str
         """
         if byte_order is None:
             raise ValueError("Invalid value for `byte_order`, must not be `None`")
-        self._byte_order = byte_order
+        allowed_values = ["LittleEndian", "BigEndian"]
+        if not byte_order.isdigit():
+            if byte_order not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `byte_order` ({0}), must be one of {1}"
+                    .format(byte_order, allowed_values))
+            self._byte_order = byte_order
+        else:
+            self._byte_order = allowed_values[int(byte_order) if six.PY3 else long(byte_order)]
 
     @property
     def compression(self):
@@ -112,7 +120,7 @@ class TiffOptionsDTO(DrawingOptionsBaseDTO):
         Compression level
 
         :return: The compression of this TiffOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._compression
 
@@ -123,11 +131,19 @@ class TiffOptionsDTO(DrawingOptionsBaseDTO):
         Compression level
 
         :param compression: The compression of this TiffOptionsDTO.
-        :type: object
+        :type: str
         """
         if compression is None:
             raise ValueError("Invalid value for `compression`, must not be `None`")
-        self._compression = compression
+        allowed_values = ["None", "CcittRle", "CcittFax3", "CcittFax4", "Lzw", "Ojpeg", "Jpeg", "AdobeDeflate", "Next", "CcittRleW", "Packbits", "Thunderscan", "It8Ctpad", "It8Lw", "It8Mp", "It8Bl", "PixarFilm", "PixarLog", "Deflate", "Dcs", "Jbig", "Sgilog", "Sgilog24", "Jp2000"]
+        if not compression.isdigit():
+            if compression not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compression` ({0}), must be one of {1}"
+                    .format(compression, allowed_values))
+            self._compression = compression
+        else:
+            self._compression = allowed_values[int(compression) if six.PY3 else long(compression)]
 
     @property
     def expected_format(self):
@@ -136,7 +152,7 @@ class TiffOptionsDTO(DrawingOptionsBaseDTO):
         Expected TIFF sub-format
 
         :return: The expected_format of this TiffOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._expected_format
 
@@ -147,11 +163,19 @@ class TiffOptionsDTO(DrawingOptionsBaseDTO):
         Expected TIFF sub-format
 
         :param expected_format: The expected_format of this TiffOptionsDTO.
-        :type: object
+        :type: str
         """
         if expected_format is None:
             raise ValueError("Invalid value for `expected_format`, must not be `None`")
-        self._expected_format = expected_format
+        allowed_values = ["Default", "TiffLzwBw", "TiffLzwRgb", "TiffLzwRgba", "TiffLzwCmyk", "TiffCcittFax3", "TiffCcittFax4", "TiffDeflateBw", "TiffDeflateRgb", "TiffDeflateRgba", "TiffCcitRle", "TiffJpegRgb", "TiffJpegYCbCr", "TiffNoCompressionBw", "TiffNoCompressionRgb", "TiffNoCompressionRgba"]
+        if not expected_format.isdigit():
+            if expected_format not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `expected_format` ({0}), must be one of {1}"
+                    .format(expected_format, allowed_values))
+            self._expected_format = expected_format
+        else:
+            self._expected_format = allowed_values[int(expected_format) if six.PY3 else long(expected_format)]
 
     @property
     def bits_per_sample(self):
@@ -182,7 +206,7 @@ class TiffOptionsDTO(DrawingOptionsBaseDTO):
         Photometric options
 
         :return: The photometric of this TiffOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._photometric
 
@@ -193,11 +217,19 @@ class TiffOptionsDTO(DrawingOptionsBaseDTO):
         Photometric options
 
         :param photometric: The photometric of this TiffOptionsDTO.
-        :type: object
+        :type: str
         """
         if photometric is None:
             raise ValueError("Invalid value for `photometric`, must not be `None`")
-        self._photometric = photometric
+        allowed_values = ["MinIsWhite", "MinIsBlack", "Rgb", "Palette", "Mask", "Separated", "Ycbcr", "Cielab", "Icclab", "Itulab", "Logl", "Logluv"]
+        if not photometric.isdigit():
+            if photometric not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `photometric` ({0}), must be one of {1}"
+                    .format(photometric, allowed_values))
+            self._photometric = photometric
+        else:
+            self._photometric = allowed_values[int(photometric) if six.PY3 else long(photometric)]
 
     def to_dict(self):
         """Returns the model properties as a dict"""

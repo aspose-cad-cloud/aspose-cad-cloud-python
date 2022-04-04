@@ -51,7 +51,7 @@ class CadRasterizationOptionsDTO(VectorRasterizationOptionsDTO):
         'automatic_layouts_scaling': 'bool',
         'layers': 'list[str]',
         'layouts': 'list[str]',
-        'draw_type': 'object',
+        'draw_type': 'str',
         'no_scaling': 'bool'
     }
 
@@ -213,7 +213,7 @@ class CadRasterizationOptionsDTO(VectorRasterizationOptionsDTO):
         Drawing mode
 
         :return: The draw_type of this CadRasterizationOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._draw_type
 
@@ -224,11 +224,19 @@ class CadRasterizationOptionsDTO(VectorRasterizationOptionsDTO):
         Drawing mode
 
         :param draw_type: The draw_type of this CadRasterizationOptionsDTO.
-        :type: object
+        :type: str
         """
         if draw_type is None:
             raise ValueError("Invalid value for `draw_type`, must not be `None`")
-        self._draw_type = draw_type
+        allowed_values = ["UseDrawColor", "UseObjectColor"]
+        if not draw_type.isdigit():
+            if draw_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `draw_type` ({0}), must be one of {1}"
+                    .format(draw_type, allowed_values))
+            self._draw_type = draw_type
+        else:
+            self._draw_type = allowed_values[int(draw_type) if six.PY3 else long(draw_type)]
 
     @property
     def no_scaling(self):

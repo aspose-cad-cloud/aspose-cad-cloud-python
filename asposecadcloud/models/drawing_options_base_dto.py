@@ -44,7 +44,7 @@ class DrawingOptionsBaseDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'rotation': 'object',
+        'rotation': 'str',
         'layers': 'list[str]',
         'resolution_settings': 'ResolutionSetting',
         'vector_rasterization_options': 'CadRasterizationOptionsDTO'
@@ -58,15 +58,19 @@ class DrawingOptionsBaseDTO(object):
     }
 
     discriminator_value_class_map = {
-        'PngOptionsDTO': 'PngOptionsDTO',
-        'JpegOptionsDTO': 'JpegOptionsDTO',
         'BmpOptionsDTO': 'BmpOptionsDTO',
-        'SvgOptionsDTO': 'SvgOptionsDTO',
-        'Jpeg2000OptionsDTO': 'Jpeg2000OptionsDTO',
-        'PdfOptionsDTO': 'PdfOptionsDTO',
         'PsdOptionsDTO': 'PsdOptionsDTO',
         'GifOptionsDTO': 'GifOptionsDTO',
         'WmfOptionsDTO': 'WmfOptionsDTO',
+        'DxfOptionsDTO': 'DxfOptionsDTO',
+        'PngOptionsDTO': 'PngOptionsDTO',
+        'JpegOptionsDTO': 'JpegOptionsDTO',
+        'FbxOptionsDTO': 'FbxOptionsDTO',
+        'SvgOptionsDTO': 'SvgOptionsDTO',
+        'Jpeg2000OptionsDTO': 'Jpeg2000OptionsDTO',
+        'PdfOptionsDTO': 'PdfOptionsDTO',
+        'DwfOptionsDTO': 'DwfOptionsDTO',
+        'ObjOptionsDTO': 'ObjOptionsDTO',
         'TiffOptionsDTO': 'TiffOptionsDTO'
     }
 
@@ -95,7 +99,7 @@ class DrawingOptionsBaseDTO(object):
         Resulting rotation operation
 
         :return: The rotation of this DrawingOptionsBaseDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._rotation
 
@@ -106,11 +110,19 @@ class DrawingOptionsBaseDTO(object):
         Resulting rotation operation
 
         :param rotation: The rotation of this DrawingOptionsBaseDTO.
-        :type: object
+        :type: str
         """
         if rotation is None:
             raise ValueError("Invalid value for `rotation`, must not be `None`")
-        self._rotation = rotation
+        allowed_values = ["RotateNoneFlipNone", "Rotate90FlipNone", "Rotate180FlipNone", "Rotate270FlipNone", "RotateNoneFlipX", "Rotate90FlipX", "Rotate180FlipX", "Rotate270FlipX", "RotateNoneFlipY", "Rotate90FlipY", "Rotate180FlipY", "Rotate270FlipY", "RotateNoneFlipXY", "Rotate90FlipXY", "Rotate180FlipXY", "Rotate270FlipXY"]
+        if not rotation.isdigit():
+            if rotation not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `rotation` ({0}), must be one of {1}"
+                    .format(rotation, allowed_values))
+            self._rotation = rotation
+        else:
+            self._rotation = allowed_values[int(rotation) if six.PY3 else long(rotation)]
 
     @property
     def layers(self):

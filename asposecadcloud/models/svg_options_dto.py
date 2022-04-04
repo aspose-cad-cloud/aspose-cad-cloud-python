@@ -45,7 +45,7 @@ class SvgOptionsDTO(DrawingOptionsBaseDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'color_type': 'object',
+        'color_type': 'str',
         'text_as_shapes': 'bool'
     }
 
@@ -73,7 +73,7 @@ class SvgOptionsDTO(DrawingOptionsBaseDTO):
         Color type
 
         :return: The color_type of this SvgOptionsDTO.
-        :rtype: object
+        :rtype: str
         """
         return self._color_type
 
@@ -84,11 +84,19 @@ class SvgOptionsDTO(DrawingOptionsBaseDTO):
         Color type
 
         :param color_type: The color_type of this SvgOptionsDTO.
-        :type: object
+        :type: str
         """
         if color_type is None:
             raise ValueError("Invalid value for `color_type`, must not be `None`")
-        self._color_type = color_type
+        allowed_values = ["Grayscale", "YCbCr", "Cmyk", "Ycck", "Rgb"]
+        if not color_type.isdigit():
+            if color_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `color_type` ({0}), must be one of {1}"
+                    .format(color_type, allowed_values))
+            self._color_type = color_type
+        else:
+            self._color_type = allowed_values[int(color_type) if six.PY3 else long(color_type)]
 
     @property
     def text_as_shapes(self):

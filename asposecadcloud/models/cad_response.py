@@ -28,13 +28,16 @@ import pprint
 import re
 import six
 
-from asposecadcloud.models.cff2_properties import Cff2Properties
+from asposecadcloud.models.cf2_properties import Cf2Properties
 from asposecadcloud.models.dgn_properties import DgnProperties
 from asposecadcloud.models.dwf_properties import DwfProperties
 from asposecadcloud.models.dwg_properties import DwgProperties
 from asposecadcloud.models.dxf_properties import DxfProperties
+from asposecadcloud.models.fbx_properties import FbxProperties
 from asposecadcloud.models.ifc_properties import IfcProperties
 from asposecadcloud.models.igs_properties import IgsProperties
+from asposecadcloud.models.obj_properties import ObjProperties
+from asposecadcloud.models.plt_properties import PltProperties
 from asposecadcloud.models.stl_properties import StlProperties
 
 
@@ -60,7 +63,10 @@ class CadResponse(object):
         'igs_properties': 'IgsProperties',
         'stl_properties': 'StlProperties',
         'dwf_properties': 'DwfProperties',
-        'cff2_properties': 'Cff2Properties'
+        'cf2_properties': 'Cf2Properties',
+        'fbx_properties': 'FbxProperties',
+        'obj_properties': 'ObjProperties',
+        'plt_properties': 'PltProperties'
     }
 
     attribute_map = {
@@ -74,10 +80,13 @@ class CadResponse(object):
         'igs_properties': 'IgsProperties',
         'stl_properties': 'StlProperties',
         'dwf_properties': 'DwfProperties',
-        'cff2_properties': 'Cff2Properties'
+        'cf2_properties': 'Cf2Properties',
+        'fbx_properties': 'FbxProperties',
+        'obj_properties': 'ObjProperties',
+        'plt_properties': 'PltProperties'
     }
 
-    def __init__(self, height=None, width=None, dwg_properties=None, dxf_properties=None, dwt_properties=None, dgn_properties=None, ifc_properties=None, igs_properties=None, stl_properties=None, dwf_properties=None, cff2_properties=None):
+    def __init__(self, height=None, width=None, dwg_properties=None, dxf_properties=None, dwt_properties=None, dgn_properties=None, ifc_properties=None, igs_properties=None, stl_properties=None, dwf_properties=None, cf2_properties=None, fbx_properties=None, obj_properties=None, plt_properties=None):
         """CadResponse - a model defined in Swagger"""
         super(CadResponse, self).__init__()
 
@@ -91,7 +100,10 @@ class CadResponse(object):
         self._igs_properties = None
         self._stl_properties = None
         self._dwf_properties = None
-        self._cff2_properties = None
+        self._cf2_properties = None
+        self._fbx_properties = None
+        self._obj_properties = None
+        self._plt_properties = None
 
         if height is not None:
             self.height = height
@@ -113,8 +125,14 @@ class CadResponse(object):
             self.stl_properties = stl_properties
         if dwf_properties is not None:
             self.dwf_properties = dwf_properties
-        if cff2_properties is not None:
-            self.cff2_properties = cff2_properties
+        if cf2_properties is not None:
+            self.cf2_properties = cf2_properties
+        if fbx_properties is not None:
+            self.fbx_properties = fbx_properties
+        if obj_properties is not None:
+            self.obj_properties = obj_properties
+        if plt_properties is not None:
+            self.plt_properties = plt_properties
 
     @property
     def height(self):
@@ -341,26 +359,92 @@ class CadResponse(object):
         self._dwf_properties = dwf_properties
 
     @property
-    def cff2_properties(self):
-        """Gets the cff2_properties of this CadResponse.
+    def cf2_properties(self):
+        """Gets the cf2_properties of this CadResponse.
 
-        Gets or sets the CFF2 properties.
+        Gets or sets the Cf2 properties.
 
-        :return: The cff2_properties of this CadResponse.
-        :rtype: Cff2Properties
+        :return: The cf2_properties of this CadResponse.
+        :rtype: Cf2Properties
         """
-        return self._cff2_properties
+        return self._cf2_properties
 
-    @cff2_properties.setter
-    def cff2_properties(self, cff2_properties):
-        """Sets the cff2_properties of this CadResponse.
+    @cf2_properties.setter
+    def cf2_properties(self, cf2_properties):
+        """Sets the cf2_properties of this CadResponse.
 
-        Gets or sets the CFF2 properties.
+        Gets or sets the Cf2 properties.
 
-        :param cff2_properties: The cff2_properties of this CadResponse.
-        :type: Cff2Properties
+        :param cf2_properties: The cf2_properties of this CadResponse.
+        :type: Cf2Properties
         """
-        self._cff2_properties = cff2_properties
+        self._cf2_properties = cf2_properties
+
+    @property
+    def fbx_properties(self):
+        """Gets the fbx_properties of this CadResponse.
+
+        Gets or sets the Cf2 properties.
+
+        :return: The fbx_properties of this CadResponse.
+        :rtype: FbxProperties
+        """
+        return self._fbx_properties
+
+    @fbx_properties.setter
+    def fbx_properties(self, fbx_properties):
+        """Sets the fbx_properties of this CadResponse.
+
+        Gets or sets the Cf2 properties.
+
+        :param fbx_properties: The fbx_properties of this CadResponse.
+        :type: FbxProperties
+        """
+        self._fbx_properties = fbx_properties
+
+    @property
+    def obj_properties(self):
+        """Gets the obj_properties of this CadResponse.
+
+        Gets or sets the FBX properties.
+
+        :return: The obj_properties of this CadResponse.
+        :rtype: ObjProperties
+        """
+        return self._obj_properties
+
+    @obj_properties.setter
+    def obj_properties(self, obj_properties):
+        """Sets the obj_properties of this CadResponse.
+
+        Gets or sets the FBX properties.
+
+        :param obj_properties: The obj_properties of this CadResponse.
+        :type: ObjProperties
+        """
+        self._obj_properties = obj_properties
+
+    @property
+    def plt_properties(self):
+        """Gets the plt_properties of this CadResponse.
+
+        Gets or sets the Cf2 properties.
+
+        :return: The plt_properties of this CadResponse.
+        :rtype: PltProperties
+        """
+        return self._plt_properties
+
+    @plt_properties.setter
+    def plt_properties(self, plt_properties):
+        """Sets the plt_properties of this CadResponse.
+
+        Gets or sets the Cf2 properties.
+
+        :param plt_properties: The plt_properties of this CadResponse.
+        :type: PltProperties
+        """
+        self._plt_properties = plt_properties
 
     def to_dict(self):
         """Returns the model properties as a dict"""

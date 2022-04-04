@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rotation** | **object** | Resulting rotation operation | 
+**rotation** | **str** | Resulting rotation operation | 
 **layers** | **list[str]** | Layers to export | [optional] 
 **resolution_settings** | [**ResolutionSetting**](ResolutionSetting.md) | DPI resolution settings | [optional] 
 **vector_rasterization_options** | [**CadRasterizationOptionsDTO**](CadRasterizationOptionsDTO.md) | Raster options | [optional] 

@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **str** | Comment to Resulting file | [optional] 
-**compression_type** | **object** | Compression type | 
-**color_type** | **object** | Color type | 
+**compression_type** | **str** | Compression type | 
+**color_type** | **str** | Color type | 
 **quality** | **int** | Quality level | 
 **rd_opt_settings** | [**RdOptimizerSettings**](RdOptimizerSettings.md) | Optimizer settings | [optional] 
 
