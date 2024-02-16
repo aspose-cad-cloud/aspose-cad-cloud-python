@@ -27,7 +27,7 @@
 from setuptools import setup, find_packages
 
 NAME = "aspose-cad-cloud"
-VERSION = "20.11.0"
+VERSION = "24.1.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -52,7 +52,7 @@ setup(
     author="Aspose",
     author_email="vitalii.kornyliuk@aspose.com",
     url="https://products.aspose.cloud/cad",
-    licence="MIT",
+    license="MIT",
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -67,6 +67,12 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12'
     ],
     keywords=[
         "Aspose",
@@ -76,6 +82,7 @@ setup(
         "API",
         "SDK",
         "drawing",
+        "watermark",
         "DWG",
         "DXF",
         "DWF",
@@ -86,6 +93,11 @@ setup(
         "DGN",
         "OBJ",
         "CF2",
+        "GLB",
+        "GLTF",
+        "CGM",
+        "U3D",
+        "3DS"
         "image",
         "bmp",
         "gif",

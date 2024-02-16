@@ -1,4 +1,4 @@
--8
+#  coding: utf-8
 #  ----------------------------------------------------------------------------
 #  <copyright company="Aspose" file="HttpRequest.py">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.

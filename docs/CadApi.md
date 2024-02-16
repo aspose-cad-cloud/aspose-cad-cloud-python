@@ -1,5 +1,43 @@
 # asposecadcloud.CadApi
 
+<a name="convert"></a>
+# **convert**
+> convert(self, convert_request)
+
+Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+
+### Return type
+
+**file**
+
+<a name="convert_async"></a>
+# **convert_async**
+> convert_async(self, convert_request)
+
+Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### ConvertRequest Parameters
+```python
+__init__(self, 
+    drawing, 
+    output_format, 
+    output_type_ext=output_type_ext)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing** | **file**| Input drawing | 
+ **output_format** | **str**| Output DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG, PNG, BMP, DIB, TIFF, TIF, JPEG, GIF, PSD, JPG, JPE, JIF, JFIF, PSD, WEBP, DCM, DICOM, JP2, J2K, JPF, JPM, JPG2, J2C, JPC, JPX, MJ2 , DJVU file format. | 
+ **output_type_ext** | **str**| For output pdf format: PDF_15, PDFa_1a OR PDFa_1b. Null for another format. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
 <a name="copy_file"></a>
 # **copy_file**
 > copy_file(self, copy_file_request)
@@ -229,6 +267,146 @@ Name | Type | Description  | Notes
  **path** | **str**| File path e.g. &#39;/folder/file.ext&#39; | 
  **storage_name** | **str**| Storage name | [optional] 
  **version_id** | **str**| File version ID to download | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="edit_metadata"></a>
+# **edit_metadata**
+> edit_metadata(self, edit_metadata_request)
+
+Get Metadata info.
+
+### Return type
+
+**file**
+
+<a name="edit_metadata_async"></a>
+# **edit_metadata_async**
+> edit_metadata_async(self, edit_metadata_request)
+
+Get Metadata info.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### EditMetadataRequest Parameters
+```python
+__init__(self, 
+    drawing)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing** | **file**| Input drawing | 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="edit_metadata2"></a>
+# **edit_metadata2**
+> edit_metadata2(self, edit_metadata2_request)
+
+Save Metadata.
+
+### Return type
+
+**file**
+
+<a name="edit_metadata2_async"></a>
+# **edit_metadata2_async**
+> edit_metadata2_async(self, edit_metadata2_request)
+
+Save Metadata.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### EditMetadata2Request Parameters
+```python
+__init__(self, 
+    drawing, 
+    metadata_component)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing** | **file**| Input drawing | 
+ **metadata_component** | **str**| Drawing components in string Json format that can be edited. | 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="extract_metadata"></a>
+# **extract_metadata**
+> extract_metadata(self, extract_metadata_request)
+
+Extract Metadata from CAD drawing to txt, xml or json file.
+
+### Return type
+
+**file**
+
+<a name="extract_metadata_async"></a>
+# **extract_metadata_async**
+> extract_metadata_async(self, extract_metadata_request)
+
+Extract Metadata from CAD drawing to txt, xml or json file.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### ExtractMetadataRequest Parameters
+```python
+__init__(self, 
+    drawing, 
+    output_format)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing** | **file**| Input drawing | 
+ **output_format** | **str**| Output TXT, XML or JSON file format. | 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="extract_text"></a>
+# **extract_text**
+> extract_text(self, extract_text_request)
+
+Extract Text from CAD drawing to txt file.
+
+### Return type
+
+**file**
+
+<a name="extract_text_async"></a>
+# **extract_text_async**
+> extract_text_async(self, extract_text_request)
+
+Extract Text from CAD drawing to txt file.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### ExtractTextRequest Parameters
+```python
+__init__(self, 
+    drawing)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing** | **file**| Input drawing | 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
@@ -628,6 +806,42 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
+<a name="paper_to_cad"></a>
+# **paper_to_cad**
+> paper_to_cad(self, paper_to_cad_request)
+
+Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
+
+### Return type
+
+**file**
+
+<a name="paper_to_cad_async"></a>
+# **paper_to_cad_async**
+> paper_to_cad_async(self, paper_to_cad_request)
+
+Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PaperToCadRequest Parameters
+```python
+__init__(self, 
+    drawing, 
+    output_format)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing** | **file**| Input drawing | 
+ **output_format** | **str**| Output DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG file format. | 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
 <a name="post_drawing_bmp"></a>
 # **post_drawing_bmp**
 > post_drawing_bmp(self, post_drawing_bmp_request)
@@ -664,6 +878,48 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Filename of an input drawing on a storage. | 
  **options** | [**BmpOptionsDTO**](BmpOptionsDTO.md)| Export BMP options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="post_drawing_cgm"></a>
+# **post_drawing_cgm**
+> post_drawing_cgm(self, post_drawing_cgm_request)
+
+Export an existing drawing to CGM format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_cgm_async"></a>
+# **post_drawing_cgm_async**
+> post_drawing_cgm_async(self, post_drawing_cgm_request)
+
+Export an existing drawing to CGM format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingCgmRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**CgmOptionsDTO**](CgmOptionsDTO.md)| Export CGM options passed as a JSON on a request body. | 
  **folder** | **str**| Folder with a drawing to process. | [optional] 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
@@ -832,6 +1088,90 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Filename of an input drawing on a storage. | 
  **options** | [**GifOptionsDTO**](GifOptionsDTO.md)| Export GIF options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="post_drawing_glb"></a>
+# **post_drawing_glb**
+> post_drawing_glb(self, post_drawing_glb_request)
+
+Export an existing drawing to GLB format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_glb_async"></a>
+# **post_drawing_glb_async**
+> post_drawing_glb_async(self, post_drawing_glb_request)
+
+Export an existing drawing to GLB format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingGlbRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**GlbOptionsDTO**](GlbOptionsDTO.md)| Export GLB options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="post_drawing_gltf"></a>
+# **post_drawing_gltf**
+> post_drawing_gltf(self, post_drawing_gltf_request)
+
+Export an existing drawing to GLTF format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_gltf_async"></a>
+# **post_drawing_gltf_async**
+> post_drawing_gltf_async(self, post_drawing_gltf_request)
+
+Export an existing drawing to GLTF format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingGltfRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**GltfOptionsDTO**](GltfOptionsDTO.md)| Export GLTF options passed as a JSON on a request body. | 
  **folder** | **str**| Folder with a drawing to process. | [optional] 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
@@ -1250,6 +1590,48 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
+<a name="post_drawing_stp"></a>
+# **post_drawing_stp**
+> post_drawing_stp(self, post_drawing_stp_request)
+
+Export an existing drawing to STP format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_stp_async"></a>
+# **post_drawing_stp_async**
+> post_drawing_stp_async(self, post_drawing_stp_request)
+
+Export an existing drawing to STP format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingSTPRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**StpOptionsDTO**](StpOptionsDTO.md)| Export Stp options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
 <a name="post_drawing_svg"></a>
 # **post_drawing_svg**
 > post_drawing_svg(self, post_drawing_svg_request)
@@ -1292,6 +1674,48 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
+<a name="post_drawing_three_ds"></a>
+# **post_drawing_three_ds**
+> post_drawing_three_ds(self, post_drawing_three_ds_request)
+
+Export an existing drawing to 3DS format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_three_ds_async"></a>
+# **post_drawing_three_ds_async**
+> post_drawing_three_ds_async(self, post_drawing_three_ds_request)
+
+Export an existing drawing to 3DS format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingThreeDSRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**ThreeDSOptionsDTO**](ThreeDSOptionsDTO.md)| Export 3DS options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
 <a name="post_drawing_tiff"></a>
 # **post_drawing_tiff**
 > post_drawing_tiff(self, post_drawing_tiff_request)
@@ -1328,6 +1752,48 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Filename of an input drawing on a storage. | 
  **options** | [**TiffOptionsDTO**](TiffOptionsDTO.md)| Export TIFF options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="post_drawing_u3d"></a>
+# **post_drawing_u3d**
+> post_drawing_u3d(self, post_drawing_u3d_request)
+
+Export an existing drawing to U3D format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_u3d_async"></a>
+# **post_drawing_u3d_async**
+> post_drawing_u3d_async(self, post_drawing_u3d_request)
+
+Export an existing drawing to U3D format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingU3dRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**U3dOptionsDTO**](U3dOptionsDTO.md)| Export U3D options passed as a JSON on a request body. | 
  **folder** | **str**| Folder with a drawing to process. | [optional] 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
@@ -1412,6 +1878,46 @@ Name | Type | Description  | Notes
  **drawing_data** | **file**| Input drawing | 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/BmpOptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="put_drawing_cgm"></a>
+# **put_drawing_cgm**
+> put_drawing_cgm(self, put_drawing_cgm_request)
+
+Export drawing to CGM format. Drawing data is passed as zero-indexed multipart/form-data as well as export Cgm options serialized as JSON. Order of drawing data and Cgm options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_cgm_async"></a>
+# **put_drawing_cgm_async**
+> put_drawing_cgm_async(self, put_drawing_cgm_request)
+
+Export drawing to CGM format. Drawing data is passed as zero-indexed multipart/form-data as well as export Cgm options serialized as JSON. Order of drawing data and Cgm options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingCgmRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/CgmOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
@@ -1572,6 +2078,86 @@ Name | Type | Description  | Notes
  **drawing_data** | **file**| Input drawing | 
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/GifOptionsDTO model definition. | [optional] 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="put_drawing_glb"></a>
+# **put_drawing_glb**
+> put_drawing_glb(self, put_drawing_glb_request)
+
+Export drawing to GLB format. Drawing data is passed as zero-indexed multipart/form-data as well as export GLB options serialized as JSON. Order of drawing data and GLB options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_glb_async"></a>
+# **put_drawing_glb_async**
+> put_drawing_glb_async(self, put_drawing_glb_request)
+
+Export drawing to GLB format. Drawing data is passed as zero-indexed multipart/form-data as well as export GLB options serialized as JSON. Order of drawing data and GLB options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingGlbRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/GlbOptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="put_drawing_gltf"></a>
+# **put_drawing_gltf**
+> put_drawing_gltf(self, put_drawing_gltf_request)
+
+Export drawing to GLTF format. Drawing data is passed as zero-indexed multipart/form-data as well as export GLTF options serialized as JSON. Order of drawing data and GLTF options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_gltf_async"></a>
+# **put_drawing_gltf_async**
+> put_drawing_gltf_async(self, put_drawing_gltf_request)
+
+Export drawing to GLTF format. Drawing data is passed as zero-indexed multipart/form-data as well as export GLTF options serialized as JSON. Order of drawing data and GLTF options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingGltfRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/GltfOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
@@ -1816,6 +2402,46 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
+<a name="put_drawing_stp"></a>
+# **put_drawing_stp**
+> put_drawing_stp(self, put_drawing_stp_request)
+
+Export drawing to Stp format. Drawing data is passed as zero-indexed multipart/form-data as well as export Stp options serialized as JSON. Order of drawing data and Stp options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_stp_async"></a>
+# **put_drawing_stp_async**
+> put_drawing_stp_async(self, put_drawing_stp_request)
+
+Export drawing to Stp format. Drawing data is passed as zero-indexed multipart/form-data as well as export Stp options serialized as JSON. Order of drawing data and Stp options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingSTPRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/StpOptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
 <a name="put_drawing_svg"></a>
 # **put_drawing_svg**
 > put_drawing_svg(self, put_drawing_svg_request)
@@ -1856,6 +2482,46 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
+<a name="put_drawing_three_ds"></a>
+# **put_drawing_three_ds**
+> put_drawing_three_ds(self, put_drawing_three_ds_request)
+
+Export drawing to 3DS format. Drawing data is passed as zero-indexed multipart/form-data as well as export 3DS options serialized as JSON. Order of drawing data and 3DS options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_three_ds_async"></a>
+# **put_drawing_three_ds_async**
+> put_drawing_three_ds_async(self, put_drawing_three_ds_request)
+
+Export drawing to 3DS format. Drawing data is passed as zero-indexed multipart/form-data as well as export 3DS options serialized as JSON. Order of drawing data and 3DS options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingThreeDSRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/ThreeDSOptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
 <a name="put_drawing_tiff"></a>
 # **put_drawing_tiff**
 > put_drawing_tiff(self, put_drawing_tiff_request)
@@ -1892,6 +2558,46 @@ Name | Type | Description  | Notes
  **drawing_data** | **file**| Input drawing | 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/TiffOptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="put_drawing_u3d"></a>
+# **put_drawing_u3d**
+> put_drawing_u3d(self, put_drawing_u3d_request)
+
+Export drawing to U3D format. Drawing data is passed as zero-indexed multipart/form-data as well as export U3D options serialized as JSON. Order of drawing data and U3D options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_u3d_async"></a>
+# **put_drawing_u3d_async**
+> put_drawing_u3d_async(self, put_drawing_u3d_request)
+
+Export drawing to U3D format. Drawing data is passed as zero-indexed multipart/form-data as well as export U3D options serialized as JSON. Order of drawing data and U3D options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingU3dRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/U3dOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
@@ -2005,6 +2711,82 @@ Name | Type | Description  | Notes
  **path** | **str**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.              | 
  **file** | **file**| File to upload | 
  **storage_name** | **str**| Storage name | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="viewer"></a>
+# **viewer**
+> viewer(self, viewer_request)
+
+Return file for viewer.
+
+### Return type
+
+**file**
+
+<a name="viewer_async"></a>
+# **viewer_async**
+> viewer_async(self, viewer_request)
+
+Return file for viewer.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### ViewerRequest Parameters
+```python
+__init__(self, 
+    drawing, 
+    output_format)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing** | **file**| Input drawing | 
+ **output_format** | **str**| Return file for viewer(SVG, PNG, PDF...). | 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="watermark"></a>
+# **watermark**
+> watermark(self, watermark_request)
+
+Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+
+### Return type
+
+**file**
+
+<a name="watermark_async"></a>
+# **watermark_async**
+> watermark_async(self, watermark_request)
+
+Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### WatermarkRequest Parameters
+```python
+__init__(self, 
+    drawing, 
+    output_format, 
+    watermark_rgb, 
+    output_type_ext=output_type_ext)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing** | **file**| Input drawing | 
+ **output_format** | **str**| Output DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG, PNG, BMP, DIB, TIFF, TIF, JPEG, GIF, PSD, JPG, JPE, JIF, JFIF, PSD, WEBP, DCM, DICOM, JP2, J2K, JPF, JPM, JPG2, J2C, JPC, JPX, MJ2 , DJVU file format. | 
+ **watermark_rgb** | **str**| String Json model | 
+ **output_type_ext** | **str**| For output pdf format: PDF_15, PDFa_1a OR PDFa_1b. Null for another format. | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 

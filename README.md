@@ -34,7 +34,7 @@ Detalied official documentation can be found at the [following link](https://doc
 
 Please, add the following [PyPi package](https://pypi.org/project/aspose-cad-cloud/) to your requirements.txt.
 ```
-aspose-cad-cloud>=20.11
+aspose-cad-cloud>=24.1.0
 ```
 Or install it using command line.
 ```
@@ -58,7 +58,7 @@ import aspose-cad-cloud
 ```
 
 ## Content
-You may check our full [API endpoints list](docs/API_README.md#documentation-for-api-endpoints) or [models available](docs/API_README.md#documentation-for-models) in the SDK.
+You may check our full [API endpoints list](https://github.com/aspose-cad-cloud/aspose-cad-cloud-python/blob/master/asposecadcloud/api/cad_api.py) or [models available](https://github.com/aspose-cad-cloud/aspose-cad-cloud-python/tree/master/asposecadcloud/models) in the SDK.
 
 ## Dependencies
 * [Python 2.7 or later](https://www.python.org/downloads/)
