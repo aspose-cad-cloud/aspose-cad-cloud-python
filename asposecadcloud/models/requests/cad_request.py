@@ -88,4 +88,3 @@ class CadRequest(object):
             return string
 
         return string[0].lower() + string[1:]
-#  coding: utf
