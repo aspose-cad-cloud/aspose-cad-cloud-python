@@ -60,6 +60,7 @@ class DrawingOptionsBaseDTO(object):
     discriminator_value_class_map = {
         'BmpOptionsDTO': 'BmpOptionsDTO',
         'StpOptionsDTO': 'StpOptionsDTO',
+        'DicomOptionsDTO': 'DicomOptionsDTO',
         'GlbOptionsDTO': 'GlbOptionsDTO',
         'PsdOptionsDTO': 'PsdOptionsDTO',
         'GifOptionsDTO': 'GifOptionsDTO',
@@ -73,6 +74,7 @@ class DrawingOptionsBaseDTO(object):
         'SvgOptionsDTO': 'SvgOptionsDTO',
         'GltfOptionsDTO': 'GltfOptionsDTO',
         'U3dOptionsDTO': 'U3dOptionsDTO',
+        'WebpOptionsDTO': 'WebpOptionsDTO',
         'Jpeg2000OptionsDTO': 'Jpeg2000OptionsDTO',
         'PdfOptionsDTO': 'PdfOptionsDTO',
         'DwfOptionsDTO': 'DwfOptionsDTO',

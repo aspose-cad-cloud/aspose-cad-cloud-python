@@ -39,6 +39,7 @@ from asposecadcloud.models.igs_properties import IgsProperties
 from asposecadcloud.models.obj_properties import ObjProperties
 from asposecadcloud.models.plt_properties import PltProperties
 from asposecadcloud.models.stl_properties import StlProperties
+from asposecadcloud.models.stp_properties import StpProperties
 
 
 class CadResponse(object):
@@ -66,7 +67,8 @@ class CadResponse(object):
         'cf2_properties': 'Cf2Properties',
         'fbx_properties': 'FbxProperties',
         'obj_properties': 'ObjProperties',
-        'plt_properties': 'PltProperties'
+        'plt_properties': 'PltProperties',
+        'stp_properties': 'StpProperties'
     }
 
     attribute_map = {
@@ -83,10 +85,11 @@ class CadResponse(object):
         'cf2_properties': 'Cf2Properties',
         'fbx_properties': 'FbxProperties',
         'obj_properties': 'ObjProperties',
-        'plt_properties': 'PltProperties'
+        'plt_properties': 'PltProperties',
+        'stp_properties': 'StpProperties'
     }
 
-    def __init__(self, height=None, width=None, dwg_properties=None, dxf_properties=None, dwt_properties=None, dgn_properties=None, ifc_properties=None, igs_properties=None, stl_properties=None, dwf_properties=None, cf2_properties=None, fbx_properties=None, obj_properties=None, plt_properties=None):
+    def __init__(self, height=None, width=None, dwg_properties=None, dxf_properties=None, dwt_properties=None, dgn_properties=None, ifc_properties=None, igs_properties=None, stl_properties=None, dwf_properties=None, cf2_properties=None, fbx_properties=None, obj_properties=None, plt_properties=None, stp_properties=None):
         """CadResponse - a model defined in Swagger"""
         super(CadResponse, self).__init__()
 
@@ -104,6 +107,7 @@ class CadResponse(object):
         self._fbx_properties = None
         self._obj_properties = None
         self._plt_properties = None
+        self._stp_properties = None
 
         if height is not None:
             self.height = height
@@ -133,6 +137,8 @@ class CadResponse(object):
             self.obj_properties = obj_properties
         if plt_properties is not None:
             self.plt_properties = plt_properties
+        if stp_properties is not None:
+            self.stp_properties = stp_properties
 
     @property
     def height(self):
@@ -445,6 +451,28 @@ class CadResponse(object):
         :type: PltProperties
         """
         self._plt_properties = plt_properties
+
+    @property
+    def stp_properties(self):
+        """Gets the stp_properties of this CadResponse.
+
+        Gets or sets the STP properties.
+
+        :return: The stp_properties of this CadResponse.
+        :rtype: StpProperties
+        """
+        return self._stp_properties
+
+    @stp_properties.setter
+    def stp_properties(self, stp_properties):
+        """Sets the stp_properties of this CadResponse.
+
+        Gets or sets the STP properties.
+
+        :param stp_properties: The stp_properties of this CadResponse.
+        :type: StpProperties
+        """
+        self._stp_properties = stp_properties
 
     def to_dict(self):
         """Returns the model properties as a dict"""

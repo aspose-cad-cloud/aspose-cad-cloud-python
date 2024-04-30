@@ -31,7 +31,7 @@ import six
 from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
 from asposecadcloud.models.drawing_options_base_dto import DrawingOptionsBaseDTO
 from asposecadcloud.models.pdf_document_info import PdfDocumentInfo
-from asposecadcloud.models.pdf_document_options import PdfDocumentOptions
+from asposecadcloud.models.pdf_document_options_dto import PdfDocumentOptionsDTO
 from asposecadcloud.models.resolution_setting import ResolutionSetting
 
 
@@ -48,7 +48,7 @@ class PdfOptionsDTO(DrawingOptionsBaseDTO):
     """
     swagger_types = {
         'pdf_document_info': 'PdfDocumentInfo',
-        'core_pdf_options': 'PdfDocumentOptions'
+        'core_pdf_options': 'PdfDocumentOptionsDTO'
     }
 
     attribute_map = {
@@ -97,7 +97,7 @@ class PdfOptionsDTO(DrawingOptionsBaseDTO):
         Core PDF rendering options
 
         :return: The core_pdf_options of this PdfOptionsDTO.
-        :rtype: PdfDocumentOptions
+        :rtype: PdfDocumentOptionsDTO
         """
         return self._core_pdf_options
 
@@ -108,7 +108,7 @@ class PdfOptionsDTO(DrawingOptionsBaseDTO):
         Core PDF rendering options
 
         :param core_pdf_options: The core_pdf_options of this PdfOptionsDTO.
-        :type: PdfDocumentOptions
+        :type: PdfDocumentOptionsDTO
         """
         self._core_pdf_options = core_pdf_options
 
