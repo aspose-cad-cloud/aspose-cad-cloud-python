@@ -8,7 +8,7 @@ Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, 
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 <a name="convert_async"></a>
 # **convert_async**
@@ -20,7 +20,7 @@ Performs operation asynchronously.
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 ### ConvertRequest Parameters
 ```python
@@ -278,7 +278,7 @@ Get Metadata info
 
 ### Return type
 
-**str**
+**file**
 
 <a name="edit_metadata_async"></a>
 # **edit_metadata_async**
@@ -290,7 +290,7 @@ Performs operation asynchronously.
 
 ### Return type
 
-**str**
+**file**
 
 ### EditMetadataRequest Parameters
 ```python
@@ -312,7 +312,7 @@ Extract Metadata from CAD drawing to txt, xml or json file.
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 <a name="extract_metadata_async"></a>
 # **extract_metadata_async**
@@ -324,7 +324,7 @@ Performs operation asynchronously.
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 ### ExtractMetadataRequest Parameters
 ```python
@@ -348,7 +348,7 @@ Extract Text from CAD drawing to txt file
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 <a name="extract_text_async"></a>
 # **extract_text_async**
@@ -360,7 +360,7 @@ Performs operation asynchronously.
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 ### ExtractTextRequest Parameters
 ```python
@@ -778,7 +778,7 @@ Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB,
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 <a name="paper_to_cad_async"></a>
 # **paper_to_cad_async**
@@ -790,7 +790,7 @@ Performs operation asynchronously.
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 ### PaperToCadRequest Parameters
 ```python
@@ -2778,7 +2778,7 @@ Save Metadata
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 <a name="put_edit_metadata_async"></a>
 # **put_edit_metadata_async**
@@ -2790,7 +2790,7 @@ Performs operation asynchronously.
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 ### PutEditMetadataRequest Parameters
 ```python
@@ -2886,7 +2886,7 @@ Return file for viewer
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 <a name="viewer_async"></a>
 # **viewer_async**
@@ -2898,7 +2898,7 @@ Performs operation asynchronously.
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 ### ViewerRequest Parameters
 ```python
@@ -2922,7 +2922,7 @@ Add watermark to drawing
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 <a name="watermark_async"></a>
 # **watermark_async**
@@ -2934,7 +2934,7 @@ Performs operation asynchronously.
 
 ### Return type
 
-[**file**](file.md)
+**file**
 
 ### WatermarkRequest Parameters
 ```python
