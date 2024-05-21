@@ -252,22 +252,20 @@ class Configuration(object):
         :return: The Auth Settings information dict.
         """
         return {
-            'Bearer':
-                {
-                    'type': 'api_key',
-                    'in': 'header',
-                    'key': 'Authorization',
-                    'value': self.get_api_key_with_prefix('Authorization')
-                },
-
-            'OAuth2':
-                {
-                    'type': 'oauth2',
-                    'in': 'header',
-                    'key': 'Authorization',
-                    'value': 'Bearer ' + self.access_token
-                },
-
+                'ApiKey':
+                    {
+                        'type': 'api_key',
+                        'in': 'header',
+                        'key': 'Authorization',
+                        'value': self.get_api_key_with_prefix('Authorization')
+                    },
+                'Bearer':
+                    {
+                        'type': 'oauth2',
+                        'in': 'header',
+                        'key': 'Authorization',
+                        'value': 'Bearer ' + self.access_token
+                    },
         }
 
     @staticmethod
@@ -280,5 +278,5 @@ class Configuration(object):
                "OS: {env}\n" \
                "Python Version: {pyversion}\n" \
                "Version of the API: 3.0\n" \
-               "SDK Package Version: 20.11.0". \
+               "SDK Package Version: 24.1.0". \
             format(env=sys.platform, pyversion=sys.version)

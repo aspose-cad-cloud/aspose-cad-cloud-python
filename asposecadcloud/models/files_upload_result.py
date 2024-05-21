@@ -28,7 +28,7 @@ import pprint
 import re
 import six
 
-from asposecadcloud.models.error import Error
+from asposecadcloud.models.error_model import ErrorModel
 
 
 class FilesUploadResult(object):
@@ -44,7 +44,7 @@ class FilesUploadResult(object):
     """
     swagger_types = {
         'uploaded': 'list[str]',
-        'errors': 'list[Error]'
+        'errors': 'list[ErrorModel]'
     }
 
     attribute_map = {
@@ -93,7 +93,7 @@ class FilesUploadResult(object):
         List of errors.
 
         :return: The errors of this FilesUploadResult.
-        :rtype: list[Error]
+        :rtype: list[ErrorModel]
         """
         return self._errors
 
@@ -104,7 +104,7 @@ class FilesUploadResult(object):
         List of errors.
 
         :param errors: The errors of this FilesUploadResult.
-        :type: list[Error]
+        :type: list[ErrorModel]
         """
         self._errors = errors
 
