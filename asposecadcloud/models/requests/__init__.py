@@ -24,6 +24,7 @@ from asposecadcloud.models.requests.put_drawing_gif_request import PutDrawingGif
 from asposecadcloud.models.requests.put_drawing_fbx_request import PutDrawingFbxRequest
 from asposecadcloud.models.requests.put_drawing_dxf_request import PutDrawingDxfRequest
 from asposecadcloud.models.requests.put_drawing_dwf_request import PutDrawingDwfRequest
+from asposecadcloud.models.requests.put_drawing_draco_request import PutDrawingDracoRequest
 from asposecadcloud.models.requests.put_drawing_dicom_request import PutDrawingDicomRequest
 from asposecadcloud.models.requests.put_drawing_cgm_request import PutDrawingCgmRequest
 from asposecadcloud.models.requests.put_drawing_bmp_request import PutDrawingBmpRequest
@@ -50,6 +51,7 @@ from asposecadcloud.models.requests.post_drawing_gif_request import PostDrawingG
 from asposecadcloud.models.requests.post_drawing_fbx_request import PostDrawingFbxRequest
 from asposecadcloud.models.requests.post_drawing_dxf_request import PostDrawingDxfRequest
 from asposecadcloud.models.requests.post_drawing_dwf_request import PostDrawingDwfRequest
+from asposecadcloud.models.requests.post_drawing_draco_request import PostDrawingDracoRequest
 from asposecadcloud.models.requests.post_drawing_dicom_request import PostDrawingDicomRequest
 from asposecadcloud.models.requests.post_drawing_cgm_request import PostDrawingCgmRequest
 from asposecadcloud.models.requests.post_drawing_bmp_request import PostDrawingBmpRequest

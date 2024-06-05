@@ -1,6 +1,6 @@
 #  coding: utf-8
 #  ----------------------------------------------------------------
-#  <copyright company="Aspose" file="ConvertRequest.py">
+#  <copyright company="Aspose" file="PostDrawingDracoRequest.py">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -28,21 +28,25 @@ from asposecadcloud.models.requests.cad_request import CadRequest
 from asposecadcloud.models.requests.http_request import HttpRequest
 
 
-class ConvertRequest(CadRequest):
+class PostDrawingDracoRequest(CadRequest):
     """
-    Request model for convert operation.
+    Request model for post_drawing_draco operation.
     Initializes a new instance.
 
-    :param output_format Output DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG, PNG, BMP, DIB, TIFF, TIF, JPEG, GIF, PSD, JPG, JPE, JIF, JFIF, PSD, WEBP, DCM, DICOM, JP2, J2K, JPF, JPM, JPG2, J2C, JPC, JPX, MJ2 , DJVU file format.
-    :param drawing Form-data file
-    :param output_type_ext For output pdf format: PDF_15, PDFa_1a OR PDFa_1b. Null for another format
+    :param name Filename of an input drawing on a storage.
+    :param options Export Draco options passed as a JSON on a request body.
+    :param folder Folder with a drawing to process.
+    :param out_path Path to updated file (if this is empty, response contains streamed file).
+    :param storage Your Aspose Cloud Storage name.
     """
 
-    def __init__(self, output_format, drawing=None, output_type_ext=None):
+    def __init__(self, name, options, folder=None, out_path=None, storage=None):
         CadRequest.__init__(self)
-        self.output_format = output_format
-        self.drawing = drawing
-        self.output_type_ext = output_type_ext
+        self.name = name
+        self.options = options
+        self.folder = folder
+        self.out_path = out_path
+        self.storage = storage
 
     def to_http_info(self, config):
         """
@@ -53,34 +57,44 @@ class ConvertRequest(CadRequest):
         :return: http_request configured http request
         :rtype: Configuration.models.requests.HttpRequest
         """
-        # verify the required parameter 'output_format' is set
-        if self.output_format is None:
-            raise ValueError("Missing the required parameter `output_format` when calling `convert`")
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `post_drawing_draco`")
+        # verify the required parameter 'options' is set
+        if self.options is None:
+            raise ValueError("Missing the required parameter `options` when calling `post_drawing_draco`")
 
         collection_formats = {}
-        path = '/cad/Convert'
+        path = '/cad/{name}/drc'
         path_params = {}
+        if self.name is not None:
+            path_params[self._lowercase_first_letter('name')] = self.name
 
         query_params = []
-        if self._lowercase_first_letter('outputFormat') in path:
-            path = path.replace('{' + self._lowercase_first_letter('outputFormat' + '}'), self.output_format if self.output_format is not None else '')
+        if self._lowercase_first_letter('folder') in path:
+            path = path.replace('{' + self._lowercase_first_letter('folder' + '}'), self.folder if self.folder is not None else '')
         else:
-            if self.output_format is not None:
-                query_params.append((self._lowercase_first_letter('outputFormat'), self.output_format))
-        if self._lowercase_first_letter('outputTypeExt') in path:
-            path = path.replace('{' + self._lowercase_first_letter('outputTypeExt' + '}'), self.output_type_ext if self.output_type_ext is not None else '')
+            if self.folder is not None:
+                query_params.append((self._lowercase_first_letter('folder'), self.folder))
+        if self._lowercase_first_letter('outPath') in path:
+            path = path.replace('{' + self._lowercase_first_letter('outPath' + '}'), self.out_path if self.out_path is not None else '')
         else:
-            if self.output_type_ext is not None:
-                query_params.append((self._lowercase_first_letter('outputTypeExt'), self.output_type_ext))
+            if self.out_path is not None:
+                query_params.append((self._lowercase_first_letter('outPath'), self.out_path))
+        if self._lowercase_first_letter('storage') in path:
+            path = path.replace('{' + self._lowercase_first_letter('storage' + '}'), self.storage if self.storage is not None else '')
+        else:
+            if self.storage is not None:
+                query_params.append((self._lowercase_first_letter('storage'), self.storage))
 
         header_params = {}
 
         form_params = []
         local_var_files = []
-        if self.drawing is not None:
-            local_var_files.append((self._lowercase_first_letter('drawing'), self.drawing))
 
         body_params = None
+        if self.options is not None:
+            body_params = self.options
 
         # HTTP header `Accept`
         header_params['Accept'] = self._select_header_accept(
@@ -88,7 +102,7 @@ class ConvertRequest(CadRequest):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = 'multipart/form-data' if form_params or local_var_files else self._select_header_content_type(
-            ['multipart/form-data', 'application/octet-stream'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['Bearer']

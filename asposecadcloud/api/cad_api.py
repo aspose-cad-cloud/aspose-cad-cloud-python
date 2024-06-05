@@ -63,7 +63,7 @@ class CadApi(object):
         self.api_client = ApiClient(configuration)
 
     def convert(self, request):
-        """Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+        """Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
 
 
         :param request ConvertRequest object with parameters
@@ -73,7 +73,7 @@ class CadApi(object):
         return self.__make_request(HttpRequest, 'POST', 'file')
 
     def convert_async(self, request):
-        """Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+        """Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
 
 
         :param request ConvertRequest object with parameters
@@ -463,7 +463,7 @@ class CadApi(object):
         return self.__make_request_async(HttpRequest, 'GET', 'ObjectExist')
 
     def paper_to_cad(self, request):
-        """Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
+        """Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
 
 
         :param request paper_to_CadRequest object with parameters
@@ -473,7 +473,7 @@ class CadApi(object):
         return self.__make_request(HttpRequest, 'POST', 'file')
 
     def paper_to_cad_async(self, request):
-        """Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
+        """Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
 
 
         :param request paper_to_CadRequest object with parameters
@@ -537,6 +537,26 @@ class CadApi(object):
 
 
         :param request PostDrawingDicomRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'POST', 'file')
+
+    def post_drawing_draco(self, request):
+        """Export an existing drawing to Draco format with export settings specified.
+
+
+        :param request PostDrawingDracoRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'POST', 'file')
+
+    def post_drawing_draco_async(self, request):
+        """Export an existing drawing to Draco format with export settings specified.
+
+
+        :param request PostDrawingDracoRequest object with parameters
         :return: file
         """
         HttpRequest = request.to_http_info(self.api_client.configuration)
@@ -1057,6 +1077,26 @@ class CadApi(object):
 
 
         :param request PutDrawingDicomRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request_async(HttpRequest, 'PUT', 'file')
+
+    def put_drawing_draco(self, request):
+        """Export drawing to Draco format. Drawing data is passed as zero-indexed multipart/form-data as well as export Draco options serialized as JSON. Order of drawing data and Draco options could vary.
+
+
+        :param request PutDrawingDracoRequest object with parameters
+        :return: file
+        """
+        HttpRequest = request.to_http_info(self.api_client.configuration)
+        return self.__make_request(HttpRequest, 'PUT', 'file')
+
+    def put_drawing_draco_async(self, request):
+        """Export drawing to Draco format. Drawing data is passed as zero-indexed multipart/form-data as well as export Draco options serialized as JSON. Order of drawing data and Draco options could vary.
+
+
+        :param request PutDrawingDracoRequest object with parameters
         :return: file
         """
         HttpRequest = request.to_http_info(self.api_client.configuration)

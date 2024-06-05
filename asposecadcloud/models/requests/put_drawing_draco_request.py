@@ -1,6 +1,6 @@
 #  coding: utf-8
 #  ----------------------------------------------------------------
-#  <copyright company="Aspose" file="ConvertRequest.py">
+#  <copyright company="Aspose" file="PutDrawingDracoRequest.py">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -28,21 +28,23 @@ from asposecadcloud.models.requests.cad_request import CadRequest
 from asposecadcloud.models.requests.http_request import HttpRequest
 
 
-class ConvertRequest(CadRequest):
+class PutDrawingDracoRequest(CadRequest):
     """
-    Request model for convert operation.
+    Request model for put_drawing_draco operation.
     Initializes a new instance.
 
-    :param output_format Output DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG, PNG, BMP, DIB, TIFF, TIF, JPEG, GIF, PSD, JPG, JPE, JIF, JFIF, PSD, WEBP, DCM, DICOM, JP2, J2K, JPF, JPM, JPG2, J2C, JPC, JPX, MJ2 , DJVU file format.
-    :param drawing Form-data file
-    :param output_type_ext For output pdf format: PDF_15, PDFa_1a OR PDFa_1b. Null for another format
+    :param drawing_data Input drawing
+    :param out_path Path to updated file (if this is empty, response contains streamed file).
+    :param export_options JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/DracoOptionsDTO model definition.
+    :param storage Your Aspose Cloud Storage name.
     """
 
-    def __init__(self, output_format, drawing=None, output_type_ext=None):
+    def __init__(self, drawing_data, out_path=None, export_options=None, storage=None):
         CadRequest.__init__(self)
-        self.output_format = output_format
-        self.drawing = drawing
-        self.output_type_ext = output_type_ext
+        self.drawing_data = drawing_data
+        self.out_path = out_path
+        self.export_options = export_options
+        self.storage = storage
 
     def to_http_info(self, config):
         """
@@ -53,32 +55,34 @@ class ConvertRequest(CadRequest):
         :return: http_request configured http request
         :rtype: Configuration.models.requests.HttpRequest
         """
-        # verify the required parameter 'output_format' is set
-        if self.output_format is None:
-            raise ValueError("Missing the required parameter `output_format` when calling `convert`")
+        # verify the required parameter 'drawing_data' is set
+        if self.drawing_data is None:
+            raise ValueError("Missing the required parameter `drawing_data` when calling `put_drawing_draco`")
 
         collection_formats = {}
-        path = '/cad/Convert'
+        path = '/cad/drc'
         path_params = {}
 
         query_params = []
-        if self._lowercase_first_letter('outputFormat') in path:
-            path = path.replace('{' + self._lowercase_first_letter('outputFormat' + '}'), self.output_format if self.output_format is not None else '')
+        if self._lowercase_first_letter('outPath') in path:
+            path = path.replace('{' + self._lowercase_first_letter('outPath' + '}'), self.out_path if self.out_path is not None else '')
         else:
-            if self.output_format is not None:
-                query_params.append((self._lowercase_first_letter('outputFormat'), self.output_format))
-        if self._lowercase_first_letter('outputTypeExt') in path:
-            path = path.replace('{' + self._lowercase_first_letter('outputTypeExt' + '}'), self.output_type_ext if self.output_type_ext is not None else '')
+            if self.out_path is not None:
+                query_params.append((self._lowercase_first_letter('outPath'), self.out_path))
+        if self._lowercase_first_letter('storage') in path:
+            path = path.replace('{' + self._lowercase_first_letter('storage' + '}'), self.storage if self.storage is not None else '')
         else:
-            if self.output_type_ext is not None:
-                query_params.append((self._lowercase_first_letter('outputTypeExt'), self.output_type_ext))
+            if self.storage is not None:
+                query_params.append((self._lowercase_first_letter('storage'), self.storage))
 
         header_params = {}
 
         form_params = []
         local_var_files = []
-        if self.drawing is not None:
-            local_var_files.append((self._lowercase_first_letter('drawing'), self.drawing))
+        if self.drawing_data is not None:
+            local_var_files.append((self._lowercase_first_letter('drawingData'), self.drawing_data))
+        if self.export_options is not None:
+            form_params.append((self._lowercase_first_letter('exportOptions'), self.export_options))
 
         body_params = None
 
