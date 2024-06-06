@@ -4,7 +4,7 @@
 # **convert**
 > convert(self, convert_request)
 
-Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
 
 ### Return type
 
@@ -14,7 +14,7 @@ Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, 
 # **convert_async**
 > convert_async(self, convert_request)
 
-Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
 
 Performs operation asynchronously.
 
@@ -32,7 +32,7 @@ __init__(self,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **output_format** | **str**| Output DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG, PNG, BMP, DIB, TIFF, TIF, JPEG, GIF, PSD, JPG, JPE, JIF, JFIF, PSD, WEBP, DCM, DICOM, JP2, J2K, JPF, JPM, JPG2, J2C, JPC, JPX, MJ2 , DJVU file format. | 
+ **output_format** | **str**| Output DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG, PNG, BMP, DIB, TIFF, TIF, JPEG, GIF, PSD, JPG, JPE, JIF, JFIF, PSD, WEBP, DCM, DICOM, JP2, J2K, JPF, JPM, JPG2, J2C, JPC, JPX, MJ2 , DJVU file format. | 
  **drawing** | **file**| Form-data file | [optional] 
  **output_type_ext** | **str**| For output pdf format: PDF_15, PDFa_1a OR PDFa_1b. Null for another format | [optional] 
 
@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
 # **paper_to_cad**
 > paper_to_cad(self, paper_to_cad_request)
 
-Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
+Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
 
 ### Return type
 
@@ -784,7 +784,7 @@ Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB,
 # **paper_to_cad_async**
 > paper_to_cad_async(self, paper_to_cad_request)
 
-Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
+Convert bitmap image to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG format.
 
 Performs operation asynchronously.
 
@@ -801,7 +801,7 @@ __init__(self,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **output_format** | **str**| Output DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG file format. | 
+ **output_format** | **str**| Output DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG file format. | 
  **drawing** | **file**| Form-data file | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
@@ -926,6 +926,48 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Filename of an input drawing on a storage. | 
  **options** | [**DicomOptionsDTO**](DicomOptionsDTO.md)| Export Dicom options passed as a JSON on a request body. | 
+ **folder** | **str**| Folder with a drawing to process. | [optional] 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="post_drawing_draco"></a>
+# **post_drawing_draco**
+> post_drawing_draco(self, post_drawing_draco_request)
+
+Export an existing drawing to Draco format with export settings specified.
+
+### Return type
+
+**file**
+
+<a name="post_drawing_draco_async"></a>
+# **post_drawing_draco_async**
+> post_drawing_draco_async(self, post_drawing_draco_request)
+
+Export an existing drawing to Draco format with export settings specified.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PostDrawingDracoRequest Parameters
+```python
+__init__(self, 
+    name, 
+    options, 
+    folder=folder, 
+    out_path=out_path, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Filename of an input drawing on a storage. | 
+ **options** | [**DracoOptionsDTO**](DracoOptionsDTO.md)| Export Draco options passed as a JSON on a request body. | 
  **folder** | **str**| Folder with a drawing to process. | [optional] 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
@@ -2006,6 +2048,46 @@ Name | Type | Description  | Notes
  **drawing_data** | **file**| Input drawing | 
  **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
  **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/DicomOptionsDTO model definition. | [optional] 
+ **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
+
+[[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
+
+<a name="put_drawing_draco"></a>
+# **put_drawing_draco**
+> put_drawing_draco(self, put_drawing_draco_request)
+
+Export drawing to Draco format. Drawing data is passed as zero-indexed multipart/form-data as well as export Draco options serialized as JSON. Order of drawing data and Draco options could vary.
+
+### Return type
+
+**file**
+
+<a name="put_drawing_draco_async"></a>
+# **put_drawing_draco_async**
+> put_drawing_draco_async(self, put_drawing_draco_request)
+
+Export drawing to Draco format. Drawing data is passed as zero-indexed multipart/form-data as well as export Draco options serialized as JSON. Order of drawing data and Draco options could vary.
+
+Performs operation asynchronously.
+
+### Return type
+
+**file**
+
+### PutDrawingDracoRequest Parameters
+```python
+__init__(self, 
+    drawing_data, 
+    out_path=out_path, 
+    export_options=export_options, 
+    storage=storage)
+```
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
+ **out_path** | **str**| Path to updated file (if this is empty, response contains streamed file). | [optional] 
+ **export_options** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/DracoOptionsDTO model definition. | [optional] 
  **storage** | **str**| Your Aspose Cloud Storage name. | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)

@@ -85,6 +85,7 @@ from asposecadcloud.models.bmp_options_dto import BmpOptionsDTO
 from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
 from asposecadcloud.models.cgm_options_dto import CgmOptionsDTO
 from asposecadcloud.models.dicom_options_dto import DicomOptionsDTO
+from asposecadcloud.models.draco_options_dto import DracoOptionsDTO
 from asposecadcloud.models.dwf_options_dto import DwfOptionsDTO
 from asposecadcloud.models.dxf_options_dto import DxfOptionsDTO
 from asposecadcloud.models.fbx_options_dto import FbxOptionsDTO

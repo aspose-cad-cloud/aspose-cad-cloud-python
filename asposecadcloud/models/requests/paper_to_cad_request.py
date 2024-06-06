@@ -33,7 +33,7 @@ class PaperToCadRequest(CadRequest):
     Request model for paper_to_cad operation.
     Initializes a new instance.
 
-    :param output_format Output DXF, DWG, DGN, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG file format.
+    :param output_format Output DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG file format.
     :param drawing Form-data file
     """
 

@@ -27,7 +27,7 @@
 from setuptools import setup, find_packages
 
 NAME = "aspose-cad-cloud"
-VERSION = "24.1.0"
+VERSION = "24.5.0"
 # To install the library, run the following
 #
 # python setup.py install
