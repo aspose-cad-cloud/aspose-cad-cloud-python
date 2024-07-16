@@ -1,6 +1,6 @@
 #  coding: utf-8
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="DracoOptionsDTO.py">
+#  <copyright company="Aspose" file="Error.py">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -28,13 +28,11 @@ import pprint
 import re
 import six
 
-from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
-from asposecadcloud.models.drawing_options_base_dto import DrawingOptionsBaseDTO
-from asposecadcloud.models.resolution_setting import ResolutionSetting
+from asposecadcloud.models.error_details import ErrorDetails
 
 
-class DracoOptionsDTO(DrawingOptionsBaseDTO):
-    """Export options for Draco format
+class Error(object):
+    """Error
     """
 
     """
@@ -45,22 +43,124 @@ class DracoOptionsDTO(DrawingOptionsBaseDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'rotation': 'str',
-        'layers': 'list[str]',
-        'resolution_settings': 'ResolutionSetting',
-        'vector_rasterization_options': 'CadRasterizationOptionsDTO'
+        'code': 'str',
+        'message': 'str',
+        'description': 'str',
+        'inner_error': 'ErrorDetails'
     }
 
     attribute_map = {
-        'rotation': 'Rotation',
-        'layers': 'Layers',
-        'resolution_settings': 'ResolutionSettings',
-        'vector_rasterization_options': 'VectorRasterizationOptions'
+        'code': 'Code',
+        'message': 'Message',
+        'description': 'Description',
+        'inner_error': 'InnerError'
     }
 
-    def __init__(self):
-        """DracoOptionsDTO - a model defined in Swagger"""
-        super(DracoOptionsDTO, self).__init__()
+    def __init__(self, code=None, message=None, description=None, inner_error=None):
+        """Error - a model defined in Swagger"""
+        super(Error, self).__init__()
+
+        self._code = None
+        self._message = None
+        self._description = None
+        self._inner_error = None
+
+        if code is not None:
+            self.code = code
+        if message is not None:
+            self.message = message
+        if description is not None:
+            self.description = description
+        if inner_error is not None:
+            self.inner_error = inner_error
+
+    @property
+    def code(self):
+        """Gets the code of this Error.
+
+        Code             
+
+        :return: The code of this Error.
+        :rtype: str
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this Error.
+
+        Code             
+
+        :param code: The code of this Error.
+        :type: str
+        """
+        self._code = code
+
+    @property
+    def message(self):
+        """Gets the message of this Error.
+
+        Message             
+
+        :return: The message of this Error.
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """Sets the message of this Error.
+
+        Message             
+
+        :param message: The message of this Error.
+        :type: str
+        """
+        self._message = message
+
+    @property
+    def description(self):
+        """Gets the description of this Error.
+
+        Description             
+
+        :return: The description of this Error.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Error.
+
+        Description             
+
+        :param description: The description of this Error.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def inner_error(self):
+        """Gets the inner_error of this Error.
+
+        Inner Error             
+
+        :return: The inner_error of this Error.
+        :rtype: ErrorDetails
+        """
+        return self._inner_error
+
+    @inner_error.setter
+    def inner_error(self, inner_error):
+        """Sets the inner_error of this Error.
+
+        Inner Error             
+
+        :param inner_error: The inner_error of this Error.
+        :type: ErrorDetails
+        """
+        self._inner_error = inner_error
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -96,7 +196,7 @@ class DracoOptionsDTO(DrawingOptionsBaseDTO):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, DracoOptionsDTO):
+        if not isinstance(other, Error):
             return False
 
         return self.__dict__ == other.__dict__

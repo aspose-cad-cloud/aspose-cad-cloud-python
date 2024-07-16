@@ -45,6 +45,10 @@ class PngOptionsDTO(DrawingOptionsBaseDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'rotation': 'str',
+        'layers': 'list[str]',
+        'resolution_settings': 'ResolutionSetting',
+        'vector_rasterization_options': 'CadRasterizationOptionsDTO',
         'color_type': 'str',
         'progressive': 'bool',
         'filter_type': 'str',
@@ -53,6 +57,10 @@ class PngOptionsDTO(DrawingOptionsBaseDTO):
     }
 
     attribute_map = {
+        'rotation': 'Rotation',
+        'layers': 'Layers',
+        'resolution_settings': 'ResolutionSettings',
+        'vector_rasterization_options': 'VectorRasterizationOptions',
         'color_type': 'ColorType',
         'progressive': 'Progressive',
         'filter_type': 'FilterType',

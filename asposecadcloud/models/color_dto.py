@@ -1,6 +1,6 @@
 #  coding: utf-8
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="ErrorModel.py">
+#  <copyright company="Aspose" file="ColorDTO.py">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -28,11 +28,9 @@ import pprint
 import re
 import six
 
-from asposecadcloud.models.error_details import ErrorDetails
 
-
-class ErrorModel(object):
-    """Error
+class ColorDTO(object):
+    """RGB color values
     """
 
     """
@@ -43,124 +41,103 @@ class ErrorModel(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'code': 'str',
-        'message': 'str',
-        'description': 'str',
-        'inner_error': 'ErrorDetails'
+        'r': 'int',
+        'g': 'int',
+        'b': 'int'
     }
 
     attribute_map = {
-        'code': 'Code',
-        'message': 'Message',
-        'description': 'Description',
-        'inner_error': 'InnerError'
+        'r': 'R',
+        'g': 'G',
+        'b': 'B'
     }
 
-    def __init__(self, code=None, message=None, description=None, inner_error=None):
-        """ErrorModel - a model defined in Swagger"""
-        super(ErrorModel, self).__init__()
+    def __init__(self, r=None, g=None, b=None):
+        """ColorDTO - a model defined in Swagger"""
+        super(ColorDTO, self).__init__()
 
-        self._code = None
-        self._message = None
-        self._description = None
-        self._inner_error = None
+        self._r = None
+        self._g = None
+        self._b = None
 
-        if code is not None:
-            self.code = code
-        if message is not None:
-            self.message = message
-        if description is not None:
-            self.description = description
-        if inner_error is not None:
-            self.inner_error = inner_error
+        if r is not None:
+            self.r = r
+        if g is not None:
+            self.g = g
+        if b is not None:
+            self.b = b
 
     @property
-    def code(self):
-        """Gets the code of this ErrorModel.
+    def r(self):
+        """Gets the r of this ColorDTO.
 
-        Code             
+        Red light(0-255).
 
-        :return: The code of this ErrorModel.
-        :rtype: str
+        :return: The r of this ColorDTO.
+        :rtype: int
         """
-        return self._code
+        return self._r
 
-    @code.setter
-    def code(self, code):
-        """Sets the code of this ErrorModel.
+    @r.setter
+    def r(self, r):
+        """Sets the r of this ColorDTO.
 
-        Code             
+        Red light(0-255).
 
-        :param code: The code of this ErrorModel.
-        :type: str
+        :param r: The r of this ColorDTO.
+        :type: int
         """
-        self._code = code
+        if r is None:
+            raise ValueError("Invalid value for `r`, must not be `None`")
+        self._r = r
 
     @property
-    def message(self):
-        """Gets the message of this ErrorModel.
+    def g(self):
+        """Gets the g of this ColorDTO.
 
-        Message             
+        Green light(0-255).
 
-        :return: The message of this ErrorModel.
-        :rtype: str
+        :return: The g of this ColorDTO.
+        :rtype: int
         """
-        return self._message
+        return self._g
 
-    @message.setter
-    def message(self, message):
-        """Sets the message of this ErrorModel.
+    @g.setter
+    def g(self, g):
+        """Sets the g of this ColorDTO.
 
-        Message             
+        Green light(0-255).
 
-        :param message: The message of this ErrorModel.
-        :type: str
+        :param g: The g of this ColorDTO.
+        :type: int
         """
-        self._message = message
+        if g is None:
+            raise ValueError("Invalid value for `g`, must not be `None`")
+        self._g = g
 
     @property
-    def description(self):
-        """Gets the description of this ErrorModel.
+    def b(self):
+        """Gets the b of this ColorDTO.
 
-        Description             
+        Blue light(0-255).
 
-        :return: The description of this ErrorModel.
-        :rtype: str
+        :return: The b of this ColorDTO.
+        :rtype: int
         """
-        return self._description
+        return self._b
 
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ErrorModel.
+    @b.setter
+    def b(self, b):
+        """Sets the b of this ColorDTO.
 
-        Description             
+        Blue light(0-255).
 
-        :param description: The description of this ErrorModel.
-        :type: str
+        :param b: The b of this ColorDTO.
+        :type: int
         """
-        self._description = description
-
-    @property
-    def inner_error(self):
-        """Gets the inner_error of this ErrorModel.
-
-        Inner Error             
-
-        :return: The inner_error of this ErrorModel.
-        :rtype: ErrorDetails
-        """
-        return self._inner_error
-
-    @inner_error.setter
-    def inner_error(self, inner_error):
-        """Sets the inner_error of this ErrorModel.
-
-        Inner Error             
-
-        :param inner_error: The inner_error of this ErrorModel.
-        :type: ErrorDetails
-        """
-        self._inner_error = inner_error
+        if b is None:
+            raise ValueError("Invalid value for `b`, must not be `None`")
+        self._b = b
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -196,7 +173,7 @@ class ErrorModel(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ErrorModel):
+        if not isinstance(other, ColorDTO):
             return False
 
         return self.__dict__ == other.__dict__

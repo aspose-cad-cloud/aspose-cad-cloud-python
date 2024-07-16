@@ -1,4 +1,4 @@
-# asposecadcloud.models.ErrorModel
+# asposecadcloud.models.Error
 
 ## Properties
 Name | Type | Description | Notes

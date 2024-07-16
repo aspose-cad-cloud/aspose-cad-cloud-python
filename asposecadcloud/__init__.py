@@ -37,7 +37,7 @@ from asposecadcloud.models.bitmap_compression import BitmapCompression
 from asposecadcloud.models.cad_draw_type_mode import CadDrawTypeMode
 from asposecadcloud.models.cad_response import CadResponse
 from asposecadcloud.models.cf2_properties import Cf2Properties
-from asposecadcloud.models.color import Color
+from asposecadcloud.models.color_dto import ColorDTO
 from asposecadcloud.models.color_modes import ColorModes
 from asposecadcloud.models.compression_method import CompressionMethod
 from asposecadcloud.models.dgn_properties import DgnProperties
@@ -46,8 +46,8 @@ from asposecadcloud.models.drawing_options_base_dto import DrawingOptionsBaseDTO
 from asposecadcloud.models.dwf_properties import DwfProperties
 from asposecadcloud.models.dwg_properties import DwgProperties
 from asposecadcloud.models.dxf_properties import DxfProperties
+from asposecadcloud.models.error import Error
 from asposecadcloud.models.error_details import ErrorDetails
-from asposecadcloud.models.error_model import ErrorModel
 from asposecadcloud.models.fbx_properties import FbxProperties
 from asposecadcloud.models.file_versions import FileVersions
 from asposecadcloud.models.files_list import FilesList
@@ -87,6 +87,7 @@ from asposecadcloud.models.tiff_expected_format import TiffExpectedFormat
 from asposecadcloud.models.tiff_photometrics import TiffPhotometrics
 from asposecadcloud.models.unit_type import UnitType
 from asposecadcloud.models.vector_rasterization_options_dto import VectorRasterizationOptionsDTO
+from asposecadcloud.models.watermark_rgb import WatermarkRGB
 from asposecadcloud.models.bmp_options_dto import BmpOptionsDTO
 from asposecadcloud.models.cad_rasterization_options_dto import CadRasterizationOptionsDTO
 from asposecadcloud.models.cgm_options_dto import CgmOptionsDTO

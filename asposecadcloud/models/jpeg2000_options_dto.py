@@ -45,11 +45,19 @@ class Jpeg2000OptionsDTO(DrawingOptionsBaseDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'rotation': 'str',
+        'layers': 'list[str]',
+        'resolution_settings': 'ResolutionSetting',
+        'vector_rasterization_options': 'CadRasterizationOptionsDTO',
         'comments': 'list[str]',
         'codec': 'str'
     }
 
     attribute_map = {
+        'rotation': 'Rotation',
+        'layers': 'Layers',
+        'resolution_settings': 'ResolutionSettings',
+        'vector_rasterization_options': 'VectorRasterizationOptions',
         'comments': 'Comments',
         'codec': 'Codec'
     }

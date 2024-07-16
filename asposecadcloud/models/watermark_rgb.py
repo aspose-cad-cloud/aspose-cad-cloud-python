@@ -1,6 +1,6 @@
 #  coding: utf-8
 #  ----------------------------------------------------------------------------
-#  <copyright company="Aspose" file="Color.py">
+#  <copyright company="Aspose" file="WatermarkRGB.py">
 #    Copyright (c) 2018-2019 Aspose Pty Ltd. All rights reserved.
 #  </copyright>
 #  <summary>
@@ -29,8 +29,8 @@ import re
 import six
 
 
-class Color(object):
-    """
+class WatermarkRGB(object):
+    """Watermark text with RGB values
     """
 
     """
@@ -41,73 +41,77 @@ class Color(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'text': 'str',
         'r': 'int',
         'g': 'int',
-        'b': 'int',
-        'a': 'int',
-        'is_known_color': 'bool',
-        'is_empty': 'bool',
-        'is_named_color': 'bool',
-        'name': 'str'
+        'b': 'int'
     }
 
     attribute_map = {
+        'text': 'Text',
         'r': 'R',
         'g': 'G',
-        'b': 'B',
-        'a': 'A',
-        'is_known_color': 'IsKnownColor',
-        'is_empty': 'IsEmpty',
-        'is_named_color': 'IsNamedColor',
-        'name': 'Name'
+        'b': 'B'
     }
 
-    def __init__(self, r=None, g=None, b=None, a=None, is_known_color=None, is_empty=None, is_named_color=None, name=None):
-        """Color - a model defined in Swagger"""
-        super(Color, self).__init__()
+    def __init__(self, text=None, r=None, g=None, b=None):
+        """WatermarkRGB - a model defined in Swagger"""
+        super(WatermarkRGB, self).__init__()
 
+        self._text = None
         self._r = None
         self._g = None
         self._b = None
-        self._a = None
-        self._is_known_color = None
-        self._is_empty = None
-        self._is_named_color = None
-        self._name = None
 
+        if text is not None:
+            self.text = text
         if r is not None:
             self.r = r
         if g is not None:
             self.g = g
         if b is not None:
             self.b = b
-        if a is not None:
-            self.a = a
-        if is_known_color is not None:
-            self.is_known_color = is_known_color
-        if is_empty is not None:
-            self.is_empty = is_empty
-        if is_named_color is not None:
-            self.is_named_color = is_named_color
-        if name is not None:
-            self.name = name
+
+    @property
+    def text(self):
+        """Gets the text of this WatermarkRGB.
+
+        Watermark text.
+
+        :return: The text of this WatermarkRGB.
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this WatermarkRGB.
+
+        Watermark text.
+
+        :param text: The text of this WatermarkRGB.
+        :type: str
+        """
+        self._text = text
 
     @property
     def r(self):
-        """Gets the r of this Color.
+        """Gets the r of this WatermarkRGB.
 
+        Red light(0-255).
 
-        :return: The r of this Color.
+        :return: The r of this WatermarkRGB.
         :rtype: int
         """
         return self._r
 
     @r.setter
     def r(self, r):
-        """Sets the r of this Color.
+        """Sets the r of this WatermarkRGB.
 
+        Red light(0-255).
 
-        :param r: The r of this Color.
+        :param r: The r of this WatermarkRGB.
         :type: int
         """
         if r is None:
@@ -116,20 +120,22 @@ class Color(object):
 
     @property
     def g(self):
-        """Gets the g of this Color.
+        """Gets the g of this WatermarkRGB.
 
+        Green light(0-255).
 
-        :return: The g of this Color.
+        :return: The g of this WatermarkRGB.
         :rtype: int
         """
         return self._g
 
     @g.setter
     def g(self, g):
-        """Sets the g of this Color.
+        """Sets the g of this WatermarkRGB.
 
+        Green light(0-255).
 
-        :param g: The g of this Color.
+        :param g: The g of this WatermarkRGB.
         :type: int
         """
         if g is None:
@@ -138,133 +144,27 @@ class Color(object):
 
     @property
     def b(self):
-        """Gets the b of this Color.
+        """Gets the b of this WatermarkRGB.
 
+        Blue light(0-255).
 
-        :return: The b of this Color.
+        :return: The b of this WatermarkRGB.
         :rtype: int
         """
         return self._b
 
     @b.setter
     def b(self, b):
-        """Sets the b of this Color.
+        """Sets the b of this WatermarkRGB.
 
+        Blue light(0-255).
 
-        :param b: The b of this Color.
+        :param b: The b of this WatermarkRGB.
         :type: int
         """
         if b is None:
             raise ValueError("Invalid value for `b`, must not be `None`")
         self._b = b
-
-    @property
-    def a(self):
-        """Gets the a of this Color.
-
-
-        :return: The a of this Color.
-        :rtype: int
-        """
-        return self._a
-
-    @a.setter
-    def a(self, a):
-        """Sets the a of this Color.
-
-
-        :param a: The a of this Color.
-        :type: int
-        """
-        if a is None:
-            raise ValueError("Invalid value for `a`, must not be `None`")
-        self._a = a
-
-    @property
-    def is_known_color(self):
-        """Gets the is_known_color of this Color.
-
-
-        :return: The is_known_color of this Color.
-        :rtype: bool
-        """
-        return self._is_known_color
-
-    @is_known_color.setter
-    def is_known_color(self, is_known_color):
-        """Sets the is_known_color of this Color.
-
-
-        :param is_known_color: The is_known_color of this Color.
-        :type: bool
-        """
-        if is_known_color is None:
-            raise ValueError("Invalid value for `is_known_color`, must not be `None`")
-        self._is_known_color = is_known_color
-
-    @property
-    def is_empty(self):
-        """Gets the is_empty of this Color.
-
-
-        :return: The is_empty of this Color.
-        :rtype: bool
-        """
-        return self._is_empty
-
-    @is_empty.setter
-    def is_empty(self, is_empty):
-        """Sets the is_empty of this Color.
-
-
-        :param is_empty: The is_empty of this Color.
-        :type: bool
-        """
-        if is_empty is None:
-            raise ValueError("Invalid value for `is_empty`, must not be `None`")
-        self._is_empty = is_empty
-
-    @property
-    def is_named_color(self):
-        """Gets the is_named_color of this Color.
-
-
-        :return: The is_named_color of this Color.
-        :rtype: bool
-        """
-        return self._is_named_color
-
-    @is_named_color.setter
-    def is_named_color(self, is_named_color):
-        """Sets the is_named_color of this Color.
-
-
-        :param is_named_color: The is_named_color of this Color.
-        :type: bool
-        """
-        if is_named_color is None:
-            raise ValueError("Invalid value for `is_named_color`, must not be `None`")
-        self._is_named_color = is_named_color
-
-    @property
-    def name(self):
-        """Gets the name of this Color.
-
-
-        :return: The name of this Color.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Color.
-
-
-        :param name: The name of this Color.
-        :type: str
-        """
-        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -300,7 +200,7 @@ class Color(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Color):
+        if not isinstance(other, WatermarkRGB):
             return False
 
         return self.__dict__ == other.__dict__

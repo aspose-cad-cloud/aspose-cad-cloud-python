@@ -43,11 +43,21 @@ class FileVersion(StorageFile):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'name': 'str',
+        'is_folder': 'bool',
+        'modified_date': 'datetime',
+        'size': 'int',
+        'path': 'str',
         'version_id': 'str',
         'is_latest': 'bool'
     }
 
     attribute_map = {
+        'name': 'Name',
+        'is_folder': 'IsFolder',
+        'modified_date': 'ModifiedDate',
+        'size': 'Size',
+        'path': 'Path',
         'version_id': 'VersionId',
         'is_latest': 'IsLatest'
     }

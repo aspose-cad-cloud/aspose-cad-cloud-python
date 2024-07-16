@@ -28,7 +28,7 @@ import pprint
 import re
 import six
 
-from asposecadcloud.models.color import Color
+from asposecadcloud.models.color_dto import ColorDTO
 from asposecadcloud.models.graphics_options import GraphicsOptions
 
 
@@ -48,8 +48,8 @@ class VectorRasterizationOptionsDTO(object):
         'border_y': 'float',
         'page_height': 'float',
         'page_width': 'float',
-        'background_color': 'Color',
-        'draw_color': 'Color',
+        'background_color': 'ColorDTO',
+        'draw_color': 'ColorDTO',
         'unit_type': 'str',
         'content_as_bitmap': 'bool',
         'graphics_options': 'GraphicsOptions'
@@ -207,7 +207,7 @@ class VectorRasterizationOptionsDTO(object):
         Gets or sets a background color.
 
         :return: The background_color of this VectorRasterizationOptionsDTO.
-        :rtype: Color
+        :rtype: ColorDTO
         """
         return self._background_color
 
@@ -218,10 +218,8 @@ class VectorRasterizationOptionsDTO(object):
         Gets or sets a background color.
 
         :param background_color: The background_color of this VectorRasterizationOptionsDTO.
-        :type: Color
+        :type: ColorDTO
         """
-        if background_color is None:
-            raise ValueError("Invalid value for `background_color`, must not be `None`")
         self._background_color = background_color
 
     @property
@@ -231,7 +229,7 @@ class VectorRasterizationOptionsDTO(object):
         Gets or sets a foreground color.
 
         :return: The draw_color of this VectorRasterizationOptionsDTO.
-        :rtype: Color
+        :rtype: ColorDTO
         """
         return self._draw_color
 
@@ -242,10 +240,8 @@ class VectorRasterizationOptionsDTO(object):
         Gets or sets a foreground color.
 
         :param draw_color: The draw_color of this VectorRasterizationOptionsDTO.
-        :type: Color
+        :type: ColorDTO
         """
-        if draw_color is None:
-            raise ValueError("Invalid value for `draw_color`, must not be `None`")
         self._draw_color = draw_color
 
     @property
