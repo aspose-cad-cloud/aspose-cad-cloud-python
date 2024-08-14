@@ -42,7 +42,6 @@ class TestLiveApi(CadApiTester):
 
         additional_export_formats = set()
         format_extension_test_cases = ['png']
-        use_reference_file = True
 
         formats_to_export = set(self.basic_export_formats).union(additional_export_formats)
 
@@ -84,9 +83,8 @@ class TestLiveApi(CadApiTester):
                         request_invoker,
                         lambda x, y, z: None,
                         folder,
-                        storage,
-                        use_reference_file,
-                        reference_file_name)
+                        reference_file_name,
+                        storage)
 
     def test_watermark(self):
         """
@@ -95,7 +93,6 @@ class TestLiveApi(CadApiTester):
 
         additional_export_formats = set()
         format_extension_test_cases = ['png']
-        use_reference_file = True
 
         formats_to_export = set(self.basic_export_formats).union(additional_export_formats)
 
@@ -143,9 +140,8 @@ class TestLiveApi(CadApiTester):
                         request_invoker,
                         lambda x, y, z: None,
                         folder,
-                        storage,
-                        use_reference_file,
-                        reference_file_name)
+                        reference_file_name,
+                        storage)
 
     def test_paper_to_cad(self):
         """
@@ -154,7 +150,6 @@ class TestLiveApi(CadApiTester):
 
         additional_export_formats = set()
         format_extension_test_cases = ['dxf']
-        use_reference_file = True
 
         formats_to_export = self.basic_raster_export_formats
 
@@ -195,9 +190,8 @@ class TestLiveApi(CadApiTester):
                         request_invoker,
                         lambda x, y, z: None,
                         folder,
-                        storage,
-                        use_reference_file,
-                        reference_file_name)
+                        reference_file_name,
+                        storage)
 
     def test_text_extractor(self):
         """
@@ -207,7 +201,6 @@ class TestLiveApi(CadApiTester):
         additional_export_formats = set()
         input_format = 'dxf'
         format_extension_test_cases = ['txt']
-        use_reference_file = True
 
         formats_to_export = set(self.basic_export_formats).union(additional_export_formats)
 
@@ -246,9 +239,8 @@ class TestLiveApi(CadApiTester):
                         request_invoker,
                         lambda x, y, z: None,
                         folder,
-                        storage,
-                        use_reference_file,
-                        reference_file_name)
+                        reference_file_name,
+                        storage)
 
     def test_metadata_extractor(self):
         """
@@ -257,7 +249,6 @@ class TestLiveApi(CadApiTester):
 
         additional_export_formats = set()
         format_extension_test_cases = ['txt', 'json', 'xml']
-        use_reference_file = True
 
         formats_to_export = set(self.basic_export_formats).union(additional_export_formats)
 
@@ -299,9 +290,8 @@ class TestLiveApi(CadApiTester):
                         request_invoker,
                         lambda x, y, z: None,
                         folder,
-                        storage,
-                        use_reference_file,
-                        reference_file_name)
+                        reference_file_name,
+                        storage)
 
     def test_post_edit_metadata(self):
         """
@@ -310,7 +300,6 @@ class TestLiveApi(CadApiTester):
         input_format = 'dxf'
         format_extension_test_cases = ['json']
         output_path = None
-        use_reference_file = True
 
         for save_to_storage in [False]:
             for format_extension in format_extension_test_cases:
@@ -345,6 +334,5 @@ class TestLiveApi(CadApiTester):
                         request_invoker,
                         lambda x, y, z: None,
                         folder,
-                        storage,
-                        use_reference_file,
-                        reference_file_name)
+                        reference_file_name,
+                        storage)

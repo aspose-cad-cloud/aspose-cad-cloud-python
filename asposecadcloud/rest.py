@@ -563,6 +563,10 @@ class ObjectHelper:
             filename = filename.replace('/', '_')
             path = os.path.join(os.path.dirname(path), filename)
 
+        dir_path = os.path.dirname(path)
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+
         with open(path, "wb") as f:
             f.write(response.data)
 

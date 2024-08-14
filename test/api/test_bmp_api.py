@@ -66,6 +66,8 @@ class TestBmpApi(CadApiTester):
                         name = input_file.name
                         operation = '_bmp_put'
 
+                        reference_file_name = name + operation + "." + format_extension
+
                         output_path = None
                         if save_to_storage:
                             output_path = folder + "/" + name + operation + "." + format_extension
@@ -83,6 +85,7 @@ class TestBmpApi(CadApiTester):
                         request_invoker,
                         lambda x, y, z: None,
                         folder,
+                        reference_file_name,
                         storage)
 
     def test_put_bmp_with_options(self):
@@ -129,6 +132,8 @@ class TestBmpApi(CadApiTester):
                         name = input_file.name
                         operation = '_bmp_put_with_options'
 
+                        reference_file_name = name + operation + "." + format_extension
+
                         output_path = None
                         if save_to_storage:
                             output_path = folder + "/" + name + operation + "." + format_extension
@@ -146,6 +151,7 @@ class TestBmpApi(CadApiTester):
                         request_invoker,
                         lambda x, y, z: None,
                         folder,
+                        reference_file_name,
                         storage)
 
     def test_post_bmp(self):
@@ -192,6 +198,7 @@ class TestBmpApi(CadApiTester):
                         name = input_file.name
                         operation = '_bmp_post'
 
+                        reference_file_name = name + operation + "." + format_extension
                         output_path = None
                         if save_to_storage:
                             output_path = self.temp_folder + "/" + name + operation + "." + format_extension
@@ -209,4 +216,5 @@ class TestBmpApi(CadApiTester):
                         request_invoker,
                         lambda x, y, z: None,
                         folder,
+                        reference_file_name,
                         storage)

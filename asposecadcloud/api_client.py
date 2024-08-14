@@ -26,6 +26,7 @@
 
 from __future__ import absolute_import
 
+import re
 import datetime
 from multiprocessing.pool import ThreadPool
 
@@ -152,12 +153,25 @@ class ApiClient(object):
 
         # request url
         url = ''
-        if six.PY3:
-            url = self.configuration.host + self.configuration.api_version + \
-                  resource_path
+        if resource_path == "/connect/token":
+            pattern = r"api(-qa)?"
+            replacement = r"id\1"
+
+            #replace api/api-qa with id/id-qa
+            auth_host = re.sub(pattern, replacement, self.configuration.host)
+            if six.PY3:
+                url = auth_host + self.configuration.api_version + \
+                      resource_path
+            else:
+                url = (auth_host + self.configuration.api_version +
+                       resource_path).encode('utf8')
         else:
-            url = (self.configuration.host + self.configuration.api_version +
-                   resource_path).encode('utf8')
+            if six.PY3:
+                url = self.configuration.host + self.configuration.api_version + \
+                      resource_path
+            else:
+                url = (self.configuration.host + self.configuration.api_version +
+                       resource_path).encode('utf8')
 
         # perform request and return response
         response_data = self.request(
