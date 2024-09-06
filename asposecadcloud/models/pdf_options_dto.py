@@ -47,11 +47,19 @@ class PdfOptionsDTO(DrawingOptionsBaseDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'rotation': 'str',
+        'layers': 'list[str]',
+        'resolution_settings': 'ResolutionSetting',
+        'vector_rasterization_options': 'CadRasterizationOptionsDTO',
         'pdf_document_info': 'PdfDocumentInfo',
         'core_pdf_options': 'PdfDocumentOptionsDTO'
     }
 
     attribute_map = {
+        'rotation': 'Rotation',
+        'layers': 'Layers',
+        'resolution_settings': 'ResolutionSettings',
+        'vector_rasterization_options': 'VectorRasterizationOptions',
         'pdf_document_info': 'PdfDocumentInfo',
         'core_pdf_options': 'CorePdfOptions'
     }

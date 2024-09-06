@@ -67,6 +67,8 @@ class TestSaveAsApi(CadApiTester):
                         name = input_file.name
                         operation = '_save_as_get'
 
+                        reference_file_name = name + operation + "." + format_extension
+
                         output_path = None
                         if save_to_storage:
                             output_path = self.temp_folder + "/" + name + operation + "." + format_extension                    
@@ -83,6 +85,7 @@ class TestSaveAsApi(CadApiTester):
                             request_invoker,
                             lambda x, y, z: None,
                             folder,
+                            reference_file_name,
                             storage)
 
     def test_post_save_image_as(self):
@@ -99,7 +102,7 @@ class TestSaveAsApi(CadApiTester):
 
         formats_to_export = set(self.basic_export_formats).union(additional_export_formats)
 
-        for save_to_storage in [ True, False ]:
+        for save_to_storage in [True, False]:
             for format_extension in format_extension_test_cases:
                 with self.subTest('format_extension: ' + str(format_extension) + ' save to storage: ' + str(save_to_storage)):
 
@@ -119,6 +122,8 @@ class TestSaveAsApi(CadApiTester):
                         name = input_file.name
                         operation = '_save_as_post'
 
+                        reference_file_name = name + operation + "." + format_extension
+
                         output_path = None
                         if save_to_storage:
                             output_path = folder + "/" + name + operation + "." + format_extension                    
@@ -135,6 +140,7 @@ class TestSaveAsApi(CadApiTester):
                             request_invoker,
                             lambda x, y, z: None,
                             folder,
+                            reference_file_name,
                             storage)
 
 #t = TestSaveAsApi()

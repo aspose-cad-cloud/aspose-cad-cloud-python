@@ -43,7 +43,7 @@ import six
 from six.moves.urllib.parse import urlencode
 
 import asposecadcloud
-from asposecadcloud.models.error_model import ErrorModel
+from asposecadcloud.models.error import Error
 
 try:
     import urllib3
@@ -68,7 +68,7 @@ class RESTResponse(io.IOBase):
 
     def getheader(self, name, default=None):
         """Returns a given response header."""
-        return self.urllib3_response.getheader(name, default)
+        return self.urllib3_response.headers.get(name, default)
 
 
 class RESTClientObject(object):
@@ -562,6 +562,10 @@ class ObjectHelper:
                                  content_disposition).group(1)
             filename = filename.replace('/', '_')
             path = os.path.join(os.path.dirname(path), filename)
+
+        dir_path = os.path.dirname(path)
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
 
         with open(path, "wb") as f:
             f.write(response.data)

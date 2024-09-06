@@ -45,6 +45,10 @@ class GifOptionsDTO(DrawingOptionsBaseDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'rotation': 'str',
+        'layers': 'list[str]',
+        'resolution_settings': 'ResolutionSetting',
+        'vector_rasterization_options': 'CadRasterizationOptionsDTO',
         'do_palette_correction': 'bool',
         'color_resolution': 'int',
         'is_palette_sorted': 'bool',
@@ -55,6 +59,10 @@ class GifOptionsDTO(DrawingOptionsBaseDTO):
     }
 
     attribute_map = {
+        'rotation': 'Rotation',
+        'layers': 'Layers',
+        'resolution_settings': 'ResolutionSettings',
+        'vector_rasterization_options': 'VectorRasterizationOptions',
         'do_palette_correction': 'DoPaletteCorrection',
         'color_resolution': 'ColorResolution',
         'is_palette_sorted': 'IsPaletteSorted',

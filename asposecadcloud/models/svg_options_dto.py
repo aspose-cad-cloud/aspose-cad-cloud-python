@@ -45,11 +45,19 @@ class SvgOptionsDTO(DrawingOptionsBaseDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'rotation': 'str',
+        'layers': 'list[str]',
+        'resolution_settings': 'ResolutionSetting',
+        'vector_rasterization_options': 'CadRasterizationOptionsDTO',
         'color_type': 'str',
         'text_as_shapes': 'bool'
     }
 
     attribute_map = {
+        'rotation': 'Rotation',
+        'layers': 'Layers',
+        'resolution_settings': 'ResolutionSettings',
+        'vector_rasterization_options': 'VectorRasterizationOptions',
         'color_type': 'ColorType',
         'text_as_shapes': 'TextAsShapes'
     }

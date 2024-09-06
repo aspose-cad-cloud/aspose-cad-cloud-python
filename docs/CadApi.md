@@ -4,7 +4,7 @@
 # **convert**
 > convert(self, convert_request)
 
-Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+Convert CAD drawing to DXF, DWG, DGN, DRC, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
 
 ### Return type
 
@@ -14,7 +14,7 @@ Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, 
 # **convert_async**
 > convert_async(self, convert_request)
 
-Convert CAD drawing to DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
+Convert CAD drawing to DXF, DWG, DGN, DRC, DWF, DWFX, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG format.
 
 Performs operation asynchronously.
 
@@ -25,15 +25,15 @@ Performs operation asynchronously.
 ### ConvertRequest Parameters
 ```python
 __init__(self, 
+    drawing_data, 
     output_format, 
-    drawing=drawing, 
     output_type_ext=output_type_ext)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
  **output_format** | **str**| Output DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, PDF, SVG, PNG, BMP, DIB, TIFF, TIF, JPEG, GIF, PSD, JPG, JPE, JIF, JFIF, PSD, WEBP, DCM, DICOM, JP2, J2K, JPF, JPM, JPG2, J2C, JPC, JPX, MJ2 , DJVU file format. | 
- **drawing** | **file**| Form-data file | [optional] 
  **output_type_ext** | **str**| For output pdf format: PDF_15, PDFa_1a OR PDFa_1b. Null for another format | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
@@ -295,12 +295,12 @@ Performs operation asynchronously.
 ### EditMetadataRequest Parameters
 ```python
 __init__(self, 
-    drawing=drawing)
+    drawing_data)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **drawing** | **file**|  | [optional] 
+ **drawing_data** | **file**| Input drawing | 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
@@ -329,14 +329,14 @@ Performs operation asynchronously.
 ### ExtractMetadataRequest Parameters
 ```python
 __init__(self, 
-    output_format, 
-    drawing=drawing)
+    drawing_data, 
+    output_format)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
  **output_format** | **str**| Output TXT, XML or JSON file format. | 
- **drawing** | **file**| Form-data file | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
@@ -365,12 +365,12 @@ Performs operation asynchronously.
 ### ExtractTextRequest Parameters
 ```python
 __init__(self, 
-    drawing=drawing)
+    drawing_data)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **drawing** | **file**|  | [optional] 
+ **drawing_data** | **file**| Input drawing | 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
@@ -795,14 +795,14 @@ Performs operation asynchronously.
 ### PaperToCadRequest Parameters
 ```python
 __init__(self, 
-    output_format, 
-    drawing=drawing)
+    drawing_data, 
+    output_format)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
  **output_format** | **str**| Output DXF, DWG, DGN, DWF, DWFX, DRC, IFC, STL, STP, STEP, CGM, GLB, GLTF, DWT, IGES, PLT, CF2, OBJ, HPGL, IGS, PCL, FBX, SVG file format. | 
- **drawing** | **file**| Form-data file | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
@@ -2877,14 +2877,14 @@ Performs operation asynchronously.
 ### PutEditMetadataRequest Parameters
 ```python
 __init__(self, 
-    drawing=drawing, 
-    metadata_component=metadata_component)
+    drawing_data, 
+    metadata_component)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **drawing** | **file**|  | [optional] 
- **metadata_component** | **str**|  | [optional] 
+ **drawing_data** | **file**| Input drawing | 
+ **metadata_component** | **str**| Metadata string json from POST/EditMetadata | 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)
 
@@ -3021,17 +3021,17 @@ Performs operation asynchronously.
 ### WatermarkRequest Parameters
 ```python
 __init__(self, 
+    drawing_data, 
     output_format, 
-    drawing=drawing, 
-    watermark_rgb=watermark_rgb, 
+    watermark, 
     output_type_ext=output_type_ext)
 ```
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **drawing_data** | **file**| Input drawing | 
  **output_format** | **str**|  | 
- **drawing** | **file**|  | [optional] 
- **watermark_rgb** | **str**|  | [optional] 
+ **watermark** | **str**| JSON-serialized export options passed as zero-indexed multipart/form-data. Follow #/definitions/WatermarkRGB model definition. | 
  **output_type_ext** | **str**|  | [optional] 
 
 [[Back to top]](#) [[Back to API list]](API_README.md#documentation-for-api-endpoints) [[Back to Model list]](API_README.md#documentation-for-models) [[Back to API_README]](API_README.md)

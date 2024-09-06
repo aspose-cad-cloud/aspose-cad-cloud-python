@@ -67,6 +67,8 @@ class TestResizeApi(CadApiTester):
                         name = input_file.name
                         operation = '_resize_get'
 
+                        reference_file_name = name + operation + "." + format_extension
+
                         output_path = None
                         if save_to_storage:
                             output_path = self.temp_folder + "/" + name + operation + "." + format_extension                    
@@ -83,6 +85,7 @@ class TestResizeApi(CadApiTester):
                             request_invoker,
                             lambda x, y, z: None,
                             folder,
+                            reference_file_name,
                             storage)
 
     def test_post_resize_image(self):
@@ -119,6 +122,8 @@ class TestResizeApi(CadApiTester):
                         name = input_file.name
                         operation = '_resize_post'
 
+                        reference_file_name = name + operation + "." + format_extension
+
                         output_path = None
                         if save_to_storage:
                             output_path = folder + "/" + name + operation + "." + format_extension                    
@@ -135,6 +140,7 @@ class TestResizeApi(CadApiTester):
                             request_invoker,
                             lambda x, y, z: None,
                             folder,
+                            reference_file_name,
                             storage)
 
 #t = TestResizeApi()

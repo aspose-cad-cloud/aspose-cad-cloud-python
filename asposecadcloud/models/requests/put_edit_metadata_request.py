@@ -33,13 +33,13 @@ class PutEditMetadataRequest(CadRequest):
     Request model for put_edit_metadata operation.
     Initializes a new instance.
 
-    :param drawing 
-    :param metadata_component 
+    :param drawing_data Input drawing
+    :param metadata_component Metadata string json from POST/EditMetadata
     """
 
-    def __init__(self, drawing=None, metadata_component=None):
+    def __init__(self, drawing_data, metadata_component):
         CadRequest.__init__(self)
-        self.drawing = drawing
+        self.drawing_data = drawing_data
         self.metadata_component = metadata_component
 
     def to_http_info(self, config):
@@ -51,6 +51,12 @@ class PutEditMetadataRequest(CadRequest):
         :return: http_request configured http request
         :rtype: Configuration.models.requests.HttpRequest
         """
+        # verify the required parameter 'drawing_data' is set
+        if self.drawing_data is None:
+            raise ValueError("Missing the required parameter `drawing_data` when calling `put_edit_metadata`")
+        # verify the required parameter 'metadata_component' is set
+        if self.metadata_component is None:
+            raise ValueError("Missing the required parameter `metadata_component` when calling `put_edit_metadata`")
 
         collection_formats = {}
         path = '/cad/EditMetadata'
@@ -62,8 +68,8 @@ class PutEditMetadataRequest(CadRequest):
 
         form_params = []
         local_var_files = []
-        if self.drawing is not None:
-            local_var_files.append((self._lowercase_first_letter('drawing'), self.drawing))
+        if self.drawing_data is not None:
+            local_var_files.append((self._lowercase_first_letter('drawingData'), self.drawing_data))
         if self.metadata_component is not None:
             form_params.append((self._lowercase_first_letter('metadataComponent'), self.metadata_component))
 
@@ -75,7 +81,7 @@ class PutEditMetadataRequest(CadRequest):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = 'multipart/form-data' if form_params or local_var_files else self._select_header_content_type(
-            ['multipart/form-data', 'application/octet-stream'])
+            ['application/octet-stream', 'multipart/form-data'])
 
         # Authentication setting
         auth_settings = ['Bearer']

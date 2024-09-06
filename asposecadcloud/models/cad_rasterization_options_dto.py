@@ -28,7 +28,7 @@ import pprint
 import re
 import six
 
-from asposecadcloud.models.color import Color
+from asposecadcloud.models.color_dto import ColorDTO
 from asposecadcloud.models.graphics_options import GraphicsOptions
 from asposecadcloud.models.pen_options import PenOptions
 from asposecadcloud.models.vector_rasterization_options_dto import VectorRasterizationOptionsDTO
@@ -46,6 +46,15 @@ class CadRasterizationOptionsDTO(VectorRasterizationOptionsDTO):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'border_x': 'float',
+        'border_y': 'float',
+        'page_height': 'float',
+        'page_width': 'float',
+        'background_color': 'ColorDTO',
+        'draw_color': 'ColorDTO',
+        'unit_type': 'str',
+        'content_as_bitmap': 'bool',
+        'graphics_options': 'GraphicsOptions',
         'zoom': 'float',
         'pen_options': 'PenOptions',
         'automatic_layouts_scaling': 'bool',
@@ -56,6 +65,15 @@ class CadRasterizationOptionsDTO(VectorRasterizationOptionsDTO):
     }
 
     attribute_map = {
+        'border_x': 'BorderX',
+        'border_y': 'BorderY',
+        'page_height': 'PageHeight',
+        'page_width': 'PageWidth',
+        'background_color': 'BackgroundColor',
+        'draw_color': 'DrawColor',
+        'unit_type': 'UnitType',
+        'content_as_bitmap': 'ContentAsBitmap',
+        'graphics_options': 'GraphicsOptions',
         'zoom': 'Zoom',
         'pen_options': 'PenOptions',
         'automatic_layouts_scaling': 'AutomaticLayoutsScaling',

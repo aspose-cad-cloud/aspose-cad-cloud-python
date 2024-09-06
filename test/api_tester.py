@@ -30,6 +30,7 @@ import getpass
 import json
 import os
 from distutils.util import strtobool
+import shutil
 
 import six
 
@@ -50,22 +51,25 @@ class ApiTester(unittest.TestCase):
         self.failed_any_test = False
         self.default_storage = 'Cad-QA'
         self.cloud_test_folder_prefix = 'CadCloudTestPython'
-        self.original_data_folder = 'CadCloudTestData'
+        self.original_data_folder = 'CadCloudTestPythonData'
         self._server_access_file = 'serverAccess.json'
         self._api_version = 'v3.0'
         self._local_test_folder = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'TestData/')
+        self._local_reference_data = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ReferenceData/')
         self.remove_result = True
+        self.override_reference_files = False
 
-        self.temp_folder = '{0}_{1}'.format(
-            self.cloud_test_folder_prefix,
-            os.environ.get('BUILD_NUMBER') or getpass.getuser())
+        self.temp_folder = self.cloud_test_folder_prefix
 
         self.basic_export_formats = ['.dwg',
                                      '.dxf',
                                      '.dgn',
                                      '.stl',
                                      '.dwf']
+
+        self.basic_raster_export_formats = ['.png']
 
         self.test_storage = os.environ.get('StorageName')
         if not self.test_storage:
@@ -145,13 +149,13 @@ class ApiTester(unittest.TestCase):
 
         self.cad_api = CadApi(app_key, app_sid, base_url, api_version, False, proxy)
 
-        testFolderExists = self.cad_api.object_exists(requests.ObjectExistsRequest(path = self.original_data_folder, storage_name=self.test_storage))
+        testFolderExists = self.cad_api.object_exists(requests.ObjectExistsRequest(path=self.original_data_folder, storage_name=self.test_storage))
         if not testFolderExists.exists:
-            self.cad_api.create_folder(requests.CreateFolderRequest(path = self.original_data_folder, storage_name=self.test_storage))
+            self.cad_api.create_folder(requests.CreateFolderRequest(path=self.original_data_folder, storage_name=self.test_storage))
 
         self.input_test_files = self.cad_api.get_files_list(requests.GetFilesListRequest(
-                path = self.original_data_folder,
-                storage_name = self.test_storage)).value
+                path=self.original_data_folder,
+                storage_name=self.test_storage)).value
 
         if len(self.input_test_files) == 0:
             for filename in os.listdir(self._local_test_folder):
@@ -222,6 +226,7 @@ class ApiTester(unittest.TestCase):
             request_invoker,
             properties_tester,
             folder,
+            reference_file_name,
             storage=None):
         if not storage:
             storage = self.default_storage
@@ -231,7 +236,7 @@ class ApiTester(unittest.TestCase):
             out_path,
             parameters_line,
             input_file_name,
-            lambda: self._obtain_get_response(request_invoker, out_path),
+            lambda: self._obtain_get_response(request_invoker, out_path, storage, reference_file_name),
             properties_tester,
             folder,
             storage)
@@ -245,6 +250,7 @@ class ApiTester(unittest.TestCase):
             request_invoker,
             properties_tester,
             folder,
+            reference_file_name,
             storage=None):
         if not storage:
             storage = self.default_storage
@@ -258,7 +264,37 @@ class ApiTester(unittest.TestCase):
                 os.path.join(folder, input_file_name),
                 result_file_name,
                 storage,
-                request_invoker),
+                request_invoker,
+                reference_file_name),
+            properties_tester,
+            folder,
+            storage)
+
+    def put_request_tester(
+            self,
+            test_method_name,
+            parameters_line,
+            input_file_name,
+            result_file_name,
+            request_invoker,
+            properties_tester,
+            folder,
+            reference_file_name,
+            storage=None):
+        if not storage:
+            storage = self.default_storage
+
+        self.__request_tester(
+            test_method_name,
+            result_file_name,
+            parameters_line,
+            input_file_name,
+            lambda: self._obtain_post_response(
+                os.path.join(folder, input_file_name),
+                result_file_name,
+                storage,
+                request_invoker,
+                reference_file_name),
             properties_tester,
             folder,
             storage)
@@ -279,14 +315,18 @@ class ApiTester(unittest.TestCase):
                 
         return None
 
-    def _obtain_get_response(self, request_invoker, output_path):
+    def _obtain_get_response(self, request_invoker, output_path, storage, reference_file_name):
         response = request_invoker()
 
         self.assertIsNotNone(response)
 
-        if not output_path:
-            self.assertGreater(os.path.getsize(response), 0)
+        if output_path:
+            response = self.cad_api.download_file(requests.DownloadFileRequest(path=output_path, storage_name=storage))
 
+        if self.override_reference_files:
+            shutil.copyfile(response, self._local_reference_data + reference_file_name)
+
+        self.assertEqual(os.path.getsize(response), os.path.getsize(self._local_reference_data + reference_file_name))
         return response
 
     def _obtain_post_response(
@@ -294,13 +334,21 @@ class ApiTester(unittest.TestCase):
             input_path,
             out_path,
             storage,
-            request_invoker):
-        res = self.cad_api.download_file(requests.DownloadFileRequest(path=input_path, storage_name=storage))
+            request_invoker,
+            reference_file_name=None):
+        res = self.cad_api.download_file(requests.DownloadFileRequest(input_path, storage))
 
         response = request_invoker(res, out_path)
 
         if out_path:
+            response = self.cad_api.download_file(requests.DownloadFileRequest(path=out_path, storage_name=storage))
+
+        if out_path and reference_file_name is None:
             return None
 
-        self.assertIsNotNone(response)
+        if self.override_reference_files:
+            shutil.copyfile(response, self._local_reference_data + reference_file_name)
+
+        self.assertEqual(os.path.getsize(response), os.path.getsize(self._local_reference_data + reference_file_name))
+
         return response

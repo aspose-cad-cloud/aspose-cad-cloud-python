@@ -33,14 +33,14 @@ class ExtractMetadataRequest(CadRequest):
     Request model for extract_metadata operation.
     Initializes a new instance.
 
+    :param drawing_data Input drawing
     :param output_format Output TXT, XML or JSON file format.
-    :param drawing Form-data file
     """
 
-    def __init__(self, output_format, drawing=None):
+    def __init__(self, drawing_data, output_format):
         CadRequest.__init__(self)
+        self.drawing_data = drawing_data
         self.output_format = output_format
-        self.drawing = drawing
 
     def to_http_info(self, config):
         """
@@ -51,6 +51,9 @@ class ExtractMetadataRequest(CadRequest):
         :return: http_request configured http request
         :rtype: Configuration.models.requests.HttpRequest
         """
+        # verify the required parameter 'drawing_data' is set
+        if self.drawing_data is None:
+            raise ValueError("Missing the required parameter `drawing_data` when calling `extract_metadata`")
         # verify the required parameter 'output_format' is set
         if self.output_format is None:
             raise ValueError("Missing the required parameter `output_format` when calling `extract_metadata`")
@@ -70,8 +73,8 @@ class ExtractMetadataRequest(CadRequest):
 
         form_params = []
         local_var_files = []
-        if self.drawing is not None:
-            local_var_files.append((self._lowercase_first_letter('drawing'), self.drawing))
+        if self.drawing_data is not None:
+            local_var_files.append((self._lowercase_first_letter('drawingData'), self.drawing_data))
 
         body_params = None
 
@@ -81,7 +84,7 @@ class ExtractMetadataRequest(CadRequest):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = 'multipart/form-data' if form_params or local_var_files else self._select_header_content_type(
-            ['multipart/form-data', 'application/octet-stream'])
+            ['application/octet-stream', 'multipart/form-data'])
 
         # Authentication setting
         auth_settings = ['Bearer']
